@@ -1,0 +1,155 @@
+{
+  "date": "2026-07-31",
+  "articles": [
+    {
+      "title": "Should You Still Learn to Code in 2026?",
+      "author": "Marina Wyss",
+      "publication": "Data Science Collective",
+      "reading_time": "9 min",
+      "blurb": "The answer isn't as obvious as I used to believe.",
+      "url": "https://medium.com/@gratitudedriven/should-you-still-learn-to-code-in-2026-034685e17707",
+      "tags": ["Programación", "IA", "Carrera"],
+      "featured": true
+    },
+    {
+      "title": "Build a Second Brain in 15 Minutes: Just Markdown, Git, and an AI Agent",
+      "author": "Roan Brasil Monteiro",
+      "publication": "",
+      "reading_time": "7 min",
+      "blurb": "A step-by-step COG tutorial - from git clone to your personal knowledge management system.",
+      "url": "https://medium.com/@roanmonteiro/build-a-second-brain-in-15-minutes-just-markdown-git-and-an-ai-agent-c9d74ba992bb",
+      "tags": ["Productividad", "IA", "Tutorial"],
+      "featured": true
+    },
+    {
+      "title": "Why Specification-Driven Development (SDD) is Not a Silver Bullet for AI-Assisted SDLC",
+      "author": "Alex Punnen",
+      "publication": "Towards AI",
+      "reading_time": "12 min",
+      "blurb": "Using a popular SDD GitHub Spec Kit and a real-world case study to explore the limitations.",
+      "url": "https://medium.com/@alexcpn/why-specification-driven-development-sdd-is-not-a-silver-bullet-for-ai-assisted-sdlc-491c71bcf835",
+      "tags": ["Desarrollo", "IA", "Metodología"],
+      "featured": false
+    },
+    {
+      "title": "Why You Should Completely Avoid Ollama in 2026",
+      "author": "Andrew Zhu",
+      "publication": "GoPenAI",
+      "reading_time": "7 min",
+      "blurb": "And the way better open source options available today.",
+      "url": "https://medium.com/@xhinker/why-you-should-completely-avoid-ollama-in-2026-6135d9e8591e",
+      "tags": ["IA", "Open Source", "Herramientas"],
+      "featured": true
+    },
+    {
+      "title": "A Lawyer Just Beat 500 Developers at Anthropic's Hackathon",
+      "author": "Jing Hu",
+      "publication": "AI Advances",
+      "reading_time": "7 min",
+      "blurb": "The most valuable skill in AI right now is not code — and you probably already have it.",
+      "url": "https://medium.com/@jinghuu/a-lawyer-just-beat-500-developers-at-anthropics-hackathon-140ca074d1a9",
+      "tags": ["IA", "Hackathon", "Habilidades"],
+      "featured": true
+    },
+    {
+      "title": "The Best Developer Is No Longer the One Who Writes the Best Code",
+      "author": "Jaroslaw Wasowski",
+      "publication": "Level Up Coding",
+      "reading_time": "13 min",
+      "blurb": "In the Spec-Driven Development era, a developer's value is shifting toward specification and design.",
+      "url": "https://medium.com/@wasowski.jarek/the-best-developer-is-no-longer-the-one-who-writes-the-best-code-996e8ed0869b",
+      "tags": ["Desarrollo", "SDD", "Carrera"],
+      "featured": false
+    },
+    {
+      "title": "AI's First Autonomous Cyber Attack",
+      "author": "Ignacio de Gregorio",
+      "publication": "",
+      "reading_time": "9 min",
+      "blurb": "An incident that could define an industry.",
+      "url": "https://medium.com/@ignacio.de.gregorio.noblejas/ais-first-autonomous-cyber-attack-5d18fdb31363",
+      "tags": ["Ciberseguridad", "IA", "Riesgo"],
+      "featured": false
+    },
+    {
+      "title": "Building a Personal AI Agent in a Couple of Hours",
+      "author": "Ivo Bernardo",
+      "publication": "",
+      "reading_time": "14 min",
+      "blurb": "We are living in a Brave New World.",
+      "url": "https://medium.com/@ivopbernardo/building-a-personal-ai-agent-in-a-couple-of-hours-7bea912f9a12",
+      "tags": ["IA", "Agentes", "Tutorial"],
+      "featured": false
+    },
+    {
+      "title": "I Hid an Entire Website Inside a Favicon, So Now I'm Worried About Your Browser",
+      "author": "David Lee",
+      "publication": "",
+      "reading_time": "7 min",
+      "blurb": "What happens when the smallest, most-ignored file on the web becomes a security threat.",
+      "url": "https://medium.com/@lordmoma/i-hid-an-entire-website-inside-a-favicon-so-now-im-worried-about-your-browser-0fa041b506f5",
+      "tags": ["Seguridad", "Web", "Hacking"],
+      "featured": false
+    },
+    {
+      "title": "Formal Verification in Spec-Driven Development — Enterprise Level",
+      "author": "Jaroslaw Wasowski",
+      "publication": "Level Up Coding",
+      "reading_time": "14 min",
+      "blurb": "In regulated enterprise, a specification becomes a legally binding artifact.",
+      "url": "https://medium.com/@wasowski.jarek/formal-verification-in-spec-driven-development-enterprise-level-8118f9a4617a",
+      "tags": ["Desarrollo", "Verificación", "Enterprise"],
+      "featured": false
+    },
+    {
+      "title": "Steve Jobs's 10-80-10 Rule Is Even More Useful in the AI Era",
+      "author": "Jessica Stillman",
+      "publication": "",
+      "reading_time": "5 min",
+      "blurb": "AI was a distant dream when Steve Jobs was using the 10-80-10 rule to build Apple.",
+      "url": "https://medium.com/@entrylevelrebel/steve-jobss-10-80-10-rule-is-even-more-useful-in-the-ai-era-8b003c8a9f7e",
+      "tags": ["Liderazgo", "IA", "Productividad"],
+      "featured": false
+    },
+    {
+      "title": "How to Do Hard Things When You Have Zero Motivation",
+      "author": "Darius Foroux",
+      "publication": "",
+      "reading_time": "3 min",
+      "blurb": "Tricks create novelty. These five strategies create discipline.",
+      "url": "https://medium.com/@dariusforoux/how-to-do-hard-things-when-you-have-zero-motivation-4218b652d950",
+      "tags": ["Productividad", "Motivación", "Mindset"],
+      "featured": false
+    },
+    {
+      "title": "Two Body Parts that Predict How Well You Age",
+      "author": "Linda Melone",
+      "publication": "Crow's Feet: Life As We Age",
+      "reading_time": "5 min",
+      "blurb": "Small muscles with an outsized impact on longevity and quality of life.",
+      "url": "https://medium.com/@linda_86854/two-body-parts-that-predict-how-well-you-age-710627fb7d4a",
+      "tags": ["Salud", "Longevidad", "Bienestar"],
+      "featured": false
+    },
+    {
+      "title": "\"Women Are Basically Reading Porn\"",
+      "author": "Desiree Peralta",
+      "publication": "Books Are Our Superpower",
+      "reading_time": "8 min",
+      "blurb": "And other misogynistic comments I receive when I say I read romance novels.",
+      "url": "https://medium.com/@dessyperalt/women-are-basically-reading-porn-2249ea9100e6",
+      "tags": ["Sociedad", "Lectura", "Género"],
+      "featured": false
+    },
+    {
+      "title": "Concurrency, Parallelism, and Async: Three Ideas That Sound the Same But Aren't",
+      "author": "Alina Kovtun",
+      "publication": "Code Like A Girl",
+      "reading_time": "8 min",
+      "blurb": "A guide to how modern software handles multiple tasks simultaneously.",
+      "url": "https://medium.com/@akovtun/concurrency-parallelism-and-async-three-ideas-that-sound-the-same-but-arent-47312e0be553",
+      "tags": ["Programación", "Conceptos", "Backend"],
+      "featured": false
+    }
+  ]
+}

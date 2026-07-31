@@ -3,357 +3,670 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Medium Daily Digest</title>
+<title>📰 Medium Daily Digest — 31 de Julio 2026</title>
 <style>
   :root {
     --bg: #0d1117;
     --card-bg: #161b22;
     --border: #30363d;
     --text: #c9d1d9;
-    --text-muted: #8b949e;
+    --text-secondary: #8b949e;
     --accent: #58a6ff;
-    --accent-dim: #1f6feb;
-    --tag-bg: #1a2332;
-    --tag-text: #58a6ff;
-    --hover: #1c2129;
-    --gold: #e3b341;
-    --green: #3fb950;
+    --accent-green: #3fb950;
+    --accent-orange: #d2991d;
+    --accent-purple: #bc8cff;
+    --accent-pink: #f778ba;
+    --accent-cyan: #39d2c0;
+    --featured-bg: #1a2332;
+    --featured-border: #1f6feb;
   }
-  * { margin: 0; padding: 0; box-sizing: border-box; }
+  * { margin:0; padding:0; box-sizing:border-box; }
   body {
-    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Noto Sans', Helvetica, Arial, sans-serif;
     background: var(--bg);
     color: var(--text);
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, sans-serif;
     line-height: 1.6;
     min-height: 100vh;
   }
-  .container {
-    max-width: 800px;
-    margin: 0 auto;
-    padding: 2rem 1.5rem 4rem;
-  }
-  header {
+  .container { max-width: 900px; margin: 0 auto; padding: 2rem 1.5rem; }
+  
+  /* Header */
+  .header {
     text-align: center;
     padding: 3rem 0 2rem;
     border-bottom: 1px solid var(--border);
-    margin-bottom: 2.5rem;
+    margin-bottom: 2rem;
   }
-  header h1 {
-    font-size: 2.2rem;
-    font-weight: 700;
-    letter-spacing: -0.5px;
-    margin-bottom: 0.5rem;
+  .header h1 { font-size: 2.5rem; font-weight: 800; margin-bottom: 0.5rem; }
+  .header .date {
+    font-size: 1.1rem;
+    color: var(--text-secondary);
+    font-weight: 500;
   }
-  header h1 span { color: var(--accent); }
-  header .date {
-    color: var(--text-muted);
+  .header .subtitle {
+    color: var(--text-secondary);
     font-size: 0.95rem;
     margin-top: 0.5rem;
   }
-  header .count {
-    display: inline-block;
-    background: var(--accent-dim);
-    color: #fff;
-    padding: 0.15rem 0.7rem;
-    border-radius: 12px;
-    font-size: 0.8rem;
-    font-weight: 600;
-    margin-top: 0.5rem;
+  
+  /* Highlight banner */
+  .highlights-banner {
+    background: linear-gradient(135deg, #1a2332 0%, #0d2847 100%);
+    border: 1px solid var(--featured-border);
+    border-radius: 16px;
+    padding: 1.75rem 2rem;
+    margin-bottom: 2.5rem;
   }
-  .article {
+  .highlights-banner h2 {
+    color: var(--accent);
+    font-size: 1.3rem;
+    margin-bottom: 1.25rem;
+  }
+  .highlight-item {
+    display: flex;
+    align-items: flex-start;
+    gap: 0.85rem;
+    padding: 0.7rem 0;
+    border-bottom: 1px solid rgba(48,54,61,0.5);
+  }
+  .highlight-item:last-child { border-bottom: none; }
+  .highlight-dot {
+    width: 10px; height: 10px;
+    background: var(--accent);
+    border-radius: 50%;
+    margin-top: 0.5rem;
+    flex-shrink: 0;
+  }
+  .highlight-item a {
+    color: var(--accent);
+    text-decoration: none;
+    font-weight: 600;
+    font-size: 1rem;
+  }
+  .highlight-item a:hover { text-decoration: underline; }
+  .highlight-item .hl-summary {
+    color: var(--text-secondary);
+    font-size: 0.9rem;
+    margin-top: 0.15rem;
+  }
+  
+  /* Stats bar */
+  .stats-bar {
+    display: flex;
+    gap: 1.5rem;
+    justify-content: center;
+    margin-bottom: 2.5rem;
+    flex-wrap: wrap;
+  }
+  .stat {
     background: var(--card-bg);
     border: 1px solid var(--border);
-    border-radius: 10px;
+    border-radius: 12px;
+    padding: 0.8rem 1.5rem;
+    text-align: center;
+    min-width: 120px;
+  }
+  .stat-value { font-size: 1.5rem; font-weight: 700; color: var(--accent); }
+  .stat-label { font-size: 0.8rem; color: var(--text-secondary); margin-top: 0.15rem; }
+  
+  /* Article card */
+  .article-card {
+    background: var(--card-bg);
+    border: 1px solid var(--border);
+    border-radius: 12px;
     padding: 1.5rem 1.75rem;
     margin-bottom: 1.25rem;
-    transition: border-color 0.2s, background 0.2s;
+    transition: border-color 0.2s, box-shadow 0.2s;
   }
-  .article:hover {
-    border-color: var(--accent-dim);
-    background: var(--hover);
+  .article-card:hover {
+    border-color: var(--accent);
+    box-shadow: 0 0 20px rgba(88,166,255,0.08);
   }
-  .article-num {
-    font-size: 0.75rem;
-    font-weight: 700;
-    color: var(--accent);
-    text-transform: uppercase;
-    letter-spacing: 1px;
-    margin-bottom: 0.4rem;
+  .article-card.featured {
+    background: var(--featured-bg);
+    border-color: var(--featured-border);
   }
-  .article h2 {
-    font-size: 1.2rem;
-    font-weight: 600;
+  .article-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    gap: 1rem;
     margin-bottom: 0.5rem;
-    line-height: 1.4;
   }
-  .article h2 a {
+  .article-title {
+    font-size: 1.15rem;
+    font-weight: 700;
+    line-height: 1.4;
+    flex: 1;
+  }
+  .article-title a {
     color: var(--text);
     text-decoration: none;
   }
-  .article h2 a:hover { color: var(--accent); }
-  .article .meta {
-    color: var(--text-muted);
-    font-size: 0.85rem;
-    margin-bottom: 0.75rem;
-    display: flex;
-    gap: 1rem;
-    flex-wrap: wrap;
+  .article-title a:hover { color: var(--accent); }
+  .reading-time {
+    background: rgba(88,166,255,0.12);
+    color: var(--accent);
+    padding: 3px 10px;
+    border-radius: 20px;
+    font-size: 0.78rem;
+    font-weight: 600;
+    white-space: nowrap;
+    flex-shrink: 0;
   }
-  .article .meta span { display: flex; align-items: center; gap: 0.3rem; }
-  .article .summary {
-    color: var(--text-muted);
+  .article-meta {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    margin-bottom: 0.65rem;
+    flex-wrap: wrap;
+    font-size: 0.88rem;
+    color: var(--text-secondary);
+  }
+  .article-meta .author { font-weight: 600; color: var(--text); }
+  .meta-dot { color: var(--border); }
+  .article-meta .publication { color: var(--accent-green); }
+  
+  /* Tags */
+  .tags {
+    display: flex;
+    gap: 0.4rem;
+    flex-wrap: wrap;
+    margin-bottom: 0.75rem;
+  }
+  .tag {
+    padding: 2px 10px;
+    border-radius: 20px;
+    font-size: 0.72rem;
+    font-weight: 600;
+    letter-spacing: 0.3px;
+  }
+  .tag-0 { background: rgba(88,166,255,0.15); color: var(--accent); }
+  .tag-1 { background: rgba(63,185,80,0.15); color: var(--accent-green); }
+  .tag-2 { background: rgba(210,153,29,0.15); color: var(--accent-orange); }
+  .tag-3 { background: rgba(188,140,255,0.15); color: var(--accent-purple); }
+  .tag-4 { background: rgba(247,120,186,0.15); color: var(--accent-pink); }
+  .tag-5 { background: rgba(57,210,192,0.15); color: var(--accent-cyan); }
+  
+  .summary {
+    color: var(--text-secondary);
     font-size: 0.92rem;
     line-height: 1.65;
-    margin-bottom: 0.75rem;
   }
-  .article .tags {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 0.4rem;
-  }
-  .article .tag {
-    background: var(--tag-bg);
-    color: var(--tag-text);
-    padding: 0.2rem 0.6rem;
-    border-radius: 6px;
-    font-size: 0.75rem;
-    font-weight: 500;
-  }
-  .article .read-more {
-    display: inline-block;
-    margin-top: 0.75rem;
-    color: var(--accent);
-    font-size: 0.85rem;
-    font-weight: 500;
-    text-decoration: none;
-  }
-  .article .read-more:hover { text-decoration: underline; }
-  .key-takeaway {
-    background: linear-gradient(135deg, #1a2332 0%, #0d2137 100%);
-    border: 1px solid var(--accent-dim);
-    border-radius: 8px;
-    padding: 1rem 1.25rem;
-    margin-bottom: 1.25rem;
-    font-size: 0.9rem;
-  }
-  .key-takeaway strong { color: var(--accent); }
-  footer {
-    text-align: center;
-    color: var(--text-muted);
+  .summary strong { color: var(--text); }
+  
+  .featured-star {
+    color: var(--accent-orange);
     font-size: 0.8rem;
-    padding: 2rem 0;
-    border-top: 1px solid var(--border);
-    margin-top: 2rem;
+    margin-left: 0.4rem;
   }
-  footer a { color: var(--accent); text-decoration: none; }
-  .loading {
+  
+  /* Footer */
+  .footer {
     text-align: center;
-    padding: 4rem 0;
-    color: var(--text-muted);
+    padding: 2.5rem 0 1.5rem;
+    margin-top: 2rem;
+    border-top: 1px solid var(--border);
+    color: var(--text-secondary);
+    font-size: 0.85rem;
   }
+  .footer .hermes {
+    color: var(--accent-purple);
+    font-weight: 600;
+  }
+  
   @media (max-width: 600px) {
     .container { padding: 1rem; }
-    header h1 { font-size: 1.6rem; }
-    .article { padding: 1.25rem; }
+    .header h1 { font-size: 1.8rem; }
+    .article-card { padding: 1.15rem 1.2rem; }
+    .stats-bar { gap: 0.7rem; }
+    .stat { padding: 0.6rem 1rem; min-width: 90px; }
   }
 </style>
 </head>
 <body>
 <div class="container">
-  <header>
-    <h1>📰 Medium <span>Daily Digest</span></h1>
-    <p class="date" id="digest-date">Cargando...</p>
-    <span class="count" id="article-count">15 artículos</span>
-  </header>
 
-  <div id="articles-container">
-    <div class="loading">⏳ Cargando digest...</div>
+  <!-- Header -->
+  <div class="header">
+    <h1>📰 Medium Daily Digest</h1>
+    <div class="date">Viernes, 31 de julio de 2026</div>
+    <div class="subtitle">Tu resumen diario de los mejores artículos de Medium — en español 🇪🇸</div>
   </div>
 
-  <footer>
-    <p>Generado automáticamente por <a href="https://github.com/udeope/medium-digest">Hermes Agent</a> · Artículos curados de Medium Daily Digest</p>
-  </footer>
+  <!-- Destacados -->
+  <div class="highlights-banner">
+    <h2>⭐ Top 4 — Lo mejor de hoy</h2>
+    <div class="highlight-item">
+      <div class="highlight-dot"></div>
+      <div>
+        <a href="https://medium.com/@gratitudedriven/should-you-still-learn-to-code-in-2026-034685e17707" target="_blank" rel="noopener">
+          Should You Still Learn to Code in 2026?
+        </a>
+        <div class="hl-summary">Marina Wyss analiza si aprender a programar sigue valiendo la pena en la era de la IA generativa.</div>
+      </div>
+    </div>
+    <div class="highlight-item">
+      <div class="highlight-dot"></div>
+      <div>
+        <a href="https://medium.com/@roanmonteiro/build-a-second-brain-in-15-minutes-just-markdown-git-and-an-ai-agent-c9d74ba992bb" target="_blank" rel="noopener">
+          Build a Second Brain in 15 Minutes
+        </a>
+        <div class="hl-summary">Tutorial exprés para crear tu propio sistema de gestión de conocimiento con Markdown, Git y un agente IA.</div>
+      </div>
+    </div>
+    <div class="highlight-item">
+      <div class="highlight-dot"></div>
+      <div>
+        <a href="https://medium.com/@xhinker/why-you-should-completely-avoid-ollama-in-2026-6135d9e8591e" target="_blank" rel="noopener">
+          Why You Should Completely Avoid Ollama in 2026
+        </a>
+        <div class="hl-summary">Andrew Zhu explica por qué Ollama ya no es la mejor opción y presenta alternativas open source superiores.</div>
+      </div>
+    </div>
+    <div class="highlight-item">
+      <div class="highlight-dot"></div>
+      <div>
+        <a href="https://medium.com/@jinghuu/a-lawyer-just-beat-500-developers-at-anthropics-hackathon-140ca074d1a9" target="_blank" rel="noopener">
+          A Lawyer Just Beat 500 Developers at Anthropic's Hackathon
+        </a>
+        <div class="hl-summary">La habilidad más valiosa en IA no es programar — un abogado, un cardiólogo y un técnico de carreteras lo demostraron.</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Stats -->
+  <div class="stats-bar">
+    <div class="stat">
+      <div class="stat-value">15</div>
+      <div class="stat-label">Artículos</div>
+    </div>
+    <div class="stat">
+      <div class="stat-value">~130 min</div>
+      <div class="stat-label">Lectura total</div>
+    </div>
+    <div class="stat">
+      <div class="stat-value">11</div>
+      <div class="stat-label">Publicaciones</div>
+    </div>
+    <div class="stat">
+      <div class="stat-value">15</div>
+      <div class="stat-label">Resúmenes</div>
+    </div>
+  </div>
+
+  <!-- Articles -->
+  
+  <!-- Article 1: Featured -->
+  <div class="article-card featured">
+    <div class="article-header">
+      <div class="article-title">
+        <a href="https://medium.com/@gratitudedriven/should-you-still-learn-to-code-in-2026-034685e17707" target="_blank" rel="noopener">
+          Should You Still Learn to Code in 2026? <span class="featured-star">⭐</span>
+        </a>
+      </div>
+      <span class="reading-time">⏱ 9 min</span>
+    </div>
+    <div class="article-meta">
+      <span class="author">👤 Marina Wyss</span>
+      <span class="meta-dot">·</span>
+      <span class="publication">📚 Data Science Collective</span>
+    </div>
+    <div class="tags">
+      <span class="tag tag-0">Programación</span>
+      <span class="tag tag-1">IA</span>
+      <span class="tag tag-2">Carrera</span>
+    </div>
+    <p class="summary">
+      Marina Wyss explora una pregunta incómoda pero necesaria: ¿tiene sentido aprender a programar en 2026? Con herramientas como Claude y ChatGPT generando código de calidad, el valor de saber programar está cambiando radicalmente. La autora argumenta que la respuesta no es binaria — programar sigue siendo valioso, pero el <strong>qué y el cómo</strong> han evolucionado. Ya no se trata de memorizar sintaxis, sino de entender arquitectura, sistemas y saber dirigir agentes de IA con precisión. Es una lectura esencial para cualquiera que se plantee su futuro en tecnología.
+    </p>
+  </div>
+
+  <!-- Article 2: Featured -->
+  <div class="article-card featured">
+    <div class="article-header">
+      <div class="article-title">
+        <a href="https://medium.com/@roanmonteiro/build-a-second-brain-in-15-minutes-just-markdown-git-and-an-ai-agent-c9d74ba992bb" target="_blank" rel="noopener">
+          Build a Second Brain in 15 Minutes: Just Markdown, Git, and an AI Agent <span class="featured-star">⭐</span>
+        </a>
+      </div>
+      <span class="reading-time">⏱ 7 min</span>
+    </div>
+    <div class="article-meta">
+      <span class="author">👤 Roan Brasil Monteiro</span>
+    </div>
+    <div class="tags">
+      <span class="tag tag-0">Productividad</span>
+      <span class="tag tag-1">IA</span>
+      <span class="tag tag-3">Tutorial</span>
+    </div>
+    <p class="summary">
+      Un tutorial paso a paso para construir un "segundo cerebro" digital usando solo Markdown, Git y un agente de IA. Monteiro demuestra cómo crear un sistema de gestión de conocimiento personal (PKM) que captura, organiza y recupera información de forma inteligente, todo en menos de 15 minutos. El enfoque minimalista evita herramientas propietarias y funciona con cualquier editor de texto. La IA actúa como asistente para conectar ideas y resumir notas, creando un flujo de trabajo sorprendentemente potente con herramientas que ya tienes instaladas.
+    </p>
+  </div>
+
+  <!-- Article 3 -->
+  <div class="article-card">
+    <div class="article-header">
+      <div class="article-title">
+        <a href="https://medium.com/@alexcpn/why-specification-driven-development-sdd-is-not-a-silver-bullet-for-ai-assisted-sdlc-491c71bcf835" target="_blank" rel="noopener">
+          Why Specification-Driven Development (SDD) is Not a Silver Bullet
+        </a>
+      </div>
+      <span class="reading-time">⏱ 12 min</span>
+    </div>
+    <div class="article-meta">
+      <span class="author">👤 Alex Punnen</span>
+      <span class="meta-dot">·</span>
+      <span class="publication">📚 Towards AI</span>
+    </div>
+    <div class="tags">
+      <span class="tag tag-0">Desarrollo</span>
+      <span class="tag tag-1">IA</span>
+      <span class="tag tag-4">Metodología</span>
+    </div>
+    <p class="summary">
+      Alex Punnen ofrece una crítica matizada al desarrollo dirigido por especificaciones (SDD), usando un caso real y el popular Spec Kit de GitHub. Si bien SDD acelera el prototipado con IA, el autor identifica limitaciones importantes: las especificaciones pueden quedar obsoletas rápidamente, no capturan conocimiento tácito del dominio y generan código que requiere refactorización significativa. Concluye que SDD es una herramienta valiosa pero no una solución mágica — la supervisión humana y el juicio ingenieril siguen siendo irremplazables en el ciclo de desarrollo.
+    </p>
+  </div>
+
+  <!-- Article 4: Featured -->
+  <div class="article-card featured">
+    <div class="article-header">
+      <div class="article-title">
+        <a href="https://medium.com/@xhinker/why-you-should-completely-avoid-ollama-in-2026-6135d9e8591e" target="_blank" rel="noopener">
+          Why You Should Completely Avoid Ollama in 2026 <span class="featured-star">⭐</span>
+        </a>
+      </div>
+      <span class="reading-time">⏱ 7 min</span>
+    </div>
+    <div class="article-meta">
+      <span class="author">👤 Andrew Zhu</span>
+      <span class="meta-dot">·</span>
+      <span class="publication">📚 GoPenAI</span>
+    </div>
+    <div class="tags">
+      <span class="tag tag-0">IA</span>
+      <span class="tag tag-1">Open Source</span>
+      <span class="tag tag-2">Herramientas</span>
+    </div>
+    <p class="summary">
+      Un artículo provocador que cuestiona el dominio de Ollama en el ecosistema open source de LLMs. Andrew Zhu detalla problemas de rendimiento, limitaciones en la gestión de memoria, falta de paralelismo real y un ecosistema de plugins que se ha quedado atrás frente a alternativas más modernas. Propone opciones como <strong>llama.cpp con servidores dedicados, vLLM para despliegues serios y LM Studio</strong> para escritorio. Para desarrolladores que ejecutan modelos localmente en 2026, este artículo ofrece una hoja de ruta hacia herramientas más eficientes.
+    </p>
+  </div>
+
+  <!-- Article 5: Featured -->
+  <div class="article-card featured">
+    <div class="article-header">
+      <div class="article-title">
+        <a href="https://medium.com/@jinghuu/a-lawyer-just-beat-500-developers-at-anthropics-hackathon-140ca074d1a9" target="_blank" rel="noopener">
+          A Lawyer Just Beat 500 Developers at Anthropic's Hackathon <span class="featured-star">⭐</span>
+        </a>
+      </div>
+      <span class="reading-time">⏱ 7 min</span>
+    </div>
+    <div class="article-meta">
+      <span class="author">👤 Jing Hu</span>
+      <span class="meta-dot">·</span>
+      <span class="publication">📚 AI Advances</span>
+    </div>
+    <div class="tags">
+      <span class="tag tag-0">IA</span>
+      <span class="tag tag-3">Hackathon</span>
+      <span class="tag tag-4">Habilidades</span>
+    </div>
+    <p class="summary">
+      En la hackathon de Anthropic, 13.000 personas aplicaron y 500 fueron seleccionadas — la mayoría desarrolladores con años de experiencia. Sin embargo, los ganadores fueron <strong>un abogado, un cardiólogo y un técnico de carreteras de Uganda</strong>, ninguno con formación en software. Jing Hu revela que la habilidad diferencial no fue programar sino <strong>pensamiento de dominio</strong>: entender profundamente un problema real y usar la IA como herramienta, no como muleta. La lección es clara: en la era de la IA, lo más valioso es lo que ya sabes del mundo real, no tu capacidad de escribir bucles.
+    </p>
+  </div>
+
+  <!-- Article 6 -->
+  <div class="article-card">
+    <div class="article-header">
+      <div class="article-title">
+        <a href="https://medium.com/@wasowski.jarek/the-best-developer-is-no-longer-the-one-who-writes-the-best-code-996e8ed0869b" target="_blank" rel="noopener">
+          The Best Developer Is No Longer the One Who Writes the Best Code
+        </a>
+      </div>
+      <span class="reading-time">⏱ 13 min</span>
+    </div>
+    <div class="article-meta">
+      <span class="author">👤 Jaroslaw Wasowski</span>
+      <span class="meta-dot">·</span>
+      <span class="publication">📚 Level Up Coding</span>
+    </div>
+    <div class="tags">
+      <span class="tag tag-0">Desarrollo</span>
+      <span class="tag tag-1">SDD</span>
+      <span class="tag tag-2">Carrera</span>
+    </div>
+    <p class="summary">
+      Jaroslaw Wasowski plantea un cambio de paradigma en la industria del software: en la era del desarrollo dirigido por especificaciones, el mejor desarrollador ya no es quien escribe el código más elegante, sino quien <strong>diseña las mejores especificaciones</strong>. El artículo traza la evolución desde la ingeniería de software tradicional hacia un modelo donde la claridad de pensamiento, la capacidad de descomponer problemas complejos y la comunicación efectiva con agentes de IA son las habilidades premium. Una reflexión necesaria para desarrolladores que quieren seguir siendo relevantes.
+    </p>
+  </div>
+
+  <!-- Article 7 -->
+  <div class="article-card">
+    <div class="article-header">
+      <div class="article-title">
+        <a href="https://medium.com/@ignacio.de.gregorio.noblejas/ais-first-autonomous-cyber-attack-5d18fdb31363" target="_blank" rel="noopener">
+          AI's First Autonomous Cyber Attack
+        </a>
+      </div>
+      <span class="reading-time">⏱ 9 min</span>
+    </div>
+    <div class="article-meta">
+      <span class="author">👤 Ignacio de Gregorio</span>
+    </div>
+    <div class="tags">
+      <span class="tag tag-0">Ciberseguridad</span>
+      <span class="tag tag-4">IA</span>
+      <span class="tag tag-2">Riesgo</span>
+    </div>
+    <p class="summary">
+      Ignacio de Gregorio narra el que podría ser el primer ciberataque completamente autónomo ejecutado por una IA, un incidente con potencial de redefinir la industria de la ciberseguridad. El artículo explora cómo un agente de IA, sin intervención humana directa, identificó vulnerabilidades, desarrolló exploits y ejecutó un ataque coordinado. Las implicaciones son profundas: la línea entre herramientas ofensivas y defensivas se difumina, y la velocidad de los ataques automatizados supera con creces la capacidad de respuesta humana. Una llamada de atención para líderes tecnológicos y reguladores.
+    </p>
+  </div>
+
+  <!-- Article 8 -->
+  <div class="article-card">
+    <div class="article-header">
+      <div class="article-title">
+        <a href="https://medium.com/@ivopbernardo/building-a-personal-ai-agent-in-a-couple-of-hours-7bea912f9a12" target="_blank" rel="noopener">
+          Building a Personal AI Agent in a Couple of Hours
+        </a>
+      </div>
+      <span class="reading-time">⏱ 14 min</span>
+    </div>
+    <div class="article-meta">
+      <span class="author">👤 Ivo Bernardo</span>
+    </div>
+    <div class="tags">
+      <span class="tag tag-0">IA</span>
+      <span class="tag tag-1">Agentes</span>
+      <span class="tag tag-3">Tutorial</span>
+    </div>
+    <p class="summary">
+      Ivo Bernardo demuestra que crear tu propio agente de IA personal ya no requiere un equipo de ingenieros ni meses de desarrollo. En unas pocas horas, combinando APIs modernas, un modelo de lenguaje y herramientas de automatización, construye un asistente capaz de gestionar correos, organizar calendarios y buscar información. El artículo es una guía práctica que refleja la democratización acelerada de la IA: <strong>estamos viviendo en "Un Mundo Feliz" donde cualquiera puede crear su propio agente</strong>. Incluye código, arquitectura y lecciones aprendidas del proceso.
+    </p>
+  </div>
+
+  <!-- Article 9 -->
+  <div class="article-card">
+    <div class="article-header">
+      <div class="article-title">
+        <a href="https://medium.com/@lordmoma/i-hid-an-entire-website-inside-a-favicon-so-now-im-worried-about-your-browser-0fa041b506f5" target="_blank" rel="noopener">
+          I Hid an Entire Website Inside a Favicon
+        </a>
+      </div>
+      <span class="reading-time">⏱ 7 min</span>
+    </div>
+    <div class="article-meta">
+      <span class="author">👤 David Lee</span>
+    </div>
+    <div class="tags">
+      <span class="tag tag-0">Seguridad</span>
+      <span class="tag tag-4">Web</span>
+      <span class="tag tag-2">Hacking</span>
+    </div>
+    <p class="summary">
+      David Lee demuestra una hazaña técnica tan brillante como alarmante: esconder un sitio web completo dentro de un favicon, el archivo más pequeño e ignorado de cualquier página. El artículo explora las implicaciones de seguridad de esta técnica — desde almacenar código malicioso en un archivo que ningún antivirus escanea hasta exfiltrar datos camuflados como píxeles. Una lectura fascinante que te hará mirar con otros ojos la pequeña pestaña del navegador y cuestionar qué otras superficies de ataque permanecen invisibles.
+    </p>
+  </div>
+
+  <!-- Article 10 -->
+  <div class="article-card">
+    <div class="article-header">
+      <div class="article-title">
+        <a href="https://medium.com/@wasowski.jarek/formal-verification-in-spec-driven-development-enterprise-level-8118f9a4617a" target="_blank" rel="noopener">
+          Formal Verification in Spec-Driven Development — Enterprise Level
+        </a>
+      </div>
+      <span class="reading-time">⏱ 14 min</span>
+    </div>
+    <div class="article-meta">
+      <span class="author">👤 Jaroslaw Wasowski</span>
+      <span class="meta-dot">·</span>
+      <span class="publication">📚 Level Up Coding</span>
+    </div>
+    <div class="tags">
+      <span class="tag tag-0">Desarrollo</span>
+      <span class="tag tag-3">Verificación</span>
+      <span class="tag tag-5">Enterprise</span>
+    </div>
+    <p class="summary">
+      Segunda entrega de Wasowski sobre SDD, esta vez enfocada en entornos empresariales regulados donde una especificación no es solo un documento de diseño sino un <strong>artefacto legalmente vinculante</strong>. El artículo explora cómo la verificación formal — tradicionalmente reservada para sistemas críticos — se está integrando en flujos de desarrollo con IA. Cubre técnicas como model checking y demostración automatizada de teoremas aplicadas a especificaciones generadas por agentes, ofreciendo garantías matemáticas de corrección en sectores como banca, salud y defensa.
+    </p>
+  </div>
+
+  <!-- Article 11 -->
+  <div class="article-card">
+    <div class="article-header">
+      <div class="article-title">
+        <a href="https://medium.com/@entrylevelrebel/steve-jobss-10-80-10-rule-is-even-more-useful-in-the-ai-era-8b003c8a9f7e" target="_blank" rel="noopener">
+          Steve Jobs's 10–80–10 Rule Is Even More Useful in the AI Era
+        </a>
+      </div>
+      <span class="reading-time">⏱ 5 min</span>
+    </div>
+    <div class="article-meta">
+      <span class="author">👤 Jessica Stillman</span>
+    </div>
+    <div class="tags">
+      <span class="tag tag-0">Liderazgo</span>
+      <span class="tag tag-1">IA</span>
+      <span class="tag tag-2">Productividad</span>
+    </div>
+    <p class="summary">
+      Jessica Stillman recupera la regla 10-80-10 de Steve Jobs y la aplica al contexto actual de la IA. La regla divide a las personas en tres grupos: el 10% superior (talentos excepcionales), el 80% medio (buenos profesionales) y el 10% inferior. Jobs creía en rodearse solo del 10% superior. Stillman argumenta que en la era de la IA, esta regla es aún más relevante: <strong>la IA está elevando el suelo pero también el techo</strong>, y la diferencia entre el 10% que sabe dirigir la IA y el 80% que solo la ejecuta será cada vez más pronunciada.
+    </p>
+  </div>
+
+  <!-- Article 12 -->
+  <div class="article-card">
+    <div class="article-header">
+      <div class="article-title">
+        <a href="https://medium.com/@dariusforoux/how-to-do-hard-things-when-you-have-zero-motivation-4218b652d950" target="_blank" rel="noopener">
+          How to Do Hard Things When You Have Zero Motivation
+        </a>
+      </div>
+      <span class="reading-time">⏱ 3 min</span>
+    </div>
+    <div class="article-meta">
+      <span class="author">👤 Darius Foroux</span>
+    </div>
+    <div class="tags">
+      <span class="tag tag-1">Productividad</span>
+      <span class="tag tag-2">Motivación</span>
+      <span class="tag tag-3">Mindset</span>
+    </div>
+    <p class="summary">
+      Darius Foroux ataca el mito de la motivación con cinco estrategias prácticas respaldadas por la psicología del comportamiento. El argumento central: <strong>los trucos crean novedad pasajera, pero las estrategias crean disciplina duradera</strong>. Propone técnicas como el "non-zero day" (hacer al menos algo cada día), reducir la fricción de inicio, y separar la identidad de los resultados. Un artículo breve pero denso, perfecto para leer cuando te sientes estancado y necesitas un empujón pragmático sin frases motivacionales vacías.
+    </p>
+  </div>
+
+  <!-- Article 13 -->
+  <div class="article-card">
+    <div class="article-header">
+      <div class="article-title">
+        <a href="https://medium.com/@linda_86854/two-body-parts-that-predict-how-well-you-age-710627fb7d4a" target="_blank" rel="noopener">
+          Two Body Parts that Predict How Well You Age
+        </a>
+      </div>
+      <span class="reading-time">⏱ 5 min</span>
+    </div>
+    <div class="article-meta">
+      <span class="author">👤 Linda Melone</span>
+      <span class="meta-dot">·</span>
+      <span class="publication">📚 Crow's Feet: Life As We Age</span>
+    </div>
+    <div class="tags">
+      <span class="tag tag-1">Salud</span>
+      <span class="tag tag-4">Longevidad</span>
+      <span class="tag tag-5">Bienestar</span>
+    </div>
+    <p class="summary">
+      Linda Melone revela que dos grupos musculares aparentemente menores — la fuerza de agarre y los músculos de la pantorrilla — son predictores sorprendentemente precisos de cómo envejecerás. Respaldada por estudios longitudinales, explica que estos "pequeños músculos con un impacto desproporcionado" son indicadores de salud cardiovascular, riesgo de caídas y longevidad general. El artículo incluye ejercicios simples para fortalecer ambas áreas, convirtiendo la ciencia en acción práctica. Una lectura valiosa para cualquiera interesado en envejecer con vitalidad.
+    </p>
+  </div>
+
+  <!-- Article 14 -->
+  <div class="article-card">
+    <div class="article-header">
+      <div class="article-title">
+        <a href="https://medium.com/@dessyperalt/women-are-basically-reading-porn-2249ea9100e6" target="_blank" rel="noopener">
+          "Women Are Basically Reading Porn"
+        </a>
+      </div>
+      <span class="reading-time">⏱ 8 min</span>
+    </div>
+    <div class="article-meta">
+      <span class="author">👤 Desiree Peralta</span>
+      <span class="meta-dot">·</span>
+      <span class="publication">📚 Books Are Our Superpower</span>
+    </div>
+    <div class="tags">
+      <span class="tag tag-0">Sociedad</span>
+      <span class="tag tag-4">Lectura</span>
+      <span class="tag tag-3">Género</span>
+    </div>
+    <p class="summary">
+      Desiree Peralta aborda el estigma que rodea a las lectoras de novela romántica, enfrentándose a comentarios misóginos que desprecian el género como "porno para mujeres". Con datos de ventas y análisis cultural, defiende que la novela romántica es <strong>uno de los géneros literarios más rentables y peor tratados por la crítica</strong>. El artículo conecta este desprecio con patrones más amplios de cómo se devalúa sistemáticamente lo que consumen las mujeres. Una defensa apasionada del derecho a leer sin pedir disculpas.
+    </p>
+  </div>
+
+  <!-- Article 15 -->
+  <div class="article-card">
+    <div class="article-header">
+      <div class="article-title">
+        <a href="https://medium.com/@akovtun/concurrency-parallelism-and-async-three-ideas-that-sound-the-same-but-arent-47312e0be553" target="_blank" rel="noopener">
+          Concurrency, Parallelism, and Async: Three Ideas That Sound the Same But Aren't
+        </a>
+      </div>
+      <span class="reading-time">⏱ 8 min</span>
+    </div>
+    <div class="article-meta">
+      <span class="author">👤 Alina Kovtun</span>
+      <span class="meta-dot">·</span>
+      <span class="publication">📚 Code Like A Girl</span>
+    </div>
+    <div class="tags">
+      <span class="tag tag-0">Programación</span>
+      <span class="tag tag-1">Conceptos</span>
+      <span class="tag tag-5">Backend</span>
+    </div>
+    <p class="summary">
+      Alina Kovtun desenreda tres conceptos que incluso desarrolladores experimentados confunden: concurrencia, paralelismo y asincronía. Usando analogías cotidianas (una cafetería, una cocina) y ejemplos de código en Python, JavaScript y Go, construye un marco mental claro para entender cuándo usar cada enfoque. El artículo es ideal tanto para juniors que quieren solidificar fundamentos como para seniors que necesitan explicar estos conceptos a sus equipos. <strong>Un recurso excelente para cerrar una brecha de conocimiento sorprendentemente común</strong>.
+    </p>
+  </div>
+
+  <!-- Footer -->
+  <div class="footer">
+    <p>📬 Medium Daily Digest · Viernes 31 de julio de 2026</p>
+    <p style="margin-top: 0.5rem;">Generado por <span class="hermes">Hermes Agent</span> · Nous Research</p>
+    <p style="margin-top: 0.3rem; font-size: 0.75rem;">Fuente: Medium Daily Digest email · Los resúmenes son generados automáticamente</p>
+  </div>
+
 </div>
-
-<!-- DATA_PLACEHOLDER -->
-<script>
-// ── Digest data injected by cron job ──
-const DIGEST = {
-  date: "Viernes, 31 de julio de 2026",
-  articles: [
-    {
-      title: "Should You Still Learn to Code in 2026?",
-      url: "https://medium.com/@gratitudedriven/should-you-still-learn-to-code-in-2026-034685e17707",
-      author: "Marina Wyss",
-      readTime: "9 min",
-      summary: "Una Científica Senior de Amazon que ya no escribe código cuestiona si aún vale la pena aprender a programar en 2026. La respuesta no es tan obvia como solía creer: el valor ya no está en escribir líneas, sino en entender sistemas, diseñar soluciones y saber qué construir.",
-      keyTakeaway: "En la era de la IA, el valor de un desarrollador ya no está en teclear código sino en entender qué construir y por qué.",
-      tags: ["IA", "Desarrollo de Software", "Carrera Tech"]
-    },
-    {
-      title: "Build a Second Brain in 15 Minutes: Just Markdown, Git, and an AI Agent",
-      url: "https://medium.com/@roanmonteiro/build-a-second-brain-in-15-minutes-just-markdown-git-and-an-ai-agent-c9d74ba992bb",
-      author: "Roan Brasil Monteiro",
-      readTime: "7 min",
-      summary: "Tutorial para crear un \"segundo cerebro\" con COG usando solo archivos Markdown, Git y un agente de IA. Sin bases de datos, servidores ni suscripciones. En 15 minutos obtienes un sistema que captura pensamientos, los organiza por dominio y entrega un briefing diario con fuentes.",
-      keyTakeaway: "La herramienta más poderosa de productividad personal puede ser sorprendentemente simple: Markdown, Git y un agente de IA bastan.",
-      tags: ["Productividad", "IA Agentes", "Segundo Cerebro", "COG"]
-    },
-    {
-      title: "Why Specification-Driven Development (SDD) is Not a Silver Bullet for AI-Assisted SDLC",
-      url: "https://medium.com/@alexcpn/why-specification-driven-development-sdd-is-not-a-silver-bullet-for-ai-assisted-sdlc-491c71bcf835",
-      author: "Alex Punnen",
-      readTime: "12 min",
-      summary: "El autor prueba el enfoque de Desarrollo Guiado por Especificaciones (SDD) usando un Spec Kit real de GitHub. Concluye que, aunque valioso, SDD no es una bala de plata: tiene limitaciones importantes en proyectos reales que requieren iteración, contexto humano y adaptación continua.",
-      keyTakeaway: "Las especificaciones formales ayudan pero no reemplazan el juicio humano ni la iteración en el desarrollo de software con IA.",
-      tags: ["SDD", "Desarrollo de Software", "IA", "Especificaciones"]
-    },
-    {
-      title: "Why You Should Completely Avoid Ollama in 2026",
-      url: "https://medium.com/@xhinker/why-you-should-completely-avoid-ollama-in-2026-6135d9e8591e",
-      author: "Andrew Zhu",
-      readTime: "7 min",
-      summary: "Un ex-usuario de Ollama explica por qué abandonó la que fue la herramienta más popular para ejecutar LLMs localmente. Aunque fue el \"Docker de los LLMs\", hoy existen alternativas open source con mejor rendimiento, más flexibilidad y menos limitaciones técnicas.",
-      keyTakeaway: "Las herramientas pioneras pueden quedar obsoletas rápido: en 2026 hay alternativas a Ollama mucho más potentes para LLMs locales.",
-      tags: ["Ollama", "LLMs Locales", "Open Source", "IA"]
-    },
-    {
-      title: "A Lawyer Just Beat 500 Developers at Anthropic's Hackathon",
-      url: "https://medium.com/@jinghuu/a-lawyer-just-beat-500-developers-at-anthropics-hackathon-140ca074d1a9",
-      author: "Jing Hu",
-      readTime: "7 min",
-      summary: "Un abogado, un cardiólogo y un ingeniero civil vencieron a 500 desarrolladores en la hackathon de Anthropic. La lección: la habilidad más valiosa en IA no es programar, sino tener experiencia de dominio para identificar problemas reales que merecen ser resueltos.",
-      keyTakeaway: "La ventaja competitiva en IA ya no la tiene quien mejor programa, sino quien mejor entiende un dominio y sus problemas reales.",
-      tags: ["Hackathon", "Anthropic", "Carrera Tech", "Conocimiento de Dominio"]
-    },
-    {
-      title: "The Best Developer Is No Longer the One Who Writes the Best Code",
-      url: "https://medium.com/@wasowski.jarek/the-best-developer-is-no-longer-the-one-who-writes-the-best-code-996e8ed0869b",
-      author: "Jaroslaw Wasowski",
-      readTime: "13 min",
-      summary: "En la era del desarrollo guiado por especificaciones, el valor del desarrollador se desplaza de la velocidad al escribir código hacia la precisión de la intención y el rigor de la verificación. El mejor developer ya no es quien escribe más líneas, sino quien define con mayor claridad qué se debe construir.",
-      keyTakeaway: "En la era SDD, la claridad de pensamiento y la precisión en la especificación valen más que la velocidad de tecleo.",
-      tags: ["SDD", "Carrera Tech", "Desarrollo de Software", "IA"]
-    },
-    {
-      title: "AI's First Autonomous Cyber Attack",
-      url: "https://medium.com/@ignacio.de.gregorio.noblejas/ais-first-autonomous-cyber-attack-5d18fdb31363",
-      author: "Ignacio de Gregorio",
-      readTime: "9 min",
-      summary: "Un incidente que podría definir toda una industria: el primer ciberataque completamente autónomo ejecutado por una inteligencia artificial. El artículo analiza las implicaciones de este evento sin precedentes para el futuro de la ciberseguridad global y la defensa digital.",
-      keyTakeaway: "El primer ciberataque autónomo con IA marca un punto de inflexión: la ciberseguridad nunca volverá a ser igual.",
-      tags: ["Ciberseguridad", "IA", "Ataques Autónomos", "Seguridad"]
-    },
-    {
-      title: "Building a Personal AI Agent in a couple of Hours",
-      url: "https://medium.com/@ivopbernardo/building-a-personal-ai-agent-in-a-couple-of-hours-7bea912f9a12",
-      author: "Ivo Bernardo",
-      readTime: "14 min",
-      summary: "El autor dedica 1-2 horas diarias a construir con su stack AI-first (Claude Code, Google AntiGravity) y demuestra cómo los builders individuales pueden crear prototipos funcionales sorprendentemente rápido. La velocidad de iteración ha cambiado radicalmente lo que es posible para una sola persona.",
-      keyTakeaway: "Con herramientas modernas como Claude Code y AntiGravity, una persona puede construir agentes de IA funcionales en horas, no en semanas.",
-      tags: ["IA Agentes", "Claude Code", "Desarrollo Rápido", "Prototipado"]
-    },
-    {
-      title: "I Hid an Entire Website Inside a Favicon, So Now I'm Worried About Your Browser",
-      url: "https://medium.com/@lordmoma/i-hid-an-entire-website-inside-a-favicon-so-now-im-worried-about-your-browser-0fa041b506f5",
-      author: "David Lee",
-      readTime: "7 min",
-      summary: "Una exploración de cómo el archivo más ignorado de la web —el favicon— puede convertirse en un contenedor de contrabando digital. Nadie lo audita, nadie lo escanea. El autor demuestra que se puede esconder un sitio web entero en el pequeño ícono de la pestaña del navegador.",
-      keyTakeaway: "Las esquinas olvidadas de la web, como los favicons, son vectores de ataque que casi nadie está auditando.",
-      tags: ["Ciberseguridad", "Web", "Favicon", "Hacking"]
-    },
-    {
-      title: "Formal Verification in Spec-Driven Development — Enterprise Level",
-      url: "https://medium.com/@wasowski.jarek/formal-verification-in-spec-driven-development-enterprise-level-8118f9a4617a",
-      author: "Jaroslaw Wasowski",
-      readTime: "14 min",
-      summary: "En entornos empresariales regulados, una especificación se convierte en un contrato ejecutable. El artículo explica por qué el código generado por IA debe ser verificado con métodos formales, no solo con tests convencionales, especialmente en industrias donde un fallo puede tener consecuencias catastróficas.",
-      keyTakeaway: "En sectores regulados como salud, finanzas o aviación, el código de IA requiere verificación formal matemática, no basta el testing tradicional.",
-      tags: ["Verificación Formal", "SDD", "Empresarial", "IA", "Regulación"]
-    },
-    {
-      title: "Steve Jobs's 10–80–10 Rule Is Even More Useful in the AI Era",
-      url: "https://medium.com/@entrylevelrebel/steve-jobss-10-80-10-rule-is-even-more-useful-in-the-ai-era-8b003c8a9f7e",
-      author: "Jessica Stillman",
-      readTime: "5 min",
-      summary: "La regla 10-80-10 de Steve Jobs divide al equipo en 10% de estrellas, 80% de ejecutores sólidos y 10% que necesita mejorar. El artículo traza la evolución de Jobs de microgestor a líder que confiaba en este principio, y argumenta que es aún más relevante con la IA amplificando a cada grupo.",
-      keyTakeaway: "La gestión de equipos en la era de la IA se beneficia del principio de Jobs: potencia a tu 10% superior y usa la IA para elevar al 80% restante.",
-      tags: ["Liderazgo", "Steve Jobs", "IA", "Gestión de Equipos"]
-    },
-    {
-      title: "How to Do Hard Things When You Have Zero Motivation",
-      url: "https://medium.com/@dariusforoux/how-to-do-hard-things-when-you-have-zero-motivation-4218b652d950",
-      author: "Darius Foroux",
-      readTime: "3 min",
-      summary: "Los trucos de motivación crean novedad pasajera pero no duran. El autor comparte cinco estrategias para construir consistencia real: aceptar que la motivación es cíclica, diseñar sistemas que funcionen sin fuerza de voluntad y enfocarse en la acción mínima viable diaria.",
-      keyTakeaway: "No dependas de la motivación —es volátil por naturaleza—; construye sistemas que funcionen incluso cuando no tengas ganas de hacer nada.",
-      tags: ["Productividad", "Motivación", "Hábitos", "Desarrollo Personal"]
-    },
-    {
-      title: "Two Body Parts that Predict How Well You Age",
-      url: "https://medium.com/@linda_86854/two-body-parts-that-predict-how-well-you-age-710627fb7d4a",
-      author: "Linda Melone",
-      readTime: "5 min",
-      summary: "La fuerza de agarre y la fuerza de los pies son dos indicadores sorprendentemente fiables de cómo envejecemos. Estos pequeños músculos tienen un impacto desproporcionado en la longevidad, el riesgo de caídas y la movilidad. El artículo explica por qué y cómo fortalecer ambos.",
-      keyTakeaway: "La fuerza de tus manos y tus pies son mejores predictores de longevidad que muchos marcadores médicos complejos.",
-      tags: ["Salud", "Longevidad", "Ejercicio", "Envejecimiento"]
-    },
-    {
-      title: "\"Women Are Basically Reading Porn\"",
-      url: "https://medium.com/@dessyperalt/women-are-basically-reading-porn-2249ea9100e6",
-      author: "Desiree Peralta",
-      readTime: "8 min",
-      summary: "La autora responde a los comentarios misóginos que recibe por leer ficción —200 libros en un año, principalmente fantasía, romance y thrillers—. Denuncia el doble estándar: la ficción que disfrutan las mujeres es sistemáticamente menospreciada mientras que la lectura masculina recibe respeto automático.",
-      keyTakeaway: "El sesgo de género también alcanza a los libros: la ficción que disfrutan las mujeres es despreciada sistemáticamente.",
-      tags: ["Feminismo", "Lectura", "Libros", "Ficción", "Sesgo de Género"]
-    },
-    {
-      title: "Concurrency, Parallelism, and Async: Three Ideas That Sound the Same But Aren't",
-      url: "https://medium.com/@akovtun/concurrency-parallelism-and-async-three-ideas-that-sound-the-same-but-arent-47312e0be553",
-      author: "Alina Kovtun",
-      readTime: "8 min",
-      summary: "Concurrencia, paralelismo y asincronía son tres conceptos distintos que muchos desarrolladores usan como sinónimos. Con diagramas y ejemplos de código, el artículo descompone cada uno, mostrando dónde fallan, cuándo usar cada herramienta y cómo confundirlos lleva a bugs reales y malas decisiones de arquitectura.",
-      keyTakeaway: "Concurrencia, paralelismo y asincronía no son lo mismo: confundirlos causa bugs y mala arquitectura. Son tres herramientas para tres problemas distintos.",
-      tags: ["Programación", "Concurrencia", "Async", "Paralelismo", "Arquitectura de Software"]
-    }
-  ]
-};
-</script>
-<!-- END_DATA_PLACEHOLDER -->
-
-<script>
-(function() {
-  const d = DIGEST;
-  document.getElementById('digest-date').textContent = d.date;
-  document.getElementById('article-count').textContent = d.articles.length + ' artículos';
-
-  if (!d.articles.length) {
-    document.getElementById('articles-container').innerHTML =
-      '<div class="loading">📭 Aún no hay artículos. ¡El primer digest llegará pronto!</div>';
-    return;
-  }
-
-  let html = '';
-  d.articles.forEach((a, i) => {
-    html += '<div class="article">';
-    html += '<div class="article-num">Artículo ' + (i + 1) + '</div>';
-    html += '<h2><a href="' + (a.url || '#') + '" target="_blank" rel="noopener">' + (a.title || 'Sin título') + '</a></h2>';
-    html += '<div class="meta">';
-    if (a.author) html += '<span>✍️ ' + a.author + '</span>';
-    if (a.readTime) html += '<span>⏱️ ' + a.readTime + '</span>';
-    html += '</div>';
-    if (a.summary) html += '<div class="summary">' + a.summary + '</div>';
-    if (a.keyTakeaway) html += '<div class="key-takeaway"><strong>💡 Clave:</strong> ' + a.keyTakeaway + '</div>';
-    if (a.tags && a.tags.length) {
-      html += '<div class="tags">';
-      a.tags.forEach(t => { html += '<span class="tag">' + t + '</span>'; });
-      html += '</div>';
-    }
-    if (a.url) html += '<a class="read-more" href="' + a.url + '" target="_blank" rel="noopener">Leer artículo completo →</a>';
-    html += '</div>';
-  });
-  document.getElementById('articles-container').innerHTML = html;
-})();
-</script>
 </body>
 </html>
