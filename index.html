@@ -179,8 +179,144 @@
 <script>
 // ── Digest data injected by cron job ──
 const DIGEST = {
-  date: "PRÓXIMAMENTE",
-  articles: []
+  date: "Viernes, 31 de julio de 2026",
+  articles: [
+    {
+      title: "Should You Still Learn to Code in 2026?",
+      url: "https://medium.com/@gratitudedriven/should-you-still-learn-to-code-in-2026-034685e17707",
+      author: "Marina Wyss",
+      readTime: "9 min",
+      summary: "Una Científica Senior de Amazon que ya no escribe código cuestiona si aún vale la pena aprender a programar en 2026. La respuesta no es tan obvia como solía creer: el valor ya no está en escribir líneas, sino en entender sistemas, diseñar soluciones y saber qué construir.",
+      keyTakeaway: "En la era de la IA, el valor de un desarrollador ya no está en teclear código sino en entender qué construir y por qué.",
+      tags: ["IA", "Desarrollo de Software", "Carrera Tech"]
+    },
+    {
+      title: "Build a Second Brain in 15 Minutes: Just Markdown, Git, and an AI Agent",
+      url: "https://medium.com/@roanmonteiro/build-a-second-brain-in-15-minutes-just-markdown-git-and-an-ai-agent-c9d74ba992bb",
+      author: "Roan Brasil Monteiro",
+      readTime: "7 min",
+      summary: "Tutorial para crear un \"segundo cerebro\" con COG usando solo archivos Markdown, Git y un agente de IA. Sin bases de datos, servidores ni suscripciones. En 15 minutos obtienes un sistema que captura pensamientos, los organiza por dominio y entrega un briefing diario con fuentes.",
+      keyTakeaway: "La herramienta más poderosa de productividad personal puede ser sorprendentemente simple: Markdown, Git y un agente de IA bastan.",
+      tags: ["Productividad", "IA Agentes", "Segundo Cerebro", "COG"]
+    },
+    {
+      title: "Why Specification-Driven Development (SDD) is Not a Silver Bullet for AI-Assisted SDLC",
+      url: "https://medium.com/@alexcpn/why-specification-driven-development-sdd-is-not-a-silver-bullet-for-ai-assisted-sdlc-491c71bcf835",
+      author: "Alex Punnen",
+      readTime: "12 min",
+      summary: "El autor prueba el enfoque de Desarrollo Guiado por Especificaciones (SDD) usando un Spec Kit real de GitHub. Concluye que, aunque valioso, SDD no es una bala de plata: tiene limitaciones importantes en proyectos reales que requieren iteración, contexto humano y adaptación continua.",
+      keyTakeaway: "Las especificaciones formales ayudan pero no reemplazan el juicio humano ni la iteración en el desarrollo de software con IA.",
+      tags: ["SDD", "Desarrollo de Software", "IA", "Especificaciones"]
+    },
+    {
+      title: "Why You Should Completely Avoid Ollama in 2026",
+      url: "https://medium.com/@xhinker/why-you-should-completely-avoid-ollama-in-2026-6135d9e8591e",
+      author: "Andrew Zhu",
+      readTime: "7 min",
+      summary: "Un ex-usuario de Ollama explica por qué abandonó la que fue la herramienta más popular para ejecutar LLMs localmente. Aunque fue el \"Docker de los LLMs\", hoy existen alternativas open source con mejor rendimiento, más flexibilidad y menos limitaciones técnicas.",
+      keyTakeaway: "Las herramientas pioneras pueden quedar obsoletas rápido: en 2026 hay alternativas a Ollama mucho más potentes para LLMs locales.",
+      tags: ["Ollama", "LLMs Locales", "Open Source", "IA"]
+    },
+    {
+      title: "A Lawyer Just Beat 500 Developers at Anthropic's Hackathon",
+      url: "https://medium.com/@jinghuu/a-lawyer-just-beat-500-developers-at-anthropics-hackathon-140ca074d1a9",
+      author: "Jing Hu",
+      readTime: "7 min",
+      summary: "Un abogado, un cardiólogo y un ingeniero civil vencieron a 500 desarrolladores en la hackathon de Anthropic. La lección: la habilidad más valiosa en IA no es programar, sino tener experiencia de dominio para identificar problemas reales que merecen ser resueltos.",
+      keyTakeaway: "La ventaja competitiva en IA ya no la tiene quien mejor programa, sino quien mejor entiende un dominio y sus problemas reales.",
+      tags: ["Hackathon", "Anthropic", "Carrera Tech", "Conocimiento de Dominio"]
+    },
+    {
+      title: "The Best Developer Is No Longer the One Who Writes the Best Code",
+      url: "https://medium.com/@wasowski.jarek/the-best-developer-is-no-longer-the-one-who-writes-the-best-code-996e8ed0869b",
+      author: "Jaroslaw Wasowski",
+      readTime: "13 min",
+      summary: "En la era del desarrollo guiado por especificaciones, el valor del desarrollador se desplaza de la velocidad al escribir código hacia la precisión de la intención y el rigor de la verificación. El mejor developer ya no es quien escribe más líneas, sino quien define con mayor claridad qué se debe construir.",
+      keyTakeaway: "En la era SDD, la claridad de pensamiento y la precisión en la especificación valen más que la velocidad de tecleo.",
+      tags: ["SDD", "Carrera Tech", "Desarrollo de Software", "IA"]
+    },
+    {
+      title: "AI's First Autonomous Cyber Attack",
+      url: "https://medium.com/@ignacio.de.gregorio.noblejas/ais-first-autonomous-cyber-attack-5d18fdb31363",
+      author: "Ignacio de Gregorio",
+      readTime: "9 min",
+      summary: "Un incidente que podría definir toda una industria: el primer ciberataque completamente autónomo ejecutado por una inteligencia artificial. El artículo analiza las implicaciones de este evento sin precedentes para el futuro de la ciberseguridad global y la defensa digital.",
+      keyTakeaway: "El primer ciberataque autónomo con IA marca un punto de inflexión: la ciberseguridad nunca volverá a ser igual.",
+      tags: ["Ciberseguridad", "IA", "Ataques Autónomos", "Seguridad"]
+    },
+    {
+      title: "Building a Personal AI Agent in a couple of Hours",
+      url: "https://medium.com/@ivopbernardo/building-a-personal-ai-agent-in-a-couple-of-hours-7bea912f9a12",
+      author: "Ivo Bernardo",
+      readTime: "14 min",
+      summary: "El autor dedica 1-2 horas diarias a construir con su stack AI-first (Claude Code, Google AntiGravity) y demuestra cómo los builders individuales pueden crear prototipos funcionales sorprendentemente rápido. La velocidad de iteración ha cambiado radicalmente lo que es posible para una sola persona.",
+      keyTakeaway: "Con herramientas modernas como Claude Code y AntiGravity, una persona puede construir agentes de IA funcionales en horas, no en semanas.",
+      tags: ["IA Agentes", "Claude Code", "Desarrollo Rápido", "Prototipado"]
+    },
+    {
+      title: "I Hid an Entire Website Inside a Favicon, So Now I'm Worried About Your Browser",
+      url: "https://medium.com/@lordmoma/i-hid-an-entire-website-inside-a-favicon-so-now-im-worried-about-your-browser-0fa041b506f5",
+      author: "David Lee",
+      readTime: "7 min",
+      summary: "Una exploración de cómo el archivo más ignorado de la web —el favicon— puede convertirse en un contenedor de contrabando digital. Nadie lo audita, nadie lo escanea. El autor demuestra que se puede esconder un sitio web entero en el pequeño ícono de la pestaña del navegador.",
+      keyTakeaway: "Las esquinas olvidadas de la web, como los favicons, son vectores de ataque que casi nadie está auditando.",
+      tags: ["Ciberseguridad", "Web", "Favicon", "Hacking"]
+    },
+    {
+      title: "Formal Verification in Spec-Driven Development — Enterprise Level",
+      url: "https://medium.com/@wasowski.jarek/formal-verification-in-spec-driven-development-enterprise-level-8118f9a4617a",
+      author: "Jaroslaw Wasowski",
+      readTime: "14 min",
+      summary: "En entornos empresariales regulados, una especificación se convierte en un contrato ejecutable. El artículo explica por qué el código generado por IA debe ser verificado con métodos formales, no solo con tests convencionales, especialmente en industrias donde un fallo puede tener consecuencias catastróficas.",
+      keyTakeaway: "En sectores regulados como salud, finanzas o aviación, el código de IA requiere verificación formal matemática, no basta el testing tradicional.",
+      tags: ["Verificación Formal", "SDD", "Empresarial", "IA", "Regulación"]
+    },
+    {
+      title: "Steve Jobs's 10–80–10 Rule Is Even More Useful in the AI Era",
+      url: "https://medium.com/@entrylevelrebel/steve-jobss-10-80-10-rule-is-even-more-useful-in-the-ai-era-8b003c8a9f7e",
+      author: "Jessica Stillman",
+      readTime: "5 min",
+      summary: "La regla 10-80-10 de Steve Jobs divide al equipo en 10% de estrellas, 80% de ejecutores sólidos y 10% que necesita mejorar. El artículo traza la evolución de Jobs de microgestor a líder que confiaba en este principio, y argumenta que es aún más relevante con la IA amplificando a cada grupo.",
+      keyTakeaway: "La gestión de equipos en la era de la IA se beneficia del principio de Jobs: potencia a tu 10% superior y usa la IA para elevar al 80% restante.",
+      tags: ["Liderazgo", "Steve Jobs", "IA", "Gestión de Equipos"]
+    },
+    {
+      title: "How to Do Hard Things When You Have Zero Motivation",
+      url: "https://medium.com/@dariusforoux/how-to-do-hard-things-when-you-have-zero-motivation-4218b652d950",
+      author: "Darius Foroux",
+      readTime: "3 min",
+      summary: "Los trucos de motivación crean novedad pasajera pero no duran. El autor comparte cinco estrategias para construir consistencia real: aceptar que la motivación es cíclica, diseñar sistemas que funcionen sin fuerza de voluntad y enfocarse en la acción mínima viable diaria.",
+      keyTakeaway: "No dependas de la motivación —es volátil por naturaleza—; construye sistemas que funcionen incluso cuando no tengas ganas de hacer nada.",
+      tags: ["Productividad", "Motivación", "Hábitos", "Desarrollo Personal"]
+    },
+    {
+      title: "Two Body Parts that Predict How Well You Age",
+      url: "https://medium.com/@linda_86854/two-body-parts-that-predict-how-well-you-age-710627fb7d4a",
+      author: "Linda Melone",
+      readTime: "5 min",
+      summary: "La fuerza de agarre y la fuerza de los pies son dos indicadores sorprendentemente fiables de cómo envejecemos. Estos pequeños músculos tienen un impacto desproporcionado en la longevidad, el riesgo de caídas y la movilidad. El artículo explica por qué y cómo fortalecer ambos.",
+      keyTakeaway: "La fuerza de tus manos y tus pies son mejores predictores de longevidad que muchos marcadores médicos complejos.",
+      tags: ["Salud", "Longevidad", "Ejercicio", "Envejecimiento"]
+    },
+    {
+      title: "\"Women Are Basically Reading Porn\"",
+      url: "https://medium.com/@dessyperalt/women-are-basically-reading-porn-2249ea9100e6",
+      author: "Desiree Peralta",
+      readTime: "8 min",
+      summary: "La autora responde a los comentarios misóginos que recibe por leer ficción —200 libros en un año, principalmente fantasía, romance y thrillers—. Denuncia el doble estándar: la ficción que disfrutan las mujeres es sistemáticamente menospreciada mientras que la lectura masculina recibe respeto automático.",
+      keyTakeaway: "El sesgo de género también alcanza a los libros: la ficción que disfrutan las mujeres es despreciada sistemáticamente.",
+      tags: ["Feminismo", "Lectura", "Libros", "Ficción", "Sesgo de Género"]
+    },
+    {
+      title: "Concurrency, Parallelism, and Async: Three Ideas That Sound the Same But Aren't",
+      url: "https://medium.com/@akovtun/concurrency-parallelism-and-async-three-ideas-that-sound-the-same-but-arent-47312e0be553",
+      author: "Alina Kovtun",
+      readTime: "8 min",
+      summary: "Concurrencia, paralelismo y asincronía son tres conceptos distintos que muchos desarrolladores usan como sinónimos. Con diagramas y ejemplos de código, el artículo descompone cada uno, mostrando dónde fallan, cuándo usar cada herramienta y cómo confundirlos lleva a bugs reales y malas decisiones de arquitectura.",
+      keyTakeaway: "Concurrencia, paralelismo y asincronía no son lo mismo: confundirlos causa bugs y mala arquitectura. Son tres herramientas para tres problemas distintos.",
+      tags: ["Programación", "Concurrencia", "Async", "Paralelismo", "Arquitectura de Software"]
+    }
+  ]
 };
 </script>
 <!-- END_DATA_PLACEHOLDER -->
