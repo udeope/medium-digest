@@ -92,6 +92,11 @@
             margin-bottom: 6px;
             padding-right: 30px;
         }
+        .top-pick h3 a {
+            color: var(--text);
+            text-decoration: none;
+        }
+        .top-pick h3 a:hover { color: var(--accent); }
         .top-pick .author {
             color: var(--text-secondary);
             font-size: 0.85em;
@@ -111,22 +116,22 @@
             font-weight: 600;
             margin: 3px 2px;
         }
+        .badge-full {
+            background: rgba(63,185,80,0.2);
+            color: var(--green);
+            border: 1px solid var(--green);
+        }
+        .badge-preview {
+            background: rgba(139,148,158,0.15);
+            color: var(--text-secondary);
+            border: 1px solid var(--border);
+        }
         .badge-ai { background: rgba(88,166,255,0.15); color: var(--accent); }
         .badge-code { background: rgba(163,113,247,0.15); color: var(--purple); }
         .badge-life { background: rgba(63,185,80,0.15); color: var(--green); }
         .badge-tech { background: rgba(210,153,29,0.15); color: var(--orange); }
         .badge-society { background: rgba(219,97,162,0.15); color: var(--pink); }
         .badge-health { background: rgba(57,210,192,0.15); color: var(--cyan); }
-        .badge-security { background: rgba(248,81,73,0.15); color: var(--red); }
-        .badge-bypass {
-            background: rgba(63,185,80,0.2);
-            color: var(--green);
-            border: 1px solid var(--green);
-        }
-        .badge-email {
-            background: rgba(139,148,158,0.15);
-            color: var(--text-secondary);
-        }
 
         /* Article cards */
         .article {
@@ -135,10 +140,6 @@
             border-radius: 12px;
             padding: 20px;
             margin-bottom: 16px;
-        }
-        .article.bypass {
-            border-color: var(--green);
-            box-shadow: 0 0 15px rgba(63,185,80,0.1);
         }
         .article h3 {
             font-size: 1.1em;
@@ -173,8 +174,11 @@
             align-items: center;
             gap: 4px;
         }
-        .clap-count { color: var(--green); font-weight: 600; }
-        .response-count { color: var(--purple); }
+        .article .stats a {
+            color: var(--accent);
+            text-decoration: none;
+        }
+        .article .stats a:hover { text-decoration: underline; }
 
         /* Section header */
         .section-header {
@@ -208,269 +212,280 @@
 <header>
     <h1>📬 Medium Daily Digest</h1>
     <div class="date">Viernes, 31 de Julio de 2026</div>
-    <div class="meta">15 artículos · 5 con bypass · 10 desde email · Para Eduard Sanchez</div>
+    <div class="meta">15 artículos · 8 con texto completo · 7 avances de pago · Para Eduard Sanchez</div>
 </header>
 
 <!-- TOP 4 PICKS -->
 <div class="top-picks">
     <div class="top-pick">
         <div class="rank">🥇</div>
-        <h3>How to Do Hard Things When You Have Zero Motivation</h3>
-        <div class="author">Darius Foroux</div>
-        <div class="claps">🔥 12.1K claps</div>
+        <h3><a href="https://ai.gopubby.com/unbelievable-run-kimi-k3-2-8-trillion-parameters-on-a-single-4gb-gpu-23590e7a16c2" target="_blank">Unbelievable! Run Kimi K3–2.8 Trillion Parameters — on a Single 4GB GPU</a></h3>
+        <div class="author">Gavin Li · AI Advances</div>
+        <div class="claps">📖 Texto completo</div>
     </div>
     <div class="top-pick">
         <div class="rank">🥈</div>
-        <h3>"Women Are Basically Reading Porn"</h3>
-        <div class="author">Desiree Peralta · Books Are Our Superpower</div>
-        <div class="claps">🔥 12.1K claps</div>
+        <h3><a href="https://medium.com/data-science-collective/your-agent-benchmark-is-lying-to-you-65a552fea151" target="_blank">Your Agent Benchmark Is Lying to You</a></h3>
+        <div class="author">Sebastian Buzdugan · Data Science Collective</div>
+        <div class="claps">📖 Texto completo</div>
     </div>
     <div class="top-pick">
         <div class="rank">🥉</div>
-        <h3>Should You Still Learn to Code in 2026?</h3>
-        <div class="author">Marina Wyss · Data Science Collective</div>
-        <div class="claps">📈 6.2K claps</div>
+        <h3><a href="https://medium.com/data-science-collective/should-you-self-host-inference-f94c8aca2a2d" target="_blank">Should You Self-Host Inference?</a></h3>
+        <div class="author">Paolo Perrone · Data Science Collective</div>
+        <div class="claps">📖 Texto completo</div>
     </div>
     <div class="top-pick">
         <div class="rank">🏅</div>
-        <h3>A Lawyer Just Beat 500 Developers at Anthropic's Hackathon</h3>
-        <div class="author">Jing Hu · AI Advances</div>
-        <div class="claps">📈 5.5K claps</div>
+        <h3><a href="https://medium.com/the-generator/if-ai-makes-better-choices-should-we-still-choose-764ccb382e24" target="_blank">If AI Makes Better Choices, Should We Still Choose?</a></h3>
+        <div class="author">Makkapati Sriya · The Generator</div>
+        <div class="claps">📖 Texto completo</div>
     </div>
 </div>
 
-<!-- SECTION: Artículos con bypass -->
-<h2 class="section-header"><span class="icon">🔓</span>Artículos con Bypass — Lectura Completa</h2>
+<!-- SECTION: Texto completo -->
+<h2 class="section-header"><span class="icon">📖</span>Lectura Completa — Texto Disponible</h2>
 
-<!-- Artículo 4: Jing Hu — BYPASS exitoso -->
-<article class="article bypass">
-    <span class="badge badge-bypass">✅ BYPASS</span>
+<!-- Artículo: Kimi K3 -->
+<article class="article">
+    <span class="badge badge-full">📖 Texto completo</span>
     <span class="badge badge-ai">IA</span>
-    <span class="badge badge-tech">Tech</span>
-    <h3><a href="https://medium.com/@jinghuu/a-lawyer-just-beat-500-developers-at-anthropics-hackathon-140ca074d1a9" target="_blank">A Lawyer Just Beat 500 Developers at Anthropic's Hackathon</a></h3>
-    <div class="meta-line">Jing Hu · AI Advances · 7 min lectura · 24 Feb 2026</div>
+    <span class="badge badge-tech">Open Source</span>
+    <span class="badge badge-code">LLM</span>
+    <h3><a href="https://ai.gopubby.com/unbelievable-run-kimi-k3-2-8-trillion-parameters-on-a-single-4gb-gpu-23590e7a16c2" target="_blank">Unbelievable! Run Kimi K3–2.8 Trillion Parameters — on a Single 4GB GPU</a></h3>
+    <div class="meta-line">Gavin Li · AI Advances · 29 jul 2026</div>
     <div class="summary">
-        <strong>La habilidad más valiosa en IA ahora mismo no es programar — y probablemente ya la tienes.</strong><br><br>
-        Jing Hu narra cómo un abogado, un cardiólogo y un técnico de carreteras de Uganda —ninguno con experiencia en software— construyeron productos de IA exitosos en menos de una semana durante la hackathon de Anthropic. De 13.000 solicitantes, solo 500 entraron, la mayoría ingenieros. Sin embargo, los ganadores no fueron los que mejor código escribían, sino quienes mejor entendían <em>qué problema resolver</em>.<br><br>
-        La tesis central: el conocimiento de dominio (domain expertise) es el nuevo superpoder en la era de la IA. Con herramientas como Claude, cualquiera puede construir software funcional. La verdadera ventaja competitiva está en saber exactamente qué necesita el usuario final. El artículo argumenta que estamos entrando en una era donde "saber preguntar" importa más que "saber programar".
+        Moonshot AI lanzó Kimi K3, un modelo open source de 2,8 billones de parámetros que puntúa 57 en el Artificial Analysis Intelligence Index, a solo 3 puntos de Claude Fable 5 (60) y por delante de GLM-5.2 (51). El checkpoint liberado pesa 1,56 TB y cargarlo de forma convencional exige un clúster de unas 40 GPU H200, algo que el autor califica de "centro de datos, no un hobby". La gran hazaña del artículo: afirma haber ejecutado el checkpoint completo (no una destilación ni una variante menor) en una sola GPU usando solo 3,72 GB de VRAM. Explica por qué la técnica clásica de inferencia por capas (la base de AirLLM, que funcionó para Llama 405B y DeepSeek-V3) se rompe con K3: es un Mixture-of-Experts extremo, con 93 capas de 896 expertos cada una, donde una sola capa expandida ocupa ~56 GB.
     </div>
     <div class="stats">
-        <span>👏 <span class="clap-count">5.5K</span></span>
-        <span>💬 <span class="response-count">114 respuestas</span></span>
-        <span class="badge badge-bypass">Contenido completo vía archive.is</span>
+        <span class="badge badge-full">📖 Texto completo</span>
     </div>
 </article>
 
-<!-- Artículo 1: Darius Foroux — BYPASS intentado, resumen enriquecido -->
-<article class="article bypass">
-    <span class="badge badge-bypass">✅ BYPASS</span>
-    <span class="badge badge-life">Productividad</span>
-    <span class="badge badge-code">Mentalidad</span>
-    <h3><a href="https://medium.com/@dariusforoux/how-to-do-hard-things-when-you-have-zero-motivation" target="_blank">How to Do Hard Things When You Have Zero Motivation</a></h3>
-    <div class="meta-line">Darius Foroux · 3 min lectura</div>
-    <div class="summary">
-        <strong>Los trucos crean novedad. Estas cinco estrategias crean disciplina real.</strong><br><br>
-        Darius Foroux, uno de los escritores más leídos de Medium sobre productividad, aborda el problema universal de hacer cosas difíciles cuando la motivación brilla por su ausencia. En lugar de depender de "hacks" temporales, propone un sistema de 5 estrategias basadas en la psicología del comportamiento: reducir la fricción inicial, usar la regla de los 2 minutos, vincular tareas difíciles con recompensas inmediatas, eliminar la toma de decisiones innecesaria y construir identidad en lugar de perseguir metas.<br><br>
-        El mensaje clave: la motivación no es el punto de partida, es el resultado de la acción. No esperes a sentirte motivado — empieza y la motivación vendrá.
-    </div>
-    <div class="stats">
-        <span>👏 <span class="clap-count">12.1K</span></span>
-        <span>💬 <span class="response-count">366 respuestas</span></span>
-        <span class="badge badge-bypass">Resumen enriquecido</span>
-    </div>
-</article>
-
-<!-- Artículo 3: Marina Wyss -->
-<article class="article bypass">
-    <span class="badge badge-bypass">✅ BYPASS</span>
+<!-- Artículo: Agent Benchmark -->
+<article class="article">
+    <span class="badge badge-full">📖 Texto completo</span>
     <span class="badge badge-ai">IA</span>
-    <span class="badge badge-code">Programación</span>
-    <h3><a href="https://medium.com/@gratitudedriven/should-you-still-learn-to-code-in-2026" target="_blank">Should You Still Learn to Code in 2026?</a></h3>
-    <div class="meta-line">Marina Wyss · Data Science Collective · 9 min lectura</div>
+    <span class="badge badge-code">Evaluación</span>
+    <h3><a href="https://medium.com/data-science-collective/your-agent-benchmark-is-lying-to-you-65a552fea151" target="_blank">Your Agent Benchmark Is Lying to You</a></h3>
+    <div class="meta-line">Sebastian Buzdugan · Data Science Collective · 29 jul 2026</div>
     <div class="summary">
-        <strong>La respuesta no es tan obvia como solía creer.</strong><br><br>
-        Marina Wyss, desde su experiencia en Data Science Collective, examina si aprender a programar sigue siendo una inversión válida en 2026, cuando los asistentes de IA generan código funcional en segundos. El artículo desmenuza los pros y contras: sí, la IA puede escribir boilerplate y funciones comunes, pero la comprensión profunda de arquitectura, debugging y pensamiento computacional sigue siendo irremplazable.<br><br>
-        Su conclusión matizada: no necesitas aprender a codificar como en 2019, pero sí necesitas "computational thinking" — la capacidad de descomponer problemas, entender flujos de datos y validar el output de la IA. Es menos sobre sintaxis y más sobre criterio.
+        El autor audita los harness de evaluación de agentes de IA y encuentra una brecha alarmante: en su suite de tareas de código, el harness reportó un 87% de aprobados cuando la tasa real era del 33%. El 53% de los "passes" eran tareas que el agente nunca resolvió: el harness confió en lo que el agente le decía en lugar de verificar lo que realmente hizo. Como evidencia, recuerda que OpenAI dejó de publicar resultados de SWE-bench Verified en febrero de 2026, tras una auditoría que halló que al menos el 59,4% de los problemas auditados tenían casos de test defectuosos que rechazaban soluciones funcionalmente correctas. Su conclusión: el problema no se arregla con mejores reglas de puntuación, sino con aislamiento real — sandboxes verificados en los que el agente no pueda mentir.
     </div>
     <div class="stats">
-        <span>👏 <span class="clap-count">6.2K</span></span>
-        <span>💬 <span class="response-count">421 respuestas</span></span>
-        <span class="badge badge-bypass">Resumen enriquecido</span>
+        <span class="badge badge-full">📖 Texto completo</span>
     </div>
 </article>
 
-<!-- Artículo 2: Desiree Peralta -->
-<article class="article bypass">
-    <span class="badge badge-bypass">✅ BYPASS</span>
-    <span class="badge badge-society">Sociedad</span>
-    <span class="badge badge-life">Cultura</span>
-    <h3><a href="https://medium.com/@dessyperalt/women-are-basically-reading-porn" target="_blank">"Women Are Basically Reading Porn"</a></h3>
-    <div class="meta-line">Desiree Peralta · Books Are Our Superpower · 8 min lectura</div>
+<!-- Artículo: Self-Host Inference -->
+<article class="article">
+    <span class="badge badge-full">📖 Texto completo</span>
+    <span class="badge badge-ai">IA</span>
+    <span class="badge badge-tech">Infraestructura</span>
+    <span class="badge badge-code">MLOps</span>
+    <h3><a href="https://medium.com/data-science-collective/should-you-self-host-inference-f94c8aca2a2d" target="_blank">Should You Self-Host Inference?</a></h3>
+    <div class="meta-line">Paolo Perrone · Data Science Collective · 30 jul 2026</div>
     <div class="summary">
-        <strong>Y otros comentarios misóginos que recibo cuando digo que leo novelas románticas.</strong><br><br>
-        Desiree Peralta desmonta el desprecio cultural hacia la literatura romántica, uno de los géneros más lucrativos del mundo editorial. Con 12.1K claps y 823 respuestas, el artículo claramente tocó una fibra sensible. Peralta argumenta que etiquetar la novela romántica como "porno para mujeres" es una forma de menospreciar lo que consumen mayoritariamente las lectoras, mientras que géneros dominados por hombres con contenido igualmente explícito rara vez reciben el mismo escrutinio.<br><br>
-        El artículo es tanto una defensa del género como una crítica a los dobles estándares culturales que devalúan sistemáticamente los intereses femeninos.
+        El autor presenta "la economía honesta" del alojamiento propio de inferencia: solo compensa en dos casos — superar ~2 millones de tokens al día, o que tus datos no puedan salir legalmente de tu red. Por debajo de un millón de tokens diarios la API hospedada es la más barata; entre uno y dos millones es un empate real, y por encima de diez millones el hardware propio se amortiza en 6 a 12 meses. Un dato que los equipos olvidan: contratar a un ingeniero de MLOps (~160.000 dólares al año solo en salario) cuesta más que el propio hardware. Concluye que la mayoría de empresas aterriza en un híbrido que resulta 40-70% más barato que ir todo-API: lo sensible y de alto volumen se queda en local, y el razonamiento difícil se envía a un modelo frontera.
     </div>
     <div class="stats">
-        <span>👏 <span class="clap-count">12.1K</span></span>
-        <span>💬 <span class="response-count">823 respuestas</span></span>
-        <span class="badge badge-bypass">Resumen enriquecido</span>
+        <span class="badge badge-full">📖 Texto completo</span>
     </div>
 </article>
 
-<!-- Artículo 5: Linda Melone -->
-<article class="article bypass">
-    <span class="badge badge-bypass">✅ BYPASS</span>
+<!-- Artículo: AI Better Choices -->
+<article class="article">
+    <span class="badge badge-full">📖 Texto completo</span>
+    <span class="badge badge-ai">IA</span>
+    <span class="badge badge-life">Filosofía</span>
+    <h3><a href="https://medium.com/the-generator/if-ai-makes-better-choices-should-we-still-choose-764ccb382e24" target="_blank">If AI Makes Better Choices, Should We Still Choose?</a></h3>
+    <div class="meta-line">Makkapati Sriya · The Generator · 2 jun 2026</div>
+    <div class="summary">
+        Una reflexión incómoda: la primera entidad que podría "conocerte" como un alma gemela quizá no sea una persona, sino una IA con acceso al registro completo e inédito de tu vida — cada búsqueda, compra o vídeo visto a las 2 de la madrugada. Se apoya en un estudio de 2015 de las universidades de Cambridge y Stanford que analizó Likes de Facebook: con 10 Likes la IA entendía tu personalidad mejor que un compañero de trabajo medio, con 70 superaba a un amigo cercano, con 150 a un padre o hermano, y con 300 a un cónyuge. El usuario medio del estudio tenía 227 Likes: mucho antes de la IA moderna, la mayoría ya dejaba suficientes migas de datos para que un algoritmo los entendiera mejor que casi cualquier humano. Sobre esa base plantea la pregunta del título: si la IA toma mejores decisiones, ¿deberíamos seguir eligiendo nosotros?
+    </div>
+    <div class="stats">
+        <span class="badge badge-full">📖 Texto completo</span>
+    </div>
+</article>
+
+<!-- Artículo: Richard Simmons -->
+<article class="article">
+    <span class="badge badge-full">📖 Texto completo</span>
     <span class="badge badge-health">Salud</span>
-    <span class="badge badge-life">Longevidad</span>
-    <h3><a href="https://medium.com/@linda_86854/two-body-parts-that-predict-how-well-you-age" target="_blank">Two Body Parts that Predict How Well You Age</a></h3>
-    <div class="meta-line">Linda Melone · Crow's Feet: Life As We Age · 5 min lectura</div>
+    <span class="badge badge-life">Fitness</span>
+    <h3><a href="https://medium.com/crows-feet/why-i-was-wrong-about-richard-simmons-fa96a6e1f503" target="_blank">Why I Was Wrong About Richard Simmons</a></h3>
+    <div class="meta-line">Joshua Brandt · Crow's Feet · 29 jul 2026</div>
     <div class="summary">
-        <strong>Músculos pequeños con un impacto desproporcionado en la longevidad y calidad de vida.</strong><br><br>
-        Linda Melone, escribiendo en la publicación Crow's Feet, revela que dos grupos musculares aparentemente menores — la fuerza de prensión (hand grip) y los músculos de la pantorrilla — son predictores sorprendentemente precisos de cómo envejecerás. La fuerza de agarre se correlaciona con la salud cardiovascular y la mortalidad por todas las causas, mientras que unas pantorrillas fuertes predicen mejor movilidad y menor riesgo de caídas en la tercera edad.<br><br>
-        El artículo incluye ejercicios prácticos y accesibles para fortalecer ambas áreas, enfatizando que nunca es tarde para empezar.
+        Un entrenador personal admite que no entendía la oleada de duelo por la muerte de Richard Simmons, a quien veía como una reliquia ochentera; reconoce que su cercanía a la "bro culture" del fitness le impedía ver el impacto real del gurú. Repasa la biografía de Simmons — obesidad infantil, bullying, refugio en la comida, la apertura de su icónico "Anatomy Asylum" en 1974 — y destaca que canalizó su dolor en algo positivo y vitalista. Contrasta ese camino con el de algunos entrenadores de "The Biggest Loser", con orígenes similares, cuya autocrítica se manifiesta en crueldad casual. El cambio de opinión del autor se ancla en el recuerdo de una clienta que conoció años atrás, en un ejercicio de reconsiderar un legado que había descartado demasiado rápido.
     </div>
     <div class="stats">
-        <span>👏 <span class="clap-count">4.6K</span></span>
-        <span>💬 <span class="response-count">67 respuestas</span></span>
-        <span class="badge badge-bypass">Resumen enriquecido</span>
+        <span class="badge badge-full">📖 Texto completo</span>
     </div>
 </article>
 
-<!-- SECTION: Resto de artículos -->
-<h2 class="section-header"><span class="icon">📧</span>Artículos desde el Email — Resúmenes Breves</h2>
-
+<!-- Artículo: Agentic AI HR -->
 <article class="article">
-    <span class="badge badge-email">📧 Email</span>
-    <span class="badge badge-code">Desarrollo</span>
-    <h3>Build a Second Brain in 15 Minutes: Just Markdown, Git, and an AI Agent</h3>
-    <div class="meta-line">Roan Brasil Monteiro · 7 min lectura</div>
-    <div class="summary">Tutorial paso a paso para construir un "segundo cerebro" digital usando solo Markdown, Git y un agente de IA. Sin apps complicadas ni suscripciones. Un enfoque minimalista y portable para gestionar conocimiento personal.</div>
-    <div class="stats">
-        <span>👏 <span class="clap-count">499</span></span>
-        <span>💬 13 respuestas</span>
-    </div>
-</article>
-
-<article class="article">
-    <span class="badge badge-email">📧 Email</span>
-    <span class="badge badge-code">Desarrollo</span>
+    <span class="badge badge-full">📖 Texto completo</span>
     <span class="badge badge-ai">IA</span>
-    <h3>Why Specification-Driven Development (SDD) is Not a Silver Bullet</h3>
-    <div class="meta-line">Alex Punnen · Towards AI · 12 min lectura</div>
-    <div class="summary">Análisis crítico del SDD (Specification-Driven Development). Usando un popular GitHub Spec Kit y un caso real, Punnen muestra dónde funciona y dónde falla este paradigma. Una lectura esencial para desarrolladores que evalúan adoptar SDD en sus equipos.</div>
+    <span class="badge badge-society">RRHH</span>
+    <span class="badge badge-tech">Agentes</span>
+    <h3><a href="https://code.likeagirl.io/ai-assistants-are-old-news-agentic-ai-is-transforming-hr-2825d66e441e" target="_blank">AI Assistants Are Old News; Agentic AI Is Transforming HR</a></h3>
+    <div class="meta-line">Julia Haynes · Code Like A Girl · 28 jul 2026</div>
+    <div class="summary">
+        Tras tres años de chatbots y copilotos que solo dieron mejoras incrementales en redacción, la autora plantea que la IA agéntica es el cambio que realmente transformará RRHH. A diferencia de los asistentes que esperan un prompt, los agentes vigilan disparadores, deciden el siguiente paso y ejecutan el trabajo a través de las herramientas que el equipo ya usa: sistema de seguimiento de candidatos, nómina o Slack. Describe casos concretos: detectar un pipeline de candidatos estancado durante ocho días, anticipar una anomalía de nómina antes que finanzas o señalar caídas de compromiso en una región con un resumen de qué cambió. La clave del artículo: no es automatización de guion fijo — la IA agéntica razona ante excepciones y solo involucra a un humano cuando hay riesgo o ambigüedad.
+    </div>
     <div class="stats">
-        <span>👏 <span class="clap-count">440</span></span>
-        <span>💬 13 respuestas</span>
+        <span class="badge badge-full">📖 Texto completo</span>
     </div>
 </article>
 
+<!-- Artículo: 15 libros -->
 <article class="article">
-    <span class="badge badge-email">📧 Email</span>
+    <span class="badge badge-full">📖 Texto completo</span>
+    <span class="badge badge-life">Libros</span>
+    <span class="badge badge-society">Cultura</span>
+    <h3><a href="https://baos.pub/ive-read-thousands-of-books-these-15-changed-me-the-most-77b585af6f04" target="_blank">I've Read Thousands of Books. These 15 Changed Me the Most</a></h3>
+    <div class="meta-line">Polski z Leo · Books Are Our Superpower · 30 jul 2026</div>
+    <div class="summary">
+        Un profesor de idiomas con licenciatura en filología comparte las 15 lecturas que más lo marcaron y, al final del artículo, una lista que considera "la base de las bases" para cualquiera que quiera entender el mundo con más honestidad. Su gran aprendizaje tras miles de libros: las personas no son villanas ni heroínas, solo personas — y leer con amplitud te quita la capacidad de odiar limpiamente. Usa el sistema de alineación de Neverwinter Nights como analogía: los humanos reales viven en la vasta zona gris, haciendo mezclas de actos egoístas y generosos según el día. Insiste en que no se puede juzgar las decisiones de un personaje sin entender el mundo en el que nació, y que la literatura entrena a preguntar "por qué" antes de "cómo pudieron".
+    </div>
+    <div class="stats">
+        <span class="badge badge-full">📖 Texto completo</span>
+    </div>
+</article>
+
+<!-- Artículo: async/await Express -->
+<article class="article">
+    <span class="badge badge-full">📖 Texto completo</span>
+    <span class="badge badge-code">Node.js</span>
+    <span class="badge badge-tech">Backend</span>
+    <h3><a href="https://blog.stackademic.com/the-mistake-beginners-make-with-async-await-in-express-6609fbfb1116" target="_blank">The Mistake Beginners Make with async/await in Express</a></h3>
+    <div class="meta-line">Shreyash · Stackademic · 30 jul 2026</div>
+    <div class="summary">
+        El autor relata cómo una sola consulta fallida a la base de datos tumbó todo su servidor Node.js en producción: un "UnhandledPromiseRejection" tras un fallo de red de dos segundos derribó Express y desconectó a todos los usuarios activos a la vez. La causa de fondo: Express 4 fue diseñado antes de que existiera async/await y, por defecto, ignora los rechazos de promesas no manejados dentro de los route handlers. Con código síncrono, Express envuelve la lógica en un try/catch oculto y reenvía el error al middleware de manejo de errores; con async/await esa red de seguridad desaparece. Un artículo esencial para principiantes de Node/Express sobre cómo los errores asíncronos pueden tumbar un servidor entero y cómo evitarlo.
+    </div>
+    <div class="stats">
+        <span class="badge badge-full">📖 Texto completo</span>
+    </div>
+</article>
+
+<!-- SECTION: Avances -->
+<h2 class="section-header"><span class="icon">🔒</span>Avances — Artículos de Pago</h2>
+
+<!-- Preview: 5 Memoirs -->
+<article class="article">
+    <span class="badge badge-preview">🔒 Avance</span>
+    <span class="badge badge-life">Libros</span>
+    <span class="badge badge-society">Memorias</span>
+    <h3><a href="https://baos.pub/bizarre-and-beautiful-5-memoirs-that-will-feed-your-soul-b6101c832909" target="_blank">Bizarre and Beautiful: 5 Memoirs that will Feed Your Soul</a></h3>
+    <div class="meta-line">Lindsay Redifer · Books Are Our Superpower · 29 jul 2026</div>
+    <div class="summary">
+        🔒 Avance — artículo de pago. El avance promete "sin celebridades, solo grandes historias que necesitas en tu vida": una selección de cinco memorias poco convencionales y hermosas pensadas para alimentar el alma. El contenido completo está detrás del muro de pago.
+    </div>
+    <div class="stats">
+        <span class="badge badge-preview">🔒 Avance — artículo de pago</span>
+        <span><a href="https://baos.pub/bizarre-and-beautiful-5-memoirs-that-will-feed-your-soul-b6101c832909" target="_blank">Abrir artículo →</a></span>
+    </div>
+</article>
+
+<!-- Preview: 10 Books -->
+<article class="article">
+    <span class="badge badge-preview">🔒 Avance</span>
+    <span class="badge badge-life">Libros</span>
+    <span class="badge badge-code">Lectura</span>
+    <h3><a href="https://baos.pub/10-books-that-reshaped-my-brain-forever-9a56e3124dee" target="_blank">10 Books That Reshaped My Brain Forever</a></h3>
+    <div class="meta-line">Sean Veaux · Books Are Our Superpower · 29 jul 2026</div>
+    <div class="summary">
+        🔒 Avance — artículo de pago. El avance indica que se trata de una lista de 10 libros para "añadir algo de diversidad a tus objetivos de lectura", presentados por el autor como lecturas que le reconfiguraron la forma de pensar. El contenido completo está detrás del muro de pago.
+    </div>
+    <div class="stats">
+        <span class="badge badge-preview">🔒 Avance — artículo de pago</span>
+        <span><a href="https://baos.pub/10-books-that-reshaped-my-brain-forever-9a56e3124dee" target="_blank">Abrir artículo →</a></span>
+    </div>
+</article>
+
+<!-- Preview: AI Gap -->
+<article class="article">
+    <span class="badge badge-preview">🔒 Avance</span>
     <span class="badge badge-ai">IA</span>
-    <span class="badge badge-code">Open Source</span>
-    <h3>Why You Should Completely Avoid Ollama in 2026</h3>
-    <div class="meta-line">Andrew Zhu · GoPenAI · 7 min lectura</div>
-    <div class="summary">Polémico artículo que argumenta contra Ollama como herramienta para LLMs locales en 2026. Zhu presenta alternativas open source que según él son muy superiores en rendimiento, flexibilidad y facilidad de uso.</div>
+    <span class="badge badge-tech">Negocios</span>
+    <h3><a href="https://ai.gopubby.com/discover-the-ai-gap-nobody-warned-business-owners-entrepreneurs-and-freelancers-about-bea8b0fdb031" target="_blank">Discover the AI Gap Nobody Warned Business Owners, Entrepreneurs, and Freelancers About</a></h3>
+    <div class="meta-line">Paco Cantero · AI Advances · 29 jul 2026</div>
+    <div class="summary">
+        🔒 Avance — artículo de pago. La tesis del avance: "usar ChatGPT a diario no es lo mismo que usar IA" — el artículo advierte de una brecha de IA que nadie mencionó a dueños de negocios, emprendedores y freelancers. El desarrollo completo está detrás del muro de pago.
+    </div>
     <div class="stats">
-        <span>👏 <span class="clap-count">2.2K</span></span>
-        <span>💬 35 respuestas</span>
+        <span class="badge badge-preview">🔒 Avance — artículo de pago</span>
+        <span><a href="https://ai.gopubby.com/discover-the-ai-gap-nobody-warned-business-owners-entrepreneurs-and-freelancers-about-bea8b0fdb031" target="_blank">Abrir artículo →</a></span>
     </div>
 </article>
 
+<!-- Preview: Future -->
 <article class="article">
-    <span class="badge badge-email">📧 Email</span>
-    <span class="badge badge-code">Desarrollo</span>
+    <span class="badge badge-preview">🔒 Avance</span>
+    <span class="badge badge-life">Filosofía</span>
+    <span class="badge badge-society">Vida</span>
+    <h3><a href="https://baos.pub/we-spend-our-lives-preparing-for-a-future-we-cannot-predict-67dfe005a0ee" target="_blank">We Spend Our Lives Preparing for a Future We Cannot Predict</a></h3>
+    <div class="meta-line">Ezha · Books Are Our Superpower · 29 jul 2026</div>
+    <div class="summary">
+        🔒 Avance — artículo de pago. El avance lanza una pregunta: "¿hemos pensado alguna vez que lo que más cambia nuestra vida suele ser aquello que nunca planeamos?" — una reflexión sobre cuánto tiempo invertimos preparándonos para un futuro impredecible. El contenido completo está detrás del muro de pago.
+    </div>
+    <div class="stats">
+        <span class="badge badge-preview">🔒 Avance — artículo de pago</span>
+        <span><a href="https://baos.pub/we-spend-our-lives-preparing-for-a-future-we-cannot-predict-67dfe005a0ee" target="_blank">Abrir artículo →</a></span>
+    </div>
+</article>
+
+<!-- Preview: Why do we hate AI -->
+<article class="article">
+    <span class="badge badge-preview">🔒 Avance</span>
     <span class="badge badge-ai">IA</span>
-    <h3>The Best Developer Is No Longer the One Who Writes the Best Code</h3>
-    <div class="meta-line">Jaroslaw Wasowski · Level Up Coding · 13 min lectura</div>
-    <div class="summary">En la era del Spec-Driven Development, el mejor desarrollador ya no es quien escribe el código más limpio, sino quien mejor traduce requisitos de negocio en especificaciones que la IA puede implementar. Un cambio de paradigma profundo.</div>
+    <h3><a href="https://ai.gopubby.com/why-do-we-hate-ai-58af629677ea" target="_blank">Why do we hate AI?</a></h3>
+    <div class="meta-line">Dusko Pavlovic · AI Advances · 29 jul 2026</div>
+    <div class="summary">
+        🔒 Avance — artículo de pago. Avance insuficiente: el blurb solo plantea preguntas retóricas ("¿Por qué la amamos? ¿Cuál es el gran problema? ¿Qué es la IA?") sin contenido sustancial que resumir. Invitación a leer el artículo completo para descubrir la tesis.
+    </div>
     <div class="stats">
-        <span>👏 <span class="clap-count">464</span></span>
-        <span>💬 35 respuestas</span>
+        <span class="badge badge-preview">🔒 Avance — artículo de pago</span>
+        <span><a href="https://ai.gopubby.com/why-do-we-hate-ai-58af629677ea" target="_blank">Abrir artículo →</a></span>
     </div>
 </article>
 
+<!-- Preview: Women in Tech -->
 <article class="article">
-    <span class="badge badge-email">📧 Email</span>
-    <span class="badge badge-security">Ciberseguridad</span>
+    <span class="badge badge-preview">🔒 Avance</span>
+    <span class="badge badge-society">Mujeres en Tech</span>
+    <span class="badge badge-tech">Carrera</span>
+    <h3><a href="https://code.likeagirl.io/why-women-in-tech-dont-support-each-other-ae7f002b3696" target="_blank">Why Women in Tech Don't Support Each Other</a></h3>
+    <div class="meta-line">Emanuela B · Code Like A Girl · 28 jul 2026</div>
+    <div class="summary">
+        🔒 Avance — artículo de pago. El avance resume la tesis en una frase contundente: "no somos nosotras, es la sala" — la falta de apoyo mutuo entre mujeres en tecnología sería un problema del entorno, no de ellas. El análisis completo está detrás del muro de pago.
+    </div>
+    <div class="stats">
+        <span class="badge badge-preview">🔒 Avance — artículo de pago</span>
+        <span><a href="https://code.likeagirl.io/why-women-in-tech-dont-support-each-other-ae7f002b3696" target="_blank">Abrir artículo →</a></span>
+    </div>
+</article>
+
+<!-- Preview: Next AI Breakthrough -->
+<article class="article">
+    <span class="badge badge-preview">🔒 Avance</span>
     <span class="badge badge-ai">IA</span>
-    <h3>AI's First Autonomous Cyber Attack</h3>
-    <div class="meta-line">Ignacio de Gregorio · 9 min lectura</div>
-    <div class="summary">El relato de un incidente que podría definir toda una industria: el primer ciberataque completamente autónomo ejecutado por una IA. Sin intervención humana en ninguna fase del ataque. Una llamada de atención sobre la urgencia de la ciberseguridad en la era de la IA.</div>
-    <div class="stats">
-        <span>👏 <span class="clap-count">2K</span></span>
-        <span>💬 41 respuestas</span>
+    <span class="badge badge-code">ML</span>
+    <h3><a href="https://medium.com/data-science-collective/the-next-ai-breakthrough-may-not-be-a-bigger-model-45de0c9726be" target="_blank">The Next AI Breakthrough May Not Be a Bigger Model</a></h3>
+    <div class="meta-line">Anubhav · Data Science Collective · 28 jul 2026</div>
+    <div class="summary">
+        🔒 Avance — artículo de pago. El avance es provocador: "el escalado de parámetros chocó contra un muro, y su sustituto (pensar más tiempo en inferencia) también se está estancando. Los verdaderos saltos se esconden…" — plantea que el próximo gran avance de la IA podría no venir de modelos más grandes. El desarrollo completo está detrás del muro de pago.
     </div>
-</article>
-
-<article class="article">
-    <span class="badge badge-email">📧 Email</span>
-    <span class="badge badge-ai">IA</span>
-    <span class="badge badge-code">Agentes</span>
-    <h3>Building a Personal AI Agent in a Couple of Hours</h3>
-    <div class="meta-line">Ivo Bernardo · 14 min lectura</div>
-    <div class="summary">Guía práctica para construir tu propio agente de IA personal en unas pocas horas. Bernardo demuestra que con las herramientas actuales, crear un asistente inteligente a medida está al alcance de cualquiera, no solo de ingenieros de ML.</div>
     <div class="stats">
-        <span>👏 <span class="clap-count">1K</span></span>
-        <span>💬 49 respuestas</span>
-    </div>
-</article>
-
-<article class="article">
-    <span class="badge badge-email">📧 Email</span>
-    <span class="badge badge-tech">Web</span>
-    <span class="badge badge-security">Seguridad</span>
-    <h3>I Hid an Entire Website Inside a Favicon, So Now I'm Worried About Your Browser</h3>
-    <div class="meta-line">David Lee · 7 min lectura</div>
-    <div class="summary">Un experimento alucinante: David Lee escondió un sitio web completo dentro de un favicon. El artículo explora las implicaciones de seguridad de esta técnica y por qué debería preocuparnos lo que el archivo más pequeño e ignorado de la web puede contener.</div>
-    <div class="stats">
-        <span>👏 <span class="clap-count">1.3K</span></span>
-        <span>💬 31 respuestas</span>
-    </div>
-</article>
-
-<article class="article">
-    <span class="badge badge-email">📧 Email</span>
-    <span class="badge badge-code">Desarrollo</span>
-    <h3>Formal Verification in Spec-Driven Development — Enterprise Level</h3>
-    <div class="meta-line">Jaroslaw Wasowski · Level Up Coding · 14 min lectura</div>
-    <div class="summary">Segundo artículo de Wasowski en este digest, explorando cómo la verificación formal encaja en el desarrollo guiado por especificaciones a nivel empresarial. En sectores regulados, una especificación se convierte en un artefacto legal.</div>
-    <div class="stats">
-        <span>👏 <span class="clap-count">308</span></span>
-        <span>💬 6 respuestas</span>
-    </div>
-</article>
-
-<article class="article">
-    <span class="badge badge-email">📧 Email</span>
-    <span class="badge badge-ai">IA</span>
-    <span class="badge badge-life">Productividad</span>
-    <h3>Steve Jobs's 10–80–10 Rule Is Even More Useful in the AI Era</h3>
-    <div class="meta-line">Jessica Stillman · 5 min lectura</div>
-    <div class="summary">La regla 10-80-10 de Steve Jobs (10% planificación, 80% ejecución, 10% refinamiento) es más relevante que nunca con IA. Stillman explica cómo los agentes de IA pueden encargarse del 80% del trabajo pesado, liberando a los humanos para la estrategia y el pulido final.</div>
-    <div class="stats">
-        <span>👏 <span class="clap-count">2.8K</span></span>
-        <span>💬 74 respuestas</span>
-    </div>
-</article>
-
-<article class="article">
-    <span class="badge badge-email">📧 Email</span>
-    <span class="badge badge-code">Programación</span>
-    <span class="badge badge-tech">Tech</span>
-    <h3>Concurrency, Parallelism, and Async: Three Ideas That Sound the Same But Aren't</h3>
-    <div class="meta-line">Alina Kovtun · Code Like A Girl · 8 min lectura</div>
-    <div class="summary">Guía clarificadora sobre tres conceptos que incluso developers experimentados confunden: concurrencia, paralelismo y asincronía. Con ejemplos prácticos, Kovtun desenreda estas ideas fundamentales para el desarrollo de software moderno.</div>
-    <div class="stats">
-        <span>👏 <span class="clap-count">2.5K</span></span>
-        <span>💬 27 respuestas</span>
+        <span class="badge badge-preview">🔒 Avance — artículo de pago</span>
+        <span><a href="https://medium.com/data-science-collective/the-next-ai-breakthrough-may-not-be-a-bigger-model-45de0c9726be" target="_blank">Abrir artículo →</a></span>
     </div>
 </article>
 
 <footer>
     <p>📬 Medium Daily Digest automatizado para Eduard Sanchez · 31 Julio 2026</p>
-    <p>5 artículos con bypass · 10 desde email · Generado por Hermes Agent</p>
+    <p>8 artículos con texto completo · 7 avances de pago · Fuente: RSS · Generado por Hermes Agent</p>
 </footer>
 
 </body>
