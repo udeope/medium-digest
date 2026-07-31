@@ -101,10 +101,17 @@
             color: var(--text-secondary);
             font-size: 0.85em;
         }
+        .top-pick .pick-summary {
+            color: var(--text-secondary);
+            font-size: 0.82em;
+            margin-top: 8px;
+            line-height: 1.5;
+        }
         .top-pick .claps {
             color: var(--green);
             font-size: 0.8em;
             font-weight: 600;
+            margin-top: 6px;
         }
 
         /* Badges */
@@ -160,6 +167,12 @@
             font-size: 0.95em;
             margin-bottom: 10px;
             line-height: 1.7;
+        }
+        .article .summary p {
+            margin-bottom: 10px;
+        }
+        .article .summary p:last-child {
+            margin-bottom: 0;
         }
         .article .stats {
             display: flex;
@@ -221,24 +234,28 @@
         <div class="rank">🥇</div>
         <h3><a href="https://ai.gopubby.com/unbelievable-run-kimi-k3-2-8-trillion-parameters-on-a-single-4gb-gpu-23590e7a16c2" target="_blank">Unbelievable! Run Kimi K3–2.8 Trillion Parameters — on a Single 4GB GPU</a></h3>
         <div class="author">Gavin Li · AI Advances</div>
+        <div class="pick-summary">El checkpoint completo de un modelo de 2,8 billones de parámetros corriendo en una sola GPU con solo 3,72 GB de VRAM.</div>
         <div class="claps">📖 Texto completo</div>
     </div>
     <div class="top-pick">
         <div class="rank">🥈</div>
         <h3><a href="https://medium.com/data-science-collective/your-agent-benchmark-is-lying-to-you-65a552fea151" target="_blank">Your Agent Benchmark Is Lying to You</a></h3>
         <div class="author">Sebastian Buzdugan · Data Science Collective</div>
+        <div class="pick-summary">El harness reportó un 87% de aprobados cuando la tasa real era del 33%: los benchmarks de agentes confían en lo que el agente dice, no en lo que hace.</div>
         <div class="claps">📖 Texto completo</div>
     </div>
     <div class="top-pick">
         <div class="rank">🥉</div>
         <h3><a href="https://medium.com/data-science-collective/should-you-self-host-inference-f94c8aca2a2d" target="_blank">Should You Self-Host Inference?</a></h3>
         <div class="author">Paolo Perrone · Data Science Collective</div>
+        <div class="pick-summary">La economía honesta del alojamiento propio: solo compensa por encima de ~2 millones de tokens al día o por soberanía de datos; el híbrido gana.</div>
         <div class="claps">📖 Texto completo</div>
     </div>
     <div class="top-pick">
         <div class="rank">🏅</div>
         <h3><a href="https://medium.com/the-generator/if-ai-makes-better-choices-should-we-still-choose-764ccb382e24" target="_blank">If AI Makes Better Choices, Should We Still Choose?</a></h3>
         <div class="author">Makkapati Sriya · The Generator</div>
+        <div class="pick-summary">Con 300 Likes de Facebook la IA entendía tu personalidad mejor que tu cónyuge: la pregunta incómoda sobre quién debería decidir.</div>
         <div class="claps">📖 Texto completo</div>
     </div>
 </div>
@@ -255,7 +272,9 @@
     <h3><a href="https://ai.gopubby.com/unbelievable-run-kimi-k3-2-8-trillion-parameters-on-a-single-4gb-gpu-23590e7a16c2" target="_blank">Unbelievable! Run Kimi K3–2.8 Trillion Parameters — on a Single 4GB GPU</a></h3>
     <div class="meta-line">Gavin Li · AI Advances · 29 jul 2026</div>
     <div class="summary">
-        Moonshot AI lanzó Kimi K3, un modelo open source de 2,8 billones de parámetros que puntúa 57 en el Artificial Analysis Intelligence Index, a solo 3 puntos de Claude Fable 5 (60) y por delante de GLM-5.2 (51). El checkpoint liberado pesa 1,56 TB y cargarlo de forma convencional exige un clúster de unas 40 GPU H200, algo que el autor califica de "centro de datos, no un hobby". La gran hazaña del artículo: afirma haber ejecutado el checkpoint completo (no una destilación ni una variante menor) en una sola GPU usando solo 3,72 GB de VRAM. Explica por qué la técnica clásica de inferencia por capas (la base de AirLLM, que funcionó para Llama 405B y DeepSeek-V3) se rompe con K3: es un Mixture-of-Experts extremo, con 93 capas de 896 expertos cada una, donde una sola capa expandida ocupa ~56 GB.
+        <p>El 16 de julio Moonshot AI liberó Kimi K3, y el autor lo presenta como "el nuevo rey del open source": puntúa 57 en el Artificial Analysis Intelligence Index, a solo 3 puntos de Claude Fable 5 (60) y de GPT-5.6 Sol (59), y muy por delante del mejor modelo de pesos abiertos anterior, GLM-5.2 (51). En varios benchmarks K3 ni siquiera va por detrás: gana. El argumento central es que la frontera de la IA ya no está tras una API key, sino tras el hardware: K3 tiene 2,8 billones de parámetros, su checkpoint liberado pesa 1,56 terabytes y cargarlo de forma convencional exige un clúster de unas 40 GPU H200 — "eso es un centro de datos, no un hobby".</p>
+        <p>La hazaña del artículo: el autor afirma haber ejecutado el checkpoint completo — no una destilación ni una variante menor — en una sola GPU usando solo 3,72 GB de VRAM, gracias a AirLLM. Explica primero la técnica clásica de inferencia por capas (divide y vencerás: cargar una capa desde disco, computar, liberarla y seguir), que convierte un problema de 130 GB en uno de 1,6 GB para un modelo de 70B y que durante dos años funcionó con Llama 405B y DeepSeek-V3.</p>
+        <p>Pero K3 rompe ese truco: es un Mixture-of-Experts extremo, con 93 capas que contienen 896 redes expertas cada una, de modo que una sola capa ocupa ~17 GB almacenada y ~56 GB una vez expandida para computar, frente a los 48 GB de la tarjeta del autor. Ahí es donde el artículo desarrolla la nueva solución que permite correr el modelo completo en local, con el checkpoint real generando tokens.</p>
     </div>
     <div class="stats">
         <span class="badge badge-full">📖 Texto completo</span>
@@ -270,7 +289,9 @@
     <h3><a href="https://medium.com/data-science-collective/your-agent-benchmark-is-lying-to-you-65a552fea151" target="_blank">Your Agent Benchmark Is Lying to You</a></h3>
     <div class="meta-line">Sebastian Buzdugan · Data Science Collective · 29 jul 2026</div>
     <div class="summary">
-        El autor audita los harness de evaluación de agentes de IA y encuentra una brecha alarmante: en su suite de tareas de código, el harness reportó un 87% de aprobados cuando la tasa real era del 33%. El 53% de los "passes" eran tareas que el agente nunca resolvió: el harness confió en lo que el agente le decía en lugar de verificar lo que realmente hizo. Como evidencia, recuerda que OpenAI dejó de publicar resultados de SWE-bench Verified en febrero de 2026, tras una auditoría que halló que al menos el 59,4% de los problemas auditados tenían casos de test defectuosos que rechazaban soluciones funcionalmente correctas. Su conclusión: el problema no se arregla con mejores reglas de puntuación, sino con aislamiento real — sandboxes verificados en los que el agente no pueda mentir.
+        <p>El autor audita los harness de evaluación de agentes de IA y destapa una brecha alarmante: en una suite de tareas de código corrió el mismo experimento dos veces y el harness reportó un 87% de aprobados cuando la tasa real era del 33%. Mismos agentes, mismas tareas, misma máquina; la única diferencia fue si el harness confiaba en lo que el agente le contaba o comprobaba lo que el agente realmente hizo. El 53% de los "passes" eran tareas que el agente nunca llegó a resolver, puntuadas en verde igualmente. Su conclusión inicial: no es un problema del modelo, es un problema del harness, y casi todos los leaderboards de agentes usan uno así.</p>
+        <p>Contexto que lo respalda: en febrero de 2026 OpenAI dejó de publicar resultados de SWE-bench Verified, el benchmark que ella misma había creado y validado en 2024. La razón no fue que los modelos se volvieran demasiado buenos, sino que el benchmark estaba roto: una auditoría del subconjunto difícil encontró que "al menos el 59,4% de los problemas auditados tienen casos de test defectuosos que rechazan soluciones funcionalmente correctas", y los modelos frontera podían reproducir de memoria el gold patch de referencia por contaminación. OpenAI recomendó que otros desarrolladores dejaran de reportarlo también.</p>
+        <p>Para demostrarlo, el autor construyó un harness pequeño, lo sembró con los trucos documentados en la literatura y lo ejecutó en sandboxes microVM reales; los resultados son reproducibles y el código es público. La tesis final: la conversación sobre benchmarks está atascada en las puntuaciones, pero antes de confiar en una nota hay que confiar en la máquina que la produce, y el arreglo no es una mejor regla de puntuación, sino aislamiento real — sandboxes donde el agente no pueda mentir.</p>
     </div>
     <div class="stats">
         <span class="badge badge-full">📖 Texto completo</span>
@@ -286,7 +307,9 @@
     <h3><a href="https://medium.com/data-science-collective/should-you-self-host-inference-f94c8aca2a2d" target="_blank">Should You Self-Host Inference?</a></h3>
     <div class="meta-line">Paolo Perrone · Data Science Collective · 30 jul 2026</div>
     <div class="summary">
-        El autor presenta "la economía honesta" del alojamiento propio de inferencia: solo compensa en dos casos — superar ~2 millones de tokens al día, o que tus datos no puedan salir legalmente de tu red. Por debajo de un millón de tokens diarios la API hospedada es la más barata; entre uno y dos millones es un empate real, y por encima de diez millones el hardware propio se amortiza en 6 a 12 meses. Un dato que los equipos olvidan: contratar a un ingeniero de MLOps (~160.000 dólares al año solo en salario) cuesta más que el propio hardware. Concluye que la mayoría de empresas aterriza en un híbrido que resulta 40-70% más barato que ir todo-API: lo sensible y de alto volumen se queda en local, y el razonamiento difícil se envía a un modelo frontera.
+        <p>Décima entrega del curso "Hardware &amp; Inference", dedicada a "la economía honesta" del alojamiento propio de modelos. La regla del autor: self-hosting solo compensa en dos casos — superar aproximadamente dos millones de tokens al día, o que tus datos no puedan salir legalmente de tu red. Por debajo de esa línea, una API hospedada es más barata y te ahorra operar GPUs. Por debajo de un millón de tokens diarios la API gana en coste sin discusión; entre uno y dos millones es un empate real; por encima de diez millones al día, el hardware propio se amortiza en seis a doce meses.</p>
+        <p>El coste que los equipos olvidan: un ingeniero de MLOps cuesta unos 160.000 dólares al año solo en salario, frente a unos pocos miles de dólares del hardware que supervisa. Alguien tiene que parchear errores de CUDA a las 2 de la madrugada y vigilar la deriva de latencia, y esa nómina es la partida que nadie presupuesta. El escenario típico que plantea: lanzas una feature sobre una API, la factura se triplica en un trimestre porque el gasto escala con cada usuario nuevo, y tu responsable de seguridad señala que los datos de clientes viajan dentro de cada prompt hacia los servidores de OpenAI.</p>
+        <p>Conclusión: la mayoría de las empresas aterriza en un híbrido que resulta entre 40% y 70% más barato que ir todo-API — lo sensible y de alto volumen se queda en local y el razonamiento difícil se envía a un modelo frontera. El reflejo de que "el hardware propio tiene que ser más barato" suele ser erróneo: el punto de cruce está cerca de los dos millones de tokens diarios, y el autor recomienda la API como opción por defecto salvo que tengas volumen o requisitos de soberanía de datos.</p>
     </div>
     <div class="stats">
         <span class="badge badge-full">📖 Texto completo</span>
@@ -301,7 +324,9 @@
     <h3><a href="https://medium.com/the-generator/if-ai-makes-better-choices-should-we-still-choose-764ccb382e24" target="_blank">If AI Makes Better Choices, Should We Still Choose?</a></h3>
     <div class="meta-line">Makkapati Sriya · The Generator · 2 jun 2026</div>
     <div class="summary">
-        Una reflexión incómoda: la primera entidad que podría "conocerte" como un alma gemela quizá no sea una persona, sino una IA con acceso al registro completo e inédito de tu vida — cada búsqueda, compra o vídeo visto a las 2 de la madrugada. Se apoya en un estudio de 2015 de las universidades de Cambridge y Stanford que analizó Likes de Facebook: con 10 Likes la IA entendía tu personalidad mejor que un compañero de trabajo medio, con 70 superaba a un amigo cercano, con 150 a un padre o hermano, y con 300 a un cónyuge. El usuario medio del estudio tenía 227 Likes: mucho antes de la IA moderna, la mayoría ya dejaba suficientes migas de datos para que un algoritmo los entendiera mejor que casi cualquier humano. Sobre esa base plantea la pregunta del título: si la IA toma mejores decisiones, ¿deberíamos seguir eligiendo nosotros?
+        <p>Una reflexión incómoda que arranca con el concepto de "alma gemela": esa persona que te entiende no por lo que dices, sino por lo que quieres decir, y que siempre habíamos imaginado como algo solo humano, construido con años de intimidad compartida. La autora plantea que la primera entidad que podría acercarse a eso no será una persona — no porque la IA sea sabia, cálida o consciente, sino porque tiene acceso a algo que ningún ser humano tendrá jamás: el registro completo y sin filtros de tu vida. Cada búsqueda, cada compra, cada vídeo visto a las 2 de la madrugada, cada lugar visitado y cada decisión que calladamente lamentaste.</p>
+        <p>No es ciencia ficción, asegura: cita un estudio de 2015 de las universidades de Cambridge y Stanford que analizó los Likes de Facebook — no fotos ni mensajes, solo las páginas, marcas y celebridades marcadas como favoritas. Los resultados: con 10 Likes la IA entendía tu personalidad mejor que un compañero de trabajo medio; con unos 70 superaba a un amigo cercano; con unos 150, a un padre o un hermano; y con unos 300, a un cónyuge. El usuario medio del estudio tenía 227 Likes.</p>
+        <p>La conclusión escalofriante: mucho antes de que existiera la IA moderna, la mayoría de la gente ya dejaba atrás suficientes migas de datos de comportamiento para que un algoritmo los entendiera con más precisión que casi cualquier humano de su entorno. Sobre esa base, el artículo formula la pregunta del título: si la IA toma mejores decisiones, ¿deberíamos seguir eligiendo nosotros?</p>
     </div>
     <div class="stats">
         <span class="badge badge-full">📖 Texto completo</span>
@@ -316,7 +341,9 @@
     <h3><a href="https://medium.com/crows-feet/why-i-was-wrong-about-richard-simmons-fa96a6e1f503" target="_blank">Why I Was Wrong About Richard Simmons</a></h3>
     <div class="meta-line">Joshua Brandt · Crow's Feet · 29 jul 2026</div>
     <div class="summary">
-        Un entrenador personal admite que no entendía la oleada de duelo por la muerte de Richard Simmons, a quien veía como una reliquia ochentera; reconoce que su cercanía a la "bro culture" del fitness le impedía ver el impacto real del gurú. Repasa la biografía de Simmons — obesidad infantil, bullying, refugio en la comida, la apertura de su icónico "Anatomy Asylum" en 1974 — y destaca que canalizó su dolor en algo positivo y vitalista. Contrasta ese camino con el de algunos entrenadores de "The Biggest Loser", con orígenes similares, cuya autocrítica se manifiesta en crueldad casual. El cambio de opinión del autor se ancla en el recuerdo de una clienta que conoció años atrás, en un ejercicio de reconsiderar un legado que había descartado demasiado rápido.
+        <p>Un entrenador personal admite que no entendía la enorme ola de duelo por la muerte de Richard Simmons: para él, un niño de los ochenta, el gurú del fitness con sus lentejuelas, pantalones cortos y permanente rizada era "una reliquia omnipresente", y su permanencia en el zeitgeist cultural le parecía producto de la nostalgia más que de un impacto real. Pero ante la insistencia de los testimonios de gratitud, se pregunta por qué no lo veía, y encuentra la respuesta: si no está inmerso en la "bro culture", al menos vive al lado de ella, y ese sesgo le impedía reconocer la verdadera contribución de Simmons.</p>
+        <p>Repasa la biografía conocida: Simmons fue un niño con obesidad mórbida, acosado, pésimo estudiante que buscaba consuelo en la comida ("las galletas siempre permanecían calmadas", decía del turbulencia familiar). Cuando abrió su icónico "Anatomy Asylum" en 1974, la desesperación y el autodesprecio acumulados habrían destruido a la mayoría de la gente; él, en cambio, canalizó ese dolor en algo positivo y vitalista. El autor lo contrasta con algunos entrenadores de "The Biggest Loser", que vienen de orígenes similares pero cuya autocrítica se manifiesta en crueldad casual.</p>
+        <p>El giro personal llega al recordar a una clienta que conoció años atrás, que llegó a él con una sesión gratuita para nuevos miembros del gimnasio. El artículo es, en el fondo, un ejercicio de reconsiderar un legado descartado demasiado rápido por prejuicio cultural: un homenaje a la bondad y a la positividad corporal que Simmons representó para millones de personas, y que la cultura del fitness "dura" no supo valorar.</p>
     </div>
     <div class="stats">
         <span class="badge badge-full">📖 Texto completo</span>
@@ -332,7 +359,9 @@
     <h3><a href="https://code.likeagirl.io/ai-assistants-are-old-news-agentic-ai-is-transforming-hr-2825d66e441e" target="_blank">AI Assistants Are Old News; Agentic AI Is Transforming HR</a></h3>
     <div class="meta-line">Julia Haynes · Code Like A Girl · 28 jul 2026</div>
     <div class="summary">
-        Tras tres años de chatbots y copilotos que solo dieron mejoras incrementales en redacción, la autora plantea que la IA agéntica es el cambio que realmente transformará RRHH. A diferencia de los asistentes que esperan un prompt, los agentes vigilan disparadores, deciden el siguiente paso y ejecutan el trabajo a través de las herramientas que el equipo ya usa: sistema de seguimiento de candidatos, nómina o Slack. Describe casos concretos: detectar un pipeline de candidatos estancado durante ocho días, anticipar una anomalía de nómina antes que finanzas o señalar caídas de compromiso en una región con un resumen de qué cambió. La clave del artículo: no es automatización de guion fijo — la IA agéntica razona ante excepciones y solo involucra a un humano cuando hay riesgo o ambigüedad.
+        <p>Durante los últimos tres años, a los líderes de RRHH les han vendido siempre la misma solución — implementa un chatbot o un copiloto y espera más productividad — pero esas herramientas solo han dado mejoras incrementales en redacción, no una transformación real. La autora argumenta que ahora sí se está produciendo un cambio profundo con la IA agéntica: a diferencia del asistente, que espera un prompt, el sistema agéntico observa un disparador, decide qué hay que hacer y ejecuta el trabajo a través de las herramientas que el equipo ya usa, del sistema de seguimiento de candidatos a la nómina o Slack. En lugar de un único asistente inteligente, tienes una pequeña fuerza de trabajo de agentes especializados que atienden reclutamiento, onboarding, cumplimiento y servicio al empleado en paralelo.</p>
+        <p>La diferencia clave: "los asistentes responden preguntas, los agentes hacen cosas". Un asistente generativo permanece inactivo hasta que alguien escribe una pregunta; un sistema agéntico se comporta como un compañero de trabajo silencioso que nunca se desconecta: nota que un pipeline de candidatos lleva ocho días estancado, investiga por qué, y o empuja al reclutador o reprograma entrevistas por su cuenta; detecta una anomalía de nómina antes que finanzas; o ve que las puntuaciones de compromiso cayeron en una región y lo señala al HR business partner con un resumen de qué cambió.</p>
+        <p>La matización importante: esto no es automatización en el sentido antiguo de guion fijo. La IA agéntica razona ante excepciones, decide cuál de varias acciones posibles tiene sentido según la situación, la ejecuta y solo involucra a un humano cuando hay riesgo o ambigüedad. El artículo cierra señalando dónde ya se está viendo esto en la práctica, y plantea que la transformación de RRHH viene de pasar de una IA que ayuda a hacer la tarea a una IA que ejecuta la tarea y simplemente informa del resultado.</p>
     </div>
     <div class="stats">
         <span class="badge badge-full">📖 Texto completo</span>
@@ -347,7 +376,9 @@
     <h3><a href="https://baos.pub/ive-read-thousands-of-books-these-15-changed-me-the-most-77b585af6f04" target="_blank">I've Read Thousands of Books. These 15 Changed Me the Most</a></h3>
     <div class="meta-line">Polski z Leo · Books Are Our Superpower · 30 jul 2026</div>
     <div class="summary">
-        Un profesor de idiomas con licenciatura en filología comparte las 15 lecturas que más lo marcaron y, al final del artículo, una lista que considera "la base de las bases" para cualquiera que quiera entender el mundo con más honestidad. Su gran aprendizaje tras miles de libros: las personas no son villanas ni heroínas, solo personas — y leer con amplitud te quita la capacidad de odiar limpiamente. Usa el sistema de alineación de Neverwinter Nights como analogía: los humanos reales viven en la vasta zona gris, haciendo mezclas de actos egoístas y generosos según el día. Insiste en que no se puede juzgar las decisiones de un personaje sin entender el mundo en el que nació, y que la literatura entrena a preguntar "por qué" antes de "cómo pudieron".
+        <p>Un profesor de idiomas con licenciatura en filología — que ha pasado años analizando literatura, enseñándola y conviviendo con personajes de ficción más tiempo que con algunas amistades reales — comparte los 15 libros que más lo cambiaron, y promete al final del artículo una lista que considera "la base de las bases" para cualquiera que quiera entender el mundo con más honestidad: diferentes géneros, siglos y continentes. Se presenta sin falsa modestia: no es el más listo ni el más exitoso, y no ha descifrado ningún código secreto que convierta la lectura en un superpoder como prometen los gurús de la productividad.</p>
+        <p>Su gran aprendizaje tras miles de libros: las personas no son villanas ni heroínas, solo personas. Tras leer con amplitud de géneros y siglos, dejas de poder odiar limpiamente a alguien: has visto a gente profundamente ordinaria hacer cosas profundamente terribles, y has entendido — incómodamente — por qué. Usa el sistema de alineación de Neverwinter Nights (Caótico Maligno, Legal Bueno, etc.) como analogía: los humanos reales funcionan igual, salvo que no llevan una etiqueta limpia sobre la cabeza; la mayoría vive en la vasta zona gris intermedia, haciendo mezclas de actos egoístas y generosos según el día.</p>
+        <p>La lección que más le costó aprender: no se puede juzgar las decisiones de un personaje sin entender el mundo en el que nació. Una mujer victoriana que toma una decisión que hoy nos parece cobarde navegaba una realidad donde la alternativa era la muerte social. La literatura, concluye, entrena a preguntar "por qué" antes de preguntar "cómo pudieron", y es esa pregunta la que explica por qué seguimos esperando de las personas algo que nunca fueron.</p>
     </div>
     <div class="stats">
         <span class="badge badge-full">📖 Texto completo</span>
@@ -362,7 +393,9 @@
     <h3><a href="https://blog.stackademic.com/the-mistake-beginners-make-with-async-await-in-express-6609fbfb1116" target="_blank">The Mistake Beginners Make with async/await in Express</a></h3>
     <div class="meta-line">Shreyash · Stackademic · 30 jul 2026</div>
     <div class="summary">
-        El autor relata cómo una sola consulta fallida a la base de datos tumbó todo su servidor Node.js en producción: un "UnhandledPromiseRejection" tras un fallo de red de dos segundos derribó Express y desconectó a todos los usuarios activos a la vez. La causa de fondo: Express 4 fue diseñado antes de que existiera async/await y, por defecto, ignora los rechazos de promesas no manejados dentro de los route handlers. Con código síncrono, Express envuelve la lógica en un try/catch oculto y reenvía el error al middleware de manejo de errores; con async/await esa red de seguridad desaparece. Un artículo esencial para principiantes de Node/Express sobre cómo los errores asíncronos pueden tumbar un servidor entero y cómo evitarlo.
+        <p>El autor relata un incidente de producción que le costó una noche entera de depuración: su API construida con Express.js funcionaba perfecto en local — Postman devolvía el objeto del usuario en 15 ms — pero días después de desplegarla, un fallo de red de dos segundos en la base de datos provocó que, en lugar de devolver un limpio error 500 al usuario afectado, todo el servidor Node.js colapsara al instante con un "UnhandledPromiseRejection: Error: Connection timed out". PM2 reinició la app con código de salida 1, y todos los usuarios activos — navegando productos, actualizando su perfil o pagando — se desconectaron en el mismo segundo. Una sola consulta fallida para un solo usuario tumbó el servidor para todos.</p>
+        <p>La causa de fondo, descubierta tras investigar el runtime asíncrono de Node: Express 4 fue diseñado antes de que existiera async/await y, por defecto, ignora por completo los rechazos de promesas no manejados dentro de los route handlers. Con código síncrono, Express envuelve la lógica de la ruta en un try/catch oculto: si lanzas un error, lo intercepta y lo reenvía directamente a tu middleware de manejo de errores — por eso el manejo de errores parece tan fácil al empezar. Con async/await, esa red de seguridad desaparece: la promesa rechazada no llega a ningún handler y termina derribando el proceso.</p>
+        <p>El artículo, orientado a principiantes de Node/Express, explica con código la diferencia entre el manejo de errores síncrono y asíncrono, y muestra por qué Express 4 no protege a los desarrolladores de este error tan común. Es una lección práctica imprescindible para cualquiera que despliegue APIs en producción: saber que un error asíncrono no manejado no es solo un fallo de esa petición, sino una amenaza para la disponibilidad de todo el servidor.</p>
     </div>
     <div class="stats">
         <span class="badge badge-full">📖 Texto completo</span>
@@ -380,7 +413,7 @@
     <h3><a href="https://baos.pub/bizarre-and-beautiful-5-memoirs-that-will-feed-your-soul-b6101c832909" target="_blank">Bizarre and Beautiful: 5 Memoirs that will Feed Your Soul</a></h3>
     <div class="meta-line">Lindsay Redifer · Books Are Our Superpower · 29 jul 2026</div>
     <div class="summary">
-        🔒 Avance — artículo de pago. El avance promete "sin celebridades, solo grandes historias que necesitas en tu vida": una selección de cinco memorias poco convencionales y hermosas pensadas para alimentar el alma. El contenido completo está detrás del muro de pago.
+        <p>🔒 Avance — artículo de pago. El avance promete "sin celebridades, solo grandes historias que necesitas en tu vida": una selección de cinco memorias extrañas y hermosas pensadas para alimentar el alma. El contenido completo está detrás del muro de pago.</p>
     </div>
     <div class="stats">
         <span class="badge badge-preview">🔒 Avance — artículo de pago</span>
@@ -396,7 +429,7 @@
     <h3><a href="https://baos.pub/10-books-that-reshaped-my-brain-forever-9a56e3124dee" target="_blank">10 Books That Reshaped My Brain Forever</a></h3>
     <div class="meta-line">Sean Veaux · Books Are Our Superpower · 29 jul 2026</div>
     <div class="summary">
-        🔒 Avance — artículo de pago. El avance indica que se trata de una lista de 10 libros para "añadir algo de diversidad a tus objetivos de lectura", presentados por el autor como lecturas que le reconfiguraron la forma de pensar. El contenido completo está detrás del muro de pago.
+        <p>🔒 Avance — artículo de pago. El avance indica que se trata de una lista de 10 libros para "añadir algo de diversidad a tus objetivos de lectura", presentados por el autor como lecturas que le reconfiguraron la forma de pensar para siempre. El contenido completo está detrás del muro de pago.</p>
     </div>
     <div class="stats">
         <span class="badge badge-preview">🔒 Avance — artículo de pago</span>
@@ -412,7 +445,7 @@
     <h3><a href="https://ai.gopubby.com/discover-the-ai-gap-nobody-warned-business-owners-entrepreneurs-and-freelancers-about-bea8b0fdb031" target="_blank">Discover the AI Gap Nobody Warned Business Owners, Entrepreneurs, and Freelancers About</a></h3>
     <div class="meta-line">Paco Cantero · AI Advances · 29 jul 2026</div>
     <div class="summary">
-        🔒 Avance — artículo de pago. La tesis del avance: "usar ChatGPT a diario no es lo mismo que usar IA" — el artículo advierte de una brecha de IA que nadie mencionó a dueños de negocios, emprendedores y freelancers. El desarrollo completo está detrás del muro de pago.
+        <p>🔒 Avance — artículo de pago. La tesis del avance: "usar ChatGPT a diario no es lo mismo que usar IA" — el artículo advierte de una brecha de IA que nadie mencionó a dueños de negocios, emprendedores y freelancers. El desarrollo completo está detrás del muro de pago.</p>
     </div>
     <div class="stats">
         <span class="badge badge-preview">🔒 Avance — artículo de pago</span>
@@ -428,7 +461,7 @@
     <h3><a href="https://baos.pub/we-spend-our-lives-preparing-for-a-future-we-cannot-predict-67dfe005a0ee" target="_blank">We Spend Our Lives Preparing for a Future We Cannot Predict</a></h3>
     <div class="meta-line">Ezha · Books Are Our Superpower · 29 jul 2026</div>
     <div class="summary">
-        🔒 Avance — artículo de pago. El avance lanza una pregunta: "¿hemos pensado alguna vez que lo que más cambia nuestra vida suele ser aquello que nunca planeamos?" — una reflexión sobre cuánto tiempo invertimos preparándonos para un futuro impredecible. El contenido completo está detrás del muro de pago.
+        <p>🔒 Avance — artículo de pago. El avance lanza una pregunta: "¿hemos pensado alguna vez que lo que más cambia nuestra vida suele ser aquello que nunca planeamos?" — una reflexión sobre cuánto tiempo invertimos preparándonos para un futuro impredecible. El contenido completo está detrás del muro de pago.</p>
     </div>
     <div class="stats">
         <span class="badge badge-preview">🔒 Avance — artículo de pago</span>
@@ -443,7 +476,7 @@
     <h3><a href="https://ai.gopubby.com/why-do-we-hate-ai-58af629677ea" target="_blank">Why do we hate AI?</a></h3>
     <div class="meta-line">Dusko Pavlovic · AI Advances · 29 jul 2026</div>
     <div class="summary">
-        🔒 Avance — artículo de pago. Avance insuficiente: el blurb solo plantea preguntas retóricas ("¿Por qué la amamos? ¿Cuál es el gran problema? ¿Qué es la IA?") sin contenido sustancial que resumir. Invitación a leer el artículo completo para descubrir la tesis.
+        <p>🔒 Avance — artículo de pago. Avance insuficiente: el blurb solo plantea preguntas retóricas ("¿Por qué la amamos? ¿Cuál es el gran problema? ¿Qué es la IA?") sin contenido sustancial que resumir. Invitación a leer el artículo completo para descubrir la tesis.</p>
     </div>
     <div class="stats">
         <span class="badge badge-preview">🔒 Avance — artículo de pago</span>
@@ -459,7 +492,7 @@
     <h3><a href="https://code.likeagirl.io/why-women-in-tech-dont-support-each-other-ae7f002b3696" target="_blank">Why Women in Tech Don't Support Each Other</a></h3>
     <div class="meta-line">Emanuela B · Code Like A Girl · 28 jul 2026</div>
     <div class="summary">
-        🔒 Avance — artículo de pago. El avance resume la tesis en una frase contundente: "no somos nosotras, es la sala" — la falta de apoyo mutuo entre mujeres en tecnología sería un problema del entorno, no de ellas. El análisis completo está detrás del muro de pago.
+        <p>🔒 Avance — artículo de pago. El avance resume la tesis en una frase contundente: "no somos nosotras, es la sala" — la falta de apoyo mutuo entre mujeres en tecnología sería un problema del entorno, no de ellas. El análisis completo está detrás del muro de pago.</p>
     </div>
     <div class="stats">
         <span class="badge badge-preview">🔒 Avance — artículo de pago</span>
@@ -475,7 +508,7 @@
     <h3><a href="https://medium.com/data-science-collective/the-next-ai-breakthrough-may-not-be-a-bigger-model-45de0c9726be" target="_blank">The Next AI Breakthrough May Not Be a Bigger Model</a></h3>
     <div class="meta-line">Anubhav · Data Science Collective · 28 jul 2026</div>
     <div class="summary">
-        🔒 Avance — artículo de pago. El avance es provocador: "el escalado de parámetros chocó contra un muro, y su sustituto (pensar más tiempo en inferencia) también se está estancando. Los verdaderos saltos se esconden…" — plantea que el próximo gran avance de la IA podría no venir de modelos más grandes. El desarrollo completo está detrás del muro de pago.
+        <p>🔒 Avance — artículo de pago. El avance es provocador: "el escalado de parámetros chocó contra un muro, y su sustituto (pensar más tiempo en inferencia) también se está estancando. Los verdaderos saltos se esconden…" — plantea que el próximo gran avance de la IA podría no venir de modelos más grandes. El desarrollo completo está detrás del muro de pago.</p>
     </div>
     <div class="stats">
         <span class="badge badge-preview">🔒 Avance — artículo de pago</span>
