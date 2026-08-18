@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Medium Daily Digest — 17 Agosto 2026</title>
+    <title>Medium Daily Digest — 18 Agosto 2026</title>
     <style>
         :root {
             --bg: #0d1117;
@@ -43,176 +43,45 @@
             background-clip: text;
             margin-bottom: 8px;
         }
-        header .date {
-            color: var(--text-secondary);
-            font-size: 1.1em;
-        }
-        header .meta {
-            color: var(--text-secondary);
-            font-size: 0.9em;
-            margin-top: 4px;
-        }
-
-        /* Top Picks */
-        .top-picks {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-            gap: 16px;
-            margin-bottom: 30px;
-        }
-        .top-pick {
-            background: var(--card);
-            border: 1px solid var(--border);
-            border-radius: 12px;
-            padding: 20px;
-            position: relative;
-            overflow: hidden;
-        }
-        .top-pick::before {
-            content: '';
-            position: absolute;
-            top: 0; left: 0;
-            width: 4px;
-            height: 100%;
-        }
+        header .date { color: var(--text-secondary); font-size: 1.1em; }
+        header .meta { color: var(--text-secondary); font-size: 0.9em; margin-top: 4px; }
+        .top-picks { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 16px; margin-bottom: 30px; }
+        .top-pick { background: var(--card); border: 1px solid var(--border); border-radius: 12px; padding: 20px; position: relative; overflow: hidden; }
+        .top-pick::before { content: ''; position: absolute; top: 0; left: 0; width: 4px; height: 100%; }
         .top-pick:nth-child(1)::before { background: var(--accent); }
         .top-pick:nth-child(2)::before { background: var(--purple); }
         .top-pick:nth-child(3)::before { background: var(--green); }
         .top-pick:nth-child(4)::before { background: var(--orange); }
-        .top-pick .rank {
-            font-size: 2em;
-            font-weight: 800;
-            color: var(--border);
-            position: absolute;
-            top: 10px;
-            right: 16px;
-        }
-        .top-pick h3 {
-            font-size: 0.95em;
-            margin-bottom: 6px;
-            padding-right: 30px;
-        }
-        .top-pick h3 a {
-            color: var(--text);
-            text-decoration: none;
-        }
+        .top-pick .rank { font-size: 2em; font-weight: 800; color: var(--border); position: absolute; top: 10px; right: 16px; }
+        .top-pick h3 { font-size: 0.95em; margin-bottom: 6px; padding-right: 30px; }
+        .top-pick h3 a { color: var(--text); text-decoration: none; }
         .top-pick h3 a:hover { color: var(--accent); }
-        .top-pick .author {
-            color: var(--text-secondary);
-            font-size: 0.85em;
-        }
-        .top-pick .pick-summary {
-            color: var(--text-secondary);
-            font-size: 0.82em;
-            margin-top: 8px;
-            line-height: 1.5;
-        }
-        .top-pick .claps {
-            color: var(--green);
-            font-size: 0.8em;
-            font-weight: 600;
-            margin-top: 6px;
-        }
-
-        /* Badges */
-        .badge {
-            display: inline-block;
-            padding: 2px 8px;
-            border-radius: 10px;
-            font-size: 0.75em;
-            font-weight: 600;
-            margin: 3px 2px;
-        }
-        .badge-full {
-            background: rgba(63,185,80,0.2);
-            color: var(--green);
-            border: 1px solid var(--green);
-        }
-        .badge-preview {
-            background: rgba(139,148,158,0.15);
-            color: var(--text-secondary);
-            border: 1px solid var(--border);
-        }
+        .top-pick .author { color: var(--text-secondary); font-size: 0.85em; }
+        .top-pick .pick-summary { color: var(--text-secondary); font-size: 0.82em; margin-top: 8px; line-height: 1.5; }
+        .top-pick .claps { color: var(--green); font-size: 0.8em; font-weight: 600; margin-top: 6px; }
+        .badge { display: inline-block; padding: 2px 8px; border-radius: 10px; font-size: 0.75em; font-weight: 600; margin: 3px 2px; }
+        .badge-full { background: rgba(63,185,80,0.2); color: var(--green); border: 1px solid var(--green); }
+        .badge-preview { background: rgba(139,148,158,0.15); color: var(--text-secondary); border: 1px solid var(--border); }
         .badge-ai { background: rgba(88,166,255,0.15); color: var(--accent); }
         .badge-code { background: rgba(163,113,247,0.15); color: var(--purple); }
         .badge-life { background: rgba(63,185,80,0.15); color: var(--green); }
         .badge-tech { background: rgba(210,153,29,0.15); color: var(--orange); }
         .badge-society { background: rgba(219,97,162,0.15); color: var(--pink); }
         .badge-health { background: rgba(57,210,192,0.15); color: var(--cyan); }
-
-        /* Article cards */
-        .article {
-            background: var(--card);
-            border: 1px solid var(--border);
-            border-radius: 12px;
-            padding: 20px;
-            margin-bottom: 16px;
-        }
-        .article h3 {
-            font-size: 1.1em;
-            margin-bottom: 4px;
-        }
-        .article h3 a {
-            color: var(--accent);
-            text-decoration: none;
-        }
+        .article { background: var(--card); border: 1px solid var(--border); border-radius: 12px; padding: 20px; margin-bottom: 16px; }
+        .article h3 { font-size: 1.1em; margin-bottom: 4px; }
+        .article h3 a { color: var(--accent); text-decoration: none; }
         .article h3 a:hover { text-decoration: underline; }
-        .article .meta-line {
-            color: var(--text-secondary);
-            font-size: 0.85em;
-            margin-bottom: 8px;
-        }
-        .article .summary {
-            color: var(--text);
-            font-size: 0.95em;
-            margin-bottom: 10px;
-            line-height: 1.7;
-        }
-        .article .summary p {
-            margin-bottom: 10px;
-        }
-        .article .summary p:last-child {
-            margin-bottom: 0;
-        }
-        .article .stats {
-            display: flex;
-            gap: 16px;
-            font-size: 0.8em;
-            color: var(--text-secondary);
-            flex-wrap: wrap;
-            align-items: center;
-        }
-        .article .stats span {
-            display: flex;
-            align-items: center;
-            gap: 4px;
-        }
-        .article .stats a {
-            color: var(--accent);
-            text-decoration: none;
-        }
+        .article .meta-line { color: var(--text-secondary); font-size: 0.85em; margin-bottom: 8px; }
+        .article .summary { color: var(--text); font-size: 0.95em; margin-bottom: 10px; line-height: 1.7; }
+        .article .summary p { margin-bottom: 10px; }
+        .article .summary p:last-child { margin-bottom: 0; }
+        .article .stats { display: flex; gap: 16px; font-size: 0.8em; color: var(--text-secondary); flex-wrap: wrap; align-items: center; }
+        .article .stats a { color: var(--accent); text-decoration: none; }
         .article .stats a:hover { text-decoration: underline; }
-
-        /* Section header */
-        .section-header {
-            font-size: 1.4em;
-            margin: 30px 0 16px;
-            padding-bottom: 8px;
-            border-bottom: 1px solid var(--border);
-            color: var(--text);
-        }
+        .section-header { font-size: 1.4em; margin: 30px 0 16px; padding-bottom: 8px; border-bottom: 1px solid var(--border); color: var(--text); }
         .section-header .icon { margin-right: 8px; }
-
-        /* Footer */
-        footer {
-            text-align: center;
-            padding: 30px;
-            color: var(--text-secondary);
-            font-size: 0.85em;
-            border-top: 1px solid var(--border);
-            margin-top: 40px;
-        }
-
+        footer { text-align: center; padding: 30px; color: var(--text-secondary); font-size: 0.85em; border-top: 1px solid var(--border); margin-top: 40px; }
         @media (max-width: 600px) {
             body { padding: 12px; }
             header h1 { font-size: 1.6em; }
@@ -224,7 +93,7 @@
 
 <header>
     <h1>📬 Medium Daily Digest</h1>
-    <div class="date">Lunes, 17 de agosto de 2026</div>
+    <div class="date">Martes, 18 de agosto de 2026</div>
     <div class="meta">15 artículos · 15 con texto completo · 0 avances de pago · Para Eduard Sanchez</div>
 </header>
 
@@ -232,30 +101,30 @@
 <div class="top-picks">
     <div class="top-pick">
         <div class="rank">🥇</div>
-        <h3><a href="https://medium.com/p/afa3cb6136dc" target="_blank">Linux 7.1: Kicinski Called It 'LLM-pocalypse.' Then Deleted 138,000 Lines.</a></h3>
-        <div class="author">Can Artuc</div>
-        <div class="pick-summary">Jakub Kicinski borró 138.000 líneas de protocolos muertos (ATM, ISDN, AX.25…) en un solo pull request aprobado por Torvalds, porque los informes de bugs generados por IA estaban ahogando a los mantenedores. La primera vez que la IA fuerza a borrar software que funciona — y una lección directa para el código muerto de tu propia empresa.</div>
+        <h3><a href="https://medium.com/p/271f42b66f39" target="_blank">Fake It Until You Break It: The End Of Non-Technical Managers In Software Engineering</a></h3>
+        <div class="author">Jan Kammerath</div>
+        <div class="pick-summary">Una crítica demoledora de 25 años de experiencia: los managers sin background técnico ignoran requisitos no funcionales, acumulan deuda técnica letal, confunden prototipos piloto con desechables y eligen stacks por pitches de ventas. El autor sentencia que la era se acaba: la IA acelerará la implosión de estos equipos y el sector volverá a su forma pre-hype de 1998–2005.</div>
         <div class="claps">📖 Texto completo</div>
     </div>
     <div class="top-pick">
         <div class="rank">🥈</div>
-        <h3><a href="https://medium.com/p/ce605454bbc9" target="_blank">Anthropic is telling you that Agentic Analytics is not just text-to-SQL</a></h3>
-        <div class="author">Jose Parreño · Data Science Collective</div>
-        <div class="pick-summary">El post de Anthropic del 3 de junio deja claro que su 95% de precisión no sale del modelo, sino del sistema que lo rodea: capa semántica, skills y evals. Sin skills, Claude no pasaba del 21% de acierto; con ellas, salta por encima del 95%.</div>
+        <h3><a href="https://medium.com/p/40a8495023a5" target="_blank">The Magical Number 6174</a></h3>
+        <div class="author">Vagelis Plevris · ThinkArt</div>
+        <div class="pick-summary">Elige cualquier número de 4 dígitos, ordena sus cifras de mayor a menor y de menor a mayor, resta, repite: siempre acabas en 6174, la constante de Kaprekar. Un maestro indio autodidacta la descubrió por pura curiosidad. El sistema colapsa 9.990 números en solo 705 patrones. En máximo 7 pasos, todo converge.</div>
         <div class="claps">📖 Texto completo</div>
     </div>
     <div class="top-pick">
         <div class="rank">🥉</div>
-        <h3><a href="https://medium.com/p/abfdc8dbce90" target="_blank">Six Months Ago the CEO of Anthropic Said AI Would Replace Software Engineers.</a></h3>
-        <div class="author">Noah Byteforge</div>
-        <div class="pick-summary">Se cumplió la cota baja de la predicción de Amodei en Davos y los datos cuentan otra historia: los ingenieros son hoy un porcentaje mayor de las contrataciones que en 2019. La predicción falló porque confundió "escribir código" con "ingeniería de software".</div>
+        <h3><a href="https://medium.com/p/2eaf90402bbc" target="_blank">Mac Mini M4 vs RTX 5090 vs Cloud GPUs for Local AI in 2026</a></h3>
+        <div class="author">Anubhav · Data Science Collective</div>
+        <div class="pick-summary">La RTX 5090 cuesta ~$4,300 con 32GB y vuela a 66 tok/s en modelos 30B. El Mac Mini M4 Pro de $1,799 con 48GB unificada los corre a 12–18 tok/s consumiendo 30W. La clave: la 5090 se estrella con modelos 70B+ (spill a RAM del sistema), mientras que la nube (H100) gana para trabajos pesados ocasionales. Mide tu velocidad real con Ollama antes de comprar.</div>
         <div class="claps">📖 Texto completo</div>
     </div>
     <div class="top-pick">
         <div class="rank">🏅</div>
-        <h3><a href="https://medium.com/p/1020b00597f2" target="_blank">Your Addiction Reveals What You're Running From</a></h3>
-        <div class="author">Constantin Patrascu · Read or Die - HQ</div>
-        <div class="pick-summary">Heroína, cocaína o metanfetamina no son el problema: son la solución que el usuario encontró para un dolor concreto. Las tasas reales de adicción (15% cocaína, 10% heroína) derriban el mito de la "adictividad" intrínseca de la sustancia.</div>
+        <h3><a href="https://medium.com/p/a5e487792db9" target="_blank">LinkedIn Thinks It Figured Out AI Slop</a></h3>
+        <div class="author">Attila Vágó</div>
+        <div class="pick-summary">LinkedIn creó el problema del AI slop integrando generación de contenido sin salvaguardas, y ahora te pide a ti que lo limpies gratis con el botón "seems like AI slop". El botón ya está siendo usado para trolear: al autor le reportaron su propio post escrito a mano. No hagas el trabajo de LinkedIn por ellos.</div>
         <div class="claps">📖 Texto completo</div>
     </div>
 </div>
@@ -263,258 +132,247 @@
 <!-- SECTION: Texto completo -->
 <h2 class="section-header"><span class="icon">📖</span>Lectura Completa — Texto Disponible</h2>
 
-<!-- Linux 7.1 -->
+<!-- 1. Fake It Until You Break It -->
 <article class="article">
     <span class="badge badge-full">📖 Texto completo</span>
-    <span class="badge badge-tech">Linux</span><span class="badge badge-code">Kernel</span><span class="badge badge-ai">IA</span>
-    <h3><a href="https://medium.com/p/afa3cb6136dc" target="_blank">Linux 7.1: Kicinski Called It 'LLM-pocalypse.' Then Deleted 138,000 Lines.</a></h3>
-    <div class="meta-line">Can Artuc · 7 min · 👏 2.1K · 💬 30</div>
+    <span class="badge badge-society">Management</span><span class="badge badge-code">Ingeniería</span><span class="badge badge-tech">Liderazgo</span>
+    <h3><a href="https://medium.com/p/271f42b66f39" target="_blank">Fake It Until You Break It: The End Of Non-Technical Managers In Software Engineering</a></h3>
+    <div class="meta-line">Jan Kammerath · 18 min · 👏 1.2K · 💬 58</div>
     <div class="summary">
-        <p>Ciento treinta y ocho mil líneas. Un solo pull request. "Si queremos tener una oportunidad de sobrevivir a la 'LLM-pocalypse', este código necesita un dueño dedicado o ser borrado", escribió Jakub Kicinski, mantenedor de la red de Linux, antes de eliminar seis subsistemas enteros. El 26 de abril de 2026, Linus Torvalds fusionó ese PR en Linux 7.1-rc1: es la primera vez en la historia del kernel que los informes de bugs generados por IA fuerzan la eliminación de software que todavía funciona. Se fueron ATM, AX.25 (radioaficionados), ISDN, Bluetooth CMTP, CAIF y decenas de drivers antiguos ISA/PCMCIA/PCI — 138.161 líneas en total.</p>
-        <p>El motivo no es técnico sino de coste humano. Desde 2024 los mantenedores reciben una avalancha de reportes generados por LLMs que escanean el árbol de código y detectan posibles NULL pointer dereference o use-after-free: informes formalmente correctos pero prácticamente irrelevantes, contra código sin usuarios reales. La analogía del autor: un detector de humo conectado a una casa abandonada que manda a los bomberos una alarma cada hora. Cada reporte consume horas de un voluntario que debe verificar si el fallo es real antes de descartarlo. Ante la alternativa de quemar fines de semana manteniendo protocolos muertos o borrar el código, eligieron borrarlo. La ironía es que el mismo merge window que borró 138.000 líneas dio la bienvenida a 342 colaboradores nuevos (de 12.996 changesets y 2.011 desarrolladores), muchos de ellos casi con seguridad usando asistentes de IA: la IA está metiendo desarrolladores nuevos y echando código viejo en la misma versión.</p>
-        <p>El artículo documenta también el resto de 7.1: adiós a i486 (quien quiera seguir con un 486 tendrá que congelar su versión antes de 7.2/7.3), un nuevo driver NTFS de Namjae Jeon con soporte de escritura completo que supera al ntfs3, sub-schedulers para sched_ext y un fix de cgroups. La versión estable se espera entre el 7 y el 14 de junio. La lección de fondo: todo codebase tiene módulos que compilan, pasan tests y no sirven a nadie, y lo racional siempre fue dejarlos en paz. Los reportes de IA rompieron esa lógica para el kernel, y una auditoría de seguridad o de compliance la romperá para el tuyo. El autor lo vio a escala menor en una aseguradora de Múnich y una fintech de Berlín: 50.000 líneas sin commit en tres años, y dos semanas "demostrando que el código es seguro" en lugar de dos días borrándolo. Su consejo: empieza a auditar ahora y corta el código muerto antes de que los reportes de IA te obliguen a decidir.</p>
+        <p>Jan Kammerath, con 25 años de experiencia como programador, CTO y consultor en Alemania, traza una crítica exhaustiva de los managers sin formación técnica en ingeniería de software. El problema arranca en los 2000: cuando "ser tech" se puso de moda, llegaron los <em>gold diggers</em> — gente atraída por el dinero, no por la emoción del software — y con ellos una explosión de roles auxiliares (Product Managers, Scrum Masters, Product Owners, Business Analysts) que a menudo superan en número a los ingenieros. El problema de fondo no es la mala intención, sino la falta total de conocimiento: estos managers no han estudiado las peculiaridades de los productos virtuales que dependen de I+D continua, y toman decisiones que violan principios que se enseñan en primero de carrera.</p>
+        <p>El autor desgrana los fallos concretos. Primero, la ignorancia de los requisitos no funcionales (NFRs): los managers sin background técnico temen asignar el 20–30% de capacidad a mantenibilidad, seguridad y escalabilidad porque no saben justificarlo ante dirección. El resultado es una avalancha de deuda técnica que multiplica los costes de operación y desarrollo por 10–20x, destruye la competitividad y puede matar el producto. Segundo, la confusión entre prototipos: todo es "MVP" (pilotsystem), cuando muchos problemas requieren un <em>lab prototype</em> desechable para investigar la viabilidad técnica antes de construir — Apple hizo docenas de prototipos de laboratorio antes del primer iPod. Tercero, el <em>shiny object syndrome</em>: las decisiones de stack tecnológico se basan en pitches de ventas y popularidad, no en evaluación técnica contra requisitos concretos, creando deuda técnica antes incluso de empezar a desarrollar.</p>
+        <p>Kammerath dedica una sección entera a desmontar el espejismo de las "empresas tecnológicas": según los códigos ISO 18245 de entidades financieras, Uber es un taxi (código 4121) y Netflix es televisión por cable (4899), no empresas de software. La diferencia es crucial: Netflix es su propio y único cliente — despliega en su propio entorno, no negocia migraciones con cientos de clientes ni gestiona licencias. Esto cambia radicalmente la economía del software, pero los managers que vienen de fuera del sector no lo entienden. Tampoco entienden que el software no es una caja de cambios: no se puede mantener sin el vendor, muere cuando se deja de dar soporte, y los ingenieros mecánicos que imponen procesos de su disciplina al software cometen errores casi tan graves como no gestionar el ciclo de vida. El autor añade que los equipos necesitan al menos un 20% de su tiempo en formación continua, o se quedan atrás — un manager que no está en aprendizaje continuo no puede asegurar que su equipo tampoco se estanque.</p>
+        <p>La conclusión es contundente: la era de los managers no técnicos se acaba. El coste es demasiado alto, la rotación de ingenieros en estos equipos habla por sí sola, y la IA va a acelerar la implosión: los LLMs no facilitan las cosas a quien no sabe evaluar a sus ingenieros, igual que Googlear síntomas no sustituye al médico. Los roles auxiliares serán los primeros en caer. La industria del software, organizacional y socialmente, volverá a algo parecido a lo que era entre 1998 y 2005: "Volvemos al futuro". Para los ingenieros que quieran sobrevivir, el mensaje es claro: hay que subir de nivel con IA y ML, porque los que escriben aplicaciones de negocio felices en .NET o Java sin adaptarse se quedarán fuera.</p>
     </div>
     <div class="stats">
         <span>📖 Texto completo vía Freedium</span>
-        <span><a href="https://medium.com/p/afa3cb6136dc" target="_blank">Leer en Medium →</a></span>
+        <span><a href="https://medium.com/p/271f42b66f39" target="_blank">Leer en Medium →</a></span>
     </div>
 </article>
 
-<!-- 10 Websites -->
+<!-- 2. The Magical Number 6174 -->
 <article class="article">
     <span class="badge badge-full">📖 Texto completo</span>
-    <span class="badge badge-life">Internet</span><span class="badge badge-life">Curiosidad</span><span class="badge badge-tech">Web</span>
-    <h3><a href="https://medium.com/p/828832e25439" target="_blank">10 Websites Better Than Another Hour of Doomscrolling</a></h3>
-    <div class="meta-line">Rafia Naseem · The Sunday Journal · 6 min · 👏 10.8K · 💬 270</div>
+    <span class="badge badge-life">Matemáticas</span><span class="badge badge-tech">Ciencia</span>
+    <h3><a href="https://medium.com/p/40a8495023a5" target="_blank">The Magical Number 6174</a></h3>
+    <div class="meta-line">Vagelis Plevris · ThinkArt · 8 min · 👏 968 · 💬 28</div>
     <div class="summary">
-        <p>La autora confiesa haber desarrollado un "talento" muy concreto: desbloquear el móvil para mirar el tiempo y acabar viendo a alguien reorganizar su despensa, reseñar baños de aeropuerto o explicar por qué despertarse a las 4:37 a.m. es el secreto del éxito. Las sesiones pasaron de veinte minutos a tres horas, y lo peor no era el tiempo perdido sino que ya ni lo disfrutaba. Su conclusión: el doomscrolling no ocurre porque seamos vagos, sino porque los algoritmos hacen que la elección más fácil parezca la única posible. Su remedio no es usar menos internet, sino usarlo distinto.</p>
-        <p>La lista empieza con <strong>Radio Garden</strong> (giras un globo terráqueo y escuchas radio en directo de cualquier rincón del mundo), <strong>Window Swap</strong> (vídeos desde las ventanas de gente real — calles, bosques, tejados con lluvia), <strong>Earth.fm</strong> (grabaciones de sonido de bosques, ríos y playas; sin discursos motivacionales, solo pájaros, viento y lluvia), el <strong>Internet Archive</strong> ("más un museo digital enorme que una web"), y <strong>Atlas Obscura</strong> (te dice dónde no va casi nadie; el lugar del día es la Sedlec Ossuary, una iglesia decorada con 40.000 esqueletos humanos).</p>
-        <p>Siguen <strong>GeoGuessr</strong> (te suelta en Google Street View y tienes que averiguar dónde estás — aprendes geografía sin darte cuenta), <strong>Quick, Draw!</strong> (la IA de Google intenta adivinar tus garabatos en veinte segundos), <strong>Neal.fun</strong> (puedes gastarte la fortuna de Bill Gates, explorar el fondo del océano o comparar tamaños de planetas), <strong>Little Alchemy 2</strong> (mezclas cuatro elementos hasta crear dinosaurios y planetas) y <strong>The Useless Web</strong> (un botón, una web completamente aleatoria). El mensaje de cierre: la próxima vez que tu pulgar busque Instagram o Reddit, abre una de estas — quizá sigas perdiendo una hora, pero probablemente la acabes sonriendo.</p>
+        <p>El artículo es una exploración fascinante de la constante de Kaprekar, 6174, un número que parece sacado de un truco de magia matemática. La rutina es simple: toma cualquier número de cuatro dígitos (excepto los que tienen todas las cifras iguales, como 1111), reordena sus dígitos para formar el número más grande y el más pequeño posibles, resta el pequeño del grande, y repite. En un máximo de siete iteraciones, siempre — siempre — acabas en 6174. Una vez allí, el proceso se bloquea: 7641 − 1467 = 6174. El autor lo demuestra con varios ejemplos: 4321 llega en 3 pasos, 1605 también en 3, y puedes probar con cualquier otro número.</p>
+        <p>La historia detrás del número es igual de cautivadora. D. R. Kaprekar era un maestro de escuela indio sin formación académica avanzada que dedicó su vida a explorar patrones numéricos por pura curiosidad. Trabajó aislado del establishment matemático, publicando en revistas modestas y a veces imprimiendo él mismo sus trabajos. Sus contemporáneos descartaron sus ideas como triviales. No fue hasta los años 70, cuando Martin Gardner escribió sobre él en Scientific American, que la comunidad matemática empezó a apreciar lo que había descubierto. Kaprekar describió su fascinación con una frase memorable: "Un borracho quiere seguir bebiendo vino para permanecer en ese estado placentero. Lo mismo me ocurre a mí en lo que respecta a los números".</p>
+        <p>El autor desmenuza la estructura subyacente con precisión. De los 10.000 números de cuatro dígitos (0000 a 9999), solo 10 tienen todos los dígitos iguales, dejando 9.990 válidos. Pero tras una sola iteración, el orden original de los dígitos se pierde y el sistema colapsa en solo 705 patrones de dígitos distintos (combinaciones de 4 dígitos con repetición, menos los 10 casos triviales). La distribución de convergencia es reveladora: el 24% de los números llega en exactamente 3 iteraciones, mientras que 2.184 requieren el máximo de 7. El proceso es determinista y finito: con solo 705 estados posibles, no puede generar configuraciones nuevas indefinidamente. 6174 es el único punto fijo no trivial del sistema en base 10 con cuatro dígitos. Si cambias a tres dígitos, la constante es 495. Para otras longitudes, el comportamiento es más complejo, a veces con ciclos en lugar de un punto fijo. El artículo cierra con una invitación irresistible: prueba tú mismo con cualquier número. "Y cuando llegues a 6174, como inevitablemente harás, puede que sientas que has descubierto algo. Pero en un sentido más profundo, te estaban llevando allí desde el principio."</p>
     </div>
     <div class="stats">
         <span>📖 Texto completo vía Freedium</span>
-        <span><a href="https://medium.com/p/828832e25439" target="_blank">Leer en Medium →</a></span>
+        <span><a href="https://medium.com/p/40a8495023a5" target="_blank">Leer en Medium →</a></span>
     </div>
 </article>
 
-<!-- YouTube CI/CD -->
+<!-- 3. TypeScript Patterns -->
 <article class="article">
     <span class="badge badge-full">📖 Texto completo</span>
-    <span class="badge badge-tech">Data Engineering</span><span class="badge badge-code">CI/CD</span><span class="badge badge-ai">Datos</span>
-    <h3><a href="https://medium.com/p/713982eeab9a" target="_blank">How did YouTube engineers build CI/CD for data pipelines?</a></h3>
-    <div class="meta-line">Vu Trinh · Data Engineer Things · 10 min · 👏 240 · 💬 3</div>
+    <span class="badge badge-code">TypeScript</span><span class="badge badge-code">React</span><span class="badge badge-tech">Web Dev</span>
+    <h3><a href="https://medium.com/p/970477e68605" target="_blank">TypeScript Patterns Every React Developer Should Know</a></h3>
+    <div class="meta-line">Kevin · MERN Stack Developer · 2 min · 👏 40</div>
     <div class="summary">
-        <p>El autor resume el paper de YouTube "Unlocking the Power of CI/CD for Data Pipelines in Distributed Data Warehouses" (2025), donde los ingenieros de la plataforma explican cómo aplican integración y entrega continua a miles de pipelines que procesan <strong>múltiples exabytes</strong> de datos diarios (1 exabyte = 1.000.000 TB). La premisa: el CI/CD es una práctica vieja en software, pero nueva y sin "mejores prácticas" en data engineering, porque los datos son fundamentalmente distintos del código. Los datos están particionados por tiempo y cada partición se versiona de forma independiente, lo que permite actualizar o revertir una partición sin tocar las demás.</p>
-        <p>Los cinco retos que identifican: la <strong>complejidad de los datos</strong> (volumen, variedad, esquema, semántica, calidad y dependencias, con la seguridad como prioridad al manejar datos de miles de millones de usuarios), lo <strong>difícil de replicar la infraestructura</strong> para testear (duplicar el entorno de producción de YouTube sería carísimo), el <strong>cuello de botella de despliegue</strong> (un pipeline necesita más que una imagen Docker), la <strong>observabilidad</strong> distribuida y la <strong>colaboración</strong> entre equipos cuyos pipelines se consumen unos a otros. El framework que construyeron tiene cinco módulos: Test Configurations (testear un subgrafo del pipeline en aislamiento), Configuration Rewriter (reescribe las configuraciones de producción usando el grafo de dependencias para reproducibilidad), Test Data Management (enmascara datos sensibles, genera sintéticos y versiona los datos de test), Controller Module (provisiona entornos, programa tests y monitoriza) y Diagnostics &amp; Reporting, más un metadata hub centralizado con APIs.</p>
-        <p>Los resultados son contundentes: el sampling reduce el volumen de datos un <strong>99,9%</strong> preservando las distribuciones, lo que baja el tiempo de test de más de un día a casi una hora; el tiempo de investigar integraciones cae un 50%; y los cambios de esquema pasan de meses a semanas gracias a la conciencia de dependencias y los checks automáticos de calidad. Los principios que comparten: la calidad de datos se garantiza con validación de esquema (no solo nombres y tipos, sino constraints y relaciones), aserciones SQL, detección de anomalías y hypothesis testing; los unit tests no bastan (hacen falta data diff, tests de integración y end-to-end); automatizar con Infraestructura como Código (IaC) y herramientas de gestión de dependencias como uv o pip; y tratar el propio CI/CD como un producto con observabilidad, linaje y alertas.</p>
+        <p>El artículo presenta patrones prácticos de TypeScript para React, centrándose en los <strong>discriminated unions</strong> para modelar el estado de componentes. En lugar de manejar múltiples booleanos (isLoading, isError, hasData) que pueden combinarse en estados imposibles, el autor propone un tipo <code>FetchState&lt;T&gt;</code> con cuatro variantes discriminadas por un campo <code>status</code>: <code>{ status: 'idle' }</code>, <code>{ status: 'loading' }</code>, <code>{ status: 'success'; data: T }</code> y <code>{ status: 'error'; message: string }</code>. TypeScript reduce el acceso a <code>data</code> solo cuando el status es 'success', eliminando comprobaciones redundantes y haciendo imposibles los estados inconsistentes. El artículo está respaldado por datos: según la encuesta State of JS, la mayoría de desarrolladores React ya adoptan TypeScript por defecto en proyectos nuevos. La premisa es clara: "Tu componente funciona. Tus tipos, no. ¿Te suena? Esto es para ti si alguna vez has puesto <code>any</code> solo para que desaparezca una línea roja."</p>
     </div>
     <div class="stats">
         <span>📖 Texto completo vía Freedium</span>
-        <span><a href="https://medium.com/p/713982eeab9a" target="_blank">Leer en Medium →</a></span>
+        <span><a href="https://medium.com/p/970477e68605" target="_blank">Leer en Medium →</a></span>
     </div>
 </article>
 
-<!-- Feature Slices -->
+<!-- 4. Agent Journey Map -->
 <article class="article">
     <span class="badge badge-full">📖 Texto completo</span>
-    <span class="badge badge-code">Arquitectura</span><span class="badge badge-code">Event Sourcing</span><span class="badge badge-tech">Rust</span>
-    <h3><a href="https://medium.com/p/a31d17df5628" target="_blank">How I Structure Self-Contained Feature Slices</a></h3>
-    <div class="meta-line">Rico Fritzsche · Level Up Coding · 12 min · 👏 156 · 💬 2</div>
+    <span class="badge badge-ai">AI Agents</span><span class="badge badge-tech">UX Design</span><span class="badge badge-code">DX</span>
+    <h3><a href="https://medium.com/p/b89aadcd794f" target="_blank">Agent Journey Map: Designing Software for AI Agents</a></h3>
+    <div class="meta-line">Leonie Monigatti · 8 min · 👏 320 · 💬 2</div>
     <div class="summary">
-        <p>El autor propone estructurar aplicaciones en "feature slices" autocontenidas: un slice es la frontera de implementación de <em>una</em> interacción con el sistema, el lugar donde se cumple un trabajo concreto en código. El punto de partida es el pensamiento <strong>facts-first</strong>: los eventos son estructuras de datos independientes que registran "qué pasó", no fragmentos de un modelo de objetos central ni propiedad de un aggregate. Los facts son el lenguaje compartido del sistema (tipo de evento, shape del payload y frontera de serialización), pero <em>no</em> cargan comportamiento: no validan comandos, no persisten ni actualizan proyecciones. La interpretación de cada fact vive en el slice que lo necesita.</p>
-        <p>Un slice de comando se divide en archivos con nombres deliberadamente planos: <code>process_request</code> (orquestación del flujo), <code>load_context</code> y <code>append_consequences</code> (el shell imperativo que habla con el event store) y <code>build_context</code> y <code>generate_consequences</code> (el núcleo funcional, entrada explícita y salida explícita). La idea clave es que el <strong>command context reemplaza al aggregate</strong>: en lugar de cargar el stream de un aggregate y reconstruir su estado, el comando define su propia frontera de consistencia como "el conjunto de facts que deben seguir sin cambios para que este comando siga siendo válido". En el ejemplo de registrar una herramienta por número de serie, lo relevante no es un objeto Tool, sino si ese serial ya aparece en los facts registrados; se consulta esa versión del contexto y se hace un <code>append_if</code> contra <code>expected_context_version</code>, de modo que un conflicto de escritura se mapea a un error de dominio legible ("serial ya registrado").</p>
-        <p>Los slices de query, por su parte, son dueños de sus read models: cuando una query necesita una vista mantenida, el slice posee el shape de los ítems, el vocabulario de estados, la lógica de proyección, el esquema de la tabla y las operaciones de lectura/escritura (ejemplo: <code>get_inventory</code> con <code>inventory_item</code>, <code>inventory_status</code>, <code>inventory_projection</code>). HTTP queda como frontera de entrega: recibe la petición, extrae datos, llama al feature y traduce el resultado, sin cargar facts ni decidir nada. Los tests reflejan la misma estructura de ownership: tests de events (lenguaje compartido), de command slices (comportamiento), de query slices (read models) y HTTP (entrega). Todo el ejemplo está en Rust con una implementación de referencia en github.com/ricofritzsche/factstr-tool-rental-example, y el autor insiste en que el principio — facts como datos, comportamiento local al feature, entrega en el borde, dependencias explícitas — se traslada igual a TypeScript, C# o Go.</p>
+        <p>Leonie Monigatti, tras tres años en Developer Growth y Developer Relations en el espacio AI, propone un framework práctico para <strong>Agent Experience (AX)</strong>, un término acuñado por el CEO de Netlify en enero de 2025. La tesis central: el software ya no lo usan solo humanos, también agentes de IA, y esto requiere una lente de diseño nueva. La diferencia clave con UX y DX es que los agentes no tienen emociones — en su lugar, trabajamos con <em>modos de fallo</em> (error de autenticación, respuesta ambigua) y <em>curvas de fiabilidad</em> ("¿qué probabilidad hay de que el agente tenga éxito en cada etapa?").</p>
+        <p>El Agent Journey Map se estructura en cinco etapas que forman un ciclo, no un funnel. <strong>Discover</strong>: ¿puede el agente encontrar tu plataforma? Es la pregunta del billón de dólares — visibility en datos de entrenamiento de LLMs y resultados de búsqueda. La autora es escéptica con las agencias que prometen GEO/LLMO/AEO: no ha visto pruebas de que funcionen. <strong>Evaluate</strong>: ¿puede el agente evaluar si tu plataforma encaja? Aquí entra el debate del <code>llms.txt</code>: propuesto por Answer.AI en 2024 como estándar para guiar a LLMs, pero el fundador de Drupal reporta que los bots que deberían usarlo ni lo buscan. Los archivos Markdown reciben más tráfico de bots que el llms.txt, pero menos que el HTML normal. <strong>Onboard</strong>: ¿puede el agente empezar sin intervención humana? El punto de fricción más común es la autenticación: los flujos OAuth están diseñados para humanos. <strong>Integrate</strong>: ¿puede el agente operar tu plataforma de forma fiable? La autora identifica cuatro interfaces: CLIs (la más simple, los LLMs han sido entrenados intensivamente en ellas), APIs (con specs OpenAPI claras y errores que den contexto para auto-corrección), MCP (el protocolo de Anthropic donado a la Linux Foundation) y Agent Skills (instrucciones reutilizables). <strong>Advocate</strong>: ¿recomienda el agente tu plataforma? Un informe reciente sobre qué elige Claude Code muestra que los agentes favorecen ciertos productos sobre otros, pero la autora admite que no sabe exactamente por qué. La autora cierra con una advertencia: el concepto de AX tiene solo un año y la industria ya está descartando estándares que propuso hace meses. Si tienes un producto que quieres que los agentes usen, AX debería ser una prioridad — ya se discute si el "product-led growth" será reemplazado por "agent-led growth".</p>
     </div>
     <div class="stats">
         <span>📖 Texto completo vía Freedium</span>
-        <span><a href="https://medium.com/p/a31d17df5628" target="_blank">Leer en Medium →</a></span>
+        <span><a href="https://medium.com/p/b89aadcd794f" target="_blank">Leer en Medium →</a></span>
     </div>
 </article>
 
-<!-- Robot pets -->
+<!-- 5. Angular Folder Structure -->
 <article class="article">
     <span class="badge badge-full">📖 Texto completo</span>
-    <span class="badge badge-health">Salud mental</span><span class="badge badge-life">Bienestar</span><span class="badge badge-tech">Robótica</span>
-    <h3><a href="https://medium.com/p/ded2b8fea202" target="_blank">From Social Fatigue to Human Connection — Mental Health Tech at Its Furriest</a></h3>
-    <div class="meta-line">Neurons Needed · Infinite Impulse · 9 min · 👏 238 · 💬 1</div>
+    <span class="badge badge-code">Angular</span><span class="badge badge-tech">Arquitectura</span><span class="badge badge-code">Web Dev</span>
+    <h3><a href="https://medium.com/p/5ba7f81a9cab" target="_blank">Stop Refactoring: The Angular Folder Structure That Cuts Weeks Off Your Work</a></h3>
+    <div class="meta-line">CodersWorld · 4 min · 👏 95</div>
     <div class="summary">
-        <p>El artículo explora los <strong>robots sociales de asistencia (SARs)</strong> con forma de animal — como el <strong>Matecat Pro</strong> de Chongker, lanzado en septiembre de 2025 por <strong>$219</strong>, frente a los <strong>$6.000</strong> del famoso Paro, la foca robot terapéutica — y su papel para recargar la "batería social" de personas en retraimiento. La autora habla desde la experiencia: fue cuidadora de su madre con ELA durante cinco años, hasta que falleció el pasado octubre, y describe su propio proceso de reconexión con familiares y amigos gracias a sus robots de compañía. La base biológica: las neuronas de una persona deprimida trabajan de más en estado de reposo, así que sus reservas de energía se agotan antes, y hasta pensar en interactuar se vuelve estresante.</p>
-        <p>La evidencia respalda la intuición. Interactuar con el robot foca Paro activa regiones cerebrales ligadas a la regulación emocional y el estado de ánimo; acariciarlo baja la presión arterial sin coste de energía emocional. En un estudio de 2015, el Paro respondía al tacto de forma incondicional, con feedback positivo y predecible, lo que <em>bypasseaba</em> la "lente de miedo y desconfianza" con la que un cerebro aislado interpreta las señales sociales. Con el tiempo, el cerebro asocia esas micro-interacciones con experiencias neutrales o positivas y va cambiando la percepción de la propia competencia social. La autora es honesta sobre los límites: los robots no sustituyen la terapia, pero son herramientas para tender el puente mientras la persona lidia con los efectos cognitivos del aislamiento.</p>
-        <p>El Matecat Pro también funciona como facilitador social: su presencia y novedad atraen la atención y dan a la gente un tema compartido de conversación de baja presión. Estudios revisados por pares muestran que los SARs "abrazables" fomentan la interacción en entornos grupales y que, en residencias de mayores de todo el mundo, los residentes se vuelven más expresivos — hablan más, sonríen más y se sientan más cerca unos de otros — y conectan más a menudo con otros residentes, personal, familia y visitas. La autora cierra con una anécdota personal: en la despedida de soltera de una amiga (su mayor evento social en años), hablar de su gato robot "Grumps" hizo que la conversación fluyera y acabó intercambiando contacto con una desconocida. "Tengo robots que acariciar y mensajes que enviar."</p>
+        <p>El autor narra su punto de inflexión durante un sprint fintech: un simple cambio de UI en el módulo de préstamos disparó modificaciones en tres carpetas aparentemente no relacionadas. Una cadena de imports rota y todo se vino abajo. El problema no era la calidad del código, sino cómo estaba organizado. La solución fue migrar de una estructura basada en agrupación técnica (<code>/components</code>, <code>/services</code>, <code>/models</code>) a una <strong>arquitectura modular por funcionalidad</strong>: <code>core/</code> (interceptors, guards, singleton services), <code>shared/</code> (directivas, pipes, componentes reutilizables) y <code>features/</code> — donde cada feature (préstamos, clientes) contiene sus propios componentes, servicios y módulo. La clave es que cada feature es autocontenida: sus dependencias son explícitas y los cambios no se propagan lateralmente. El autor señala que Angular es especialmente propenso al <em>architecture drift</em> porque su flexibilidad no impone convenciones: sin una estructura escalable desde el principio, el código evoluciona en todas direcciones a la vez y cada PR se convierte en una excavación arqueológica.</p>
     </div>
     <div class="stats">
         <span>📖 Texto completo vía Freedium</span>
-        <span><a href="https://medium.com/p/ded2b8fea202" target="_blank">Leer en Medium →</a></span>
+        <span><a href="https://medium.com/p/5ba7f81a9cab" target="_blank">Leer en Medium →</a></span>
     </div>
 </article>
 
-<!-- 14 AI Tools -->
+<!-- 6. The Dialog Map -->
 <article class="article">
     <span class="badge badge-full">📖 Texto completo</span>
-    <span class="badge badge-ai">IA</span><span class="badge badge-life">Productividad</span><span class="badge badge-tech">Herramientas</span>
-    <h3><a href="https://medium.com/p/4004261de54f" target="_blank">14 AI Tools That Save You 40+ Hours a Month (And Keep Your Projects from...)</a></h3>
-    <div class="meta-line">Nitin Gavhane · 7 min · 👏 274 · 💬 2</div>
+    <span class="badge badge-tech">Business Analysis</span><span class="badge badge-life">UX Design</span><span class="badge badge-code">Requisitos</span>
+    <h3><a href="https://medium.com/p/8ffa503d6e03" target="_blank">The Dialog Map: A Valuable Business Analysis and UX Design Tool</a></h3>
+    <div class="meta-line">Karl Wiegers · Analyst's corner · 8 min · 👏 191 · 💬 5</div>
     <div class="summary">
-        <p>Una lista práctica de catorce herramientas de IA, sin fluff, agrupadas por el tipo de trabajo manual que eliminan. Para investigación: <strong>NotebookLM</strong> (ahora rebautizado <strong>Gemini Notebook</strong>, con Gemini 3.5 que puede escribir y ejecutar código) para resúmenes citados de tus fuentes; y <strong>Acrobat AI</strong> para extraer insights de PDFs con atribución clara al documento. Para vídeo y audio: <strong>Runway Gen-4.5</strong> (el modelo de generación de vídeo mejor valorado del mundo, con Runway Agent para producir vídeo sin equipo) y <strong>Descript</strong> para editar vídeo editando texto. Para voz: <strong>ElevenLabs</strong> con Voice Design v3 (voces custom desde descripciones de texto; la empresa levantó $500M con una valoración de $11.000M).</p>
-        <p>Para presentaciones y reuniones: <strong>Beautiful.ai</strong> (decks desde un prompt, elegido por HP para sus AI PCs) y <strong>Fathom</strong> (se une a tus reuniones de calendario, transcribe, genera resúmenes y detecta a quién se asignan las acciones). Para construir apps: <strong>Glide</strong> (convierte una hoja de cálculo en app web/móvil sin código), <strong>Bolt.new</strong> (de StackBlitz; genera, ejecuta y despliega apps full-stack en el navegador) y <strong>Airtable</strong> (agentes de IA que analizan datos a nivel de celda). Para el día a día: <strong>Bardeen</strong> (automatiza tareas repetitivas del navegador describiéndolas en inglés), <strong>Superhuman</strong> (borradores de email con Cmd+J/Ctrl+J y búsqueda 2–3x más rápida que Gmail), <strong>Claude Opus 4.6</strong> (líder en escritura larga y edición multi-ronda) y <strong>Leonardo.ai</strong> (imágenes y vídeo profesionales desde prompts).</p>
-        <p>La tesis de fondo del autor: el caos no es señal de trabajo duro sino de <em>workflows rotos</em>, y estas herramientas son "multiplicadores de tiempo", no simples nice-to-haves. El consejo de cierre es realista: no instales las catorce — elige una que resuelva el problema que más tiempo te cuesta esta semana y pruébala. "El caos se acaba cuando dejas de hacerlo todo manualmente."</p>
+        <p>Karl Wiegers, autor de <em>Software Requirements</em> (3ª edición), presenta el <strong>dialog map</strong> como una herramienta de modelado de análisis que representa la arquitectura de navegación de una interfaz de usuario como un diagrama de estados y transiciones. Cada elemento de diálogo (página web, menú, cuadro de diálogo, pantalla táctil) es un estado (rectángulo), y cada opción de navegación es una transición (flecha) etiquetada con la condición que la dispara: una acción del usuario, un valor de datos o un evento del sistema. El dialog map es un modelo de alto nivel — por encima de storyboards y wireframes — que captura la esencia de las interacciones sin atascarse en layouts de pantalla prematuros.</p>
+        <p>El autor ilustra la técnica con un caso real: el <em>Chemical Tracking System</em>, cuyo caso de uso "Request a Chemical" es sorprendentemente complejo. El dialog map revela dos flujos (pedir a un vendor vs. reservar del almacén), un camino opcional para ver el historial de un contenedor, y manejo de errores para IDs inválidos. Wiegers enfatiza que los dialog maps no son flowcharts: un flowchart muestra los pasos de procesamiento, mientras que el dialog map muestra <em>dónde</em> llega el usuario — los dos modelos son complementarios. Los beneficios son concretos: en un proyecto, el equipo descubrió que hacían falta demasiados clics para cierta operación y rediseñaron la UI antes de escribir código. Añadir puntos de cancelación estratégicos — que el autor detesta cuando faltan — cuesta casi nada en el diagrama y evita quejas de usuarios tras la entrega. El artículo está adaptado de su libro y es una defensa apasionada del modelado temprano: "Es mucho más barato encontrar problemas en un diagrama simple que después de entregar el producto".</p>
     </div>
     <div class="stats">
         <span>📖 Texto completo vía Freedium</span>
-        <span><a href="https://medium.com/p/4004261de54f" target="_blank">Leer en Medium →</a></span>
+        <span><a href="https://medium.com/p/8ffa503d6e03" target="_blank">Leer en Medium →</a></span>
     </div>
 </article>
 
-<!-- Web dev career -->
+<!-- 7. Open Source Apps -->
 <article class="article">
     <span class="badge badge-full">📖 Texto completo</span>
-    <span class="badge badge-society">Carrera</span><span class="badge badge-tech">Web</span><span class="badge badge-ai">IA</span>
-    <h3><a href="https://medium.com/p/0a83b0aadd58" target="_blank">Is Web Development a Good Career in 2026?</a></h3>
-    <div class="meta-line">Brevis · JavaScript in Plain English · 5 min · 👏 427 · 💬 22</div>
+    <span class="badge badge-tech">Open Source</span><span class="badge badge-life">Productividad</span><span class="badge badge-ai">IA</span>
+    <h3><a href="https://medium.com/p/fe355bae7c75" target="_blank">Open Source Apps To Replace Your Every Subscription (And don't suck)</a></h3>
+    <div class="meta-line">Haz Techy Content · Level Up Coding · 5 min · 👏 720 · 💬 18</div>
     <div class="summary">
-        <p>La respuesta corta es sí, pero no de la misma forma que hace unos años. "El desarrollo web no está muerto. La vía fácil sí." El argumento anti-"webdev is dead" es doble: la IA también genera codebases terribles llenos de dependencias aleatorias, lógica rota y seguridad falsa, y las empresas siguen necesitando dashboards, e-commerce, SaaS, APIs, autenticación, pagos, optimización y accesibilidad. Lo que cambió es la expectativa: el código básico se volvió <em>barato</em> (no inútil), y una empresa ya no necesita tres juniors escribiendo código repetitivo cuando un senior con IA termina más rápido.</p>
-        <p>El rol junior cambió en silencio. Conocer HTML, CSS y React ya no es la ventaja, es el mínimo. El junior moderno debe usar bien las herramientas de IA, entender frontend y backend, depurar solo, leer documentación sin pánico, desplegar, optimizar rendimiento, entender APIs, preocuparse un mínimo por la seguridad, comunicarse con claridad y aprender rápido — en una palabra, ser <strong>generalista</strong>. Y la IA cambió el desarrollo, pero no como la gente cree: "quitó fricción a programar, no quitó la necesidad de pensar". Si la IA escribe el 70% del código repetitivo, tu valor se desplaza a la arquitectura, la toma de decisiones, el rendimiento, la mantenibilidad, la seguridad y la experiencia de usuario. Irónicamente, la IA está haciendo las habilidades de ingeniería de software <em>más</em> importantes, no menos: ahora todo el mundo genera código, pero no todo el mundo construye sistemas que no colapsen seis meses después.</p>
-        <p>Los frameworks se volvieron ecosistemas (ya no basta "saber React" sin entender meta-frameworks, SSR, caché, edge functions y pipelines), y por fin importan rendimiento, accesibilidad, seguridad y UX — cosas ignoradas durante años. La realidad incómoda: sigue habiendo trabajo, pero hay menos trabajos <em>fáciles</em>; el mercado está saturado de gente con habilidades superficiales y la IA subió la barra de productividad esperada. La conclusión: deberías ser desarrollador web en 2026 solo si de verdad te gusta construir cosas, porque la vía de bajo esfuerzo se está apagando y el campo cambia constantemente. "No creo que la IA reemplace a los desarrolladores web por completo. Pero sí creo que reemplazará a los desarrolladores que se niegan a adaptarse."</p>
+        <p>El autor, recién cumplidos 18 años y con su primera tarjeta de crédito, se encontró con precios "extorsionadores" y se fue a GitHub a buscar alternativas open source. El resultado es una lista práctica y honesta, con los catches de cada herramienta. <strong>Omni-route</strong> es la joya de la corona: agrega los tiers gratuitos de 101 proveedores de inferencia AI y los rota, dando 1.300 millones de tokens gratis al mes — conéctalo a Claude Code o Open Claw vía API local. El catch: hay que añadir los providers manualmente. <strong>AgenticSeek / 3Toks</strong> son agentes de codificación local-first; 3Toks es la versión ligera que funciona con modelos de 1.5B parámetros. El autor lo usa para extraer texto de blogs técnicos y generar Markdown directamente en su directorio de Obsidian. <strong>Gitea</strong> reemplaza GitHub Teams para arquitecturas de microservicios: $0 auto-hosteado o $6–7/mes en Hetzner con usuarios ilimitados, frente a $4/usuario en GitHub.</p>
+        <p><strong>n8n</strong> es la alternativa a Zapier: automatiza onboarding, recordatorios, resúmenes de email, scraping de leads y envío de emails personalizados. El catch: requiere gestionar Docker y webhooks tras un reverse proxy. <strong>yt-dlp / Monochrome.tf</strong> reemplazan Spotify/YT Music: el primero es CLI, el segundo es una web con descarga en 24bit lossless y un algoritmo de recomendaciones sorprendentemente bueno. <strong>Jellyfin</strong> reemplaza Netflix/Crunchyroll: el autor admite que multiplicó por 5 su adicción al anime y que funciona sin internet y sin buffering. El catch: el transcoding en hardware débil hace llorar a la CPU con múltiples streams. Menciones de honor: <strong>Hermes</strong> (aprende tu flujo de trabajo con el tiempo, compatible con automatizaciones de Open Claw; el catch es que las skills pueden degradarse) y <strong>Blender</strong> (ha superado a todo el software 3D de pago — Jujutsu Kaisen S3, Chainsaw Man y Spider-Man: Across the Spider-Verse lo usaron).</p>
     </div>
     <div class="stats">
         <span>📖 Texto completo vía Freedium</span>
-        <span><a href="https://medium.com/p/0a83b0aadd58" target="_blank">Leer en Medium →</a></span>
+        <span><a href="https://medium.com/p/fe355bae7c75" target="_blank">Leer en Medium →</a></span>
     </div>
 </article>
 
-<!-- Anthropic prediction -->
+<!-- 8. Angular 22.1 -->
 <article class="article">
     <span class="badge badge-full">📖 Texto completo</span>
-    <span class="badge badge-ai">IA</span><span class="badge badge-society">Empleo</span><span class="badge badge-tech">Ingeniería</span>
-    <h3><a href="https://medium.com/p/abfdc8dbce90" target="_blank">Six Months Ago the CEO of Anthropic Said AI Would Replace Software Engineers.</a></h3>
-    <div class="meta-line">Noah Byteforge · 6 min · 👏 1K · 💬 41</div>
+    <span class="badge badge-code">Angular</span><span class="badge badge-tech">Release</span><span class="badge badge-code">Web Dev</span>
+    <h3><a href="https://medium.com/p/072c81f82799" target="_blank">Angular 22.1: What's new</a></h3>
+    <div class="meta-line">Amos Isaila · 7 min · 👏 27</div>
     <div class="summary">
-        <p>El 23 de enero de 2026, en el panel "The Day After AGI" del Foro Económico Mundial de Davos, Dario Amodei dijo: "creo que podríamos estar a entre seis y doce meses de que el modelo haga la mayor parte, quizá todo, de lo que hacen los ingenieros de software de principio a fin". Seis meses era la cota baja de la predicción, y se acaba de cumplir. El artículo hace lo que nadie hizo en enero y febrero: esperar seis meses y comprobar los datos. Importante el matiz que los titulares ignoraron — Amodei no dijo que los ingenieros se quedarían sin trabajo, sino que los modelos serían <em>capaces</em> de hacer ese trabajo; describió ingenieros de Anthropic que ya no escriben código sino que dirigen a la IA, y reconoció la incertidumbre ("es fácil ver cómo esto podría tardar unos años"), citando la fabricación de chips y el tiempo de entrenamiento como frenos.</p>
-        <p>Los datos cuentan otra historia. Un estudio del Yale Budget Lab no encontró ningún cambio significativo en las tasas de desempleo de los trabajadores expuestos a la IA desde el lanzamiento de ChatGPT a finales de 2022, pese a la expansión de la IA por escritura, código, atención al cliente, investigación y marketing. Sam Altman admitió en mayo de 2026 que las predicciones habían sido "demasiado extremas": los laboratorios acertaron en lo tecnológico y se equivocaron en lo social y económico. Y los datos de contratación de SignalFire (más de ochenta millones de empresas) muestran que los ingenieros fueron el <strong>55% de todas las nuevas contrataciones</strong> de las grandes tecnológicas en 2025, frente al 46% en 2019, y que las startups early-stage contrataron un 7% más de ingenieros. La profesión más predicha para ser automatizada es hoy una proporción <em>mayor</em> de la fuerza laboral que antes de la predicción.</p>
-        <p>Lo que sí cambió es real: el 73% de los equipos de ingeniería usa herramientas de IA a diario (frente al 41% un año antes), y las tareas de boilerplate, tests unitarios, documentación y debugging de errores conocidos ya se hacen en minutos. Lo que no cambió es el trabajo que exige juicio sobre qué construir, comprensión del sistema concreto y evaluación de si la salida de la IA es correcta <em>para ese contexto</em>; de hecho, esa carga de revisión creció con el volumen de código generado. El error de la predicción no fue sobre la capacidad de la IA, sino sobre qué es realmente la ingeniería de software: la trató como sinónimo de "escribir código". El retroceso simultáneo de Amodei y Altman en el mismo mes es una señal: son gente con acceso a datos que los comentaristas no tienen, y ambos corrigieron en la misma dirección. La lección para el ingeniero: ni el pánico de enero ni el desprecio de "todo es hype" — adoptar lo que ayuda, mantener lo que las herramientas no reemplazan y desconfiar de las predicciones de plazos.</p>
+        <p>Angular 22.1 introduce una mejora significativa en reactividad: <strong>custom set option para linkedSignal</strong>. Hasta ahora, <code>linkedSignal</code> calculaba su valor a partir de otra señal pero no permitía redirigir escrituras a la fuente original. Con la nueva opción <code>set</code>, puedes definir una callback que transforma el valor antes de escribirlo en la señal fuente. El ejemplo del artículo es un conversor de temperatura: la señal <code>tempF</code> (Fahrenheit) se calcula a partir de <code>tempC</code> (Celsius), pero cuando escribes en <code>tempF</code>, la custom set callback convierte a Celsius y actualiza <code>tempC</code>. Esto elimina la necesidad de sincronización manual entre señales vinculadas. La versión también incluye mejoras en reactivity, estilado, SSR y developer tooling, con builds más rápidos gracias al nuevo compilador OXC. El artículo es conciso y está centrado en código, mostrando la migración directa del patrón anterior al nuevo.</p>
     </div>
     <div class="stats">
         <span>📖 Texto completo vía Freedium</span>
-        <span><a href="https://medium.com/p/abfdc8dbce90" target="_blank">Leer en Medium →</a></span>
+        <span><a href="https://medium.com/p/072c81f82799" target="_blank">Leer en Medium →</a></span>
     </div>
 </article>
 
-<!-- WireGuard VPN -->
+<!-- 9. DESIGN.md -->
 <article class="article">
     <span class="badge badge-full">📖 Texto completo</span>
-    <span class="badge badge-tech">Redes</span><span class="badge badge-code">Linux</span><span class="badge badge-tech">Seguridad</span>
-    <h3><a href="https://medium.com/p/d34cddbc0924" target="_blank">Use Your Linux Machine as a VPN — For Free, Forever</a></h3>
-    <div class="meta-line">Sabit · Bash_DevOps_AI · 8 min · 👏 657 · 💬 14</div>
+    <span class="badge badge-ai">AI Design</span><span class="badge badge-life">UX</span><span class="badge badge-code">Documentación</span>
+    <h3><a href="https://medium.com/p/c00325e8b23a" target="_blank">DESIGN.md Best Practices</a></h3>
+    <div class="meta-line">Nick Babich · UX Planet · 6 min · 👏 845 · 💬 17</div>
     <div class="summary">
-        <p>¿Pagando $100 al año por un VPN de una empresa que no conoces, con servidores que no puedes ver y una política de privacidad de 4.000 palabras? El autor propone la alternativa: un VPN <strong>propio</strong> con <strong>WireGuard</strong>, integrado en el kernel de Linux desde 2020, más rápido que OpenVPN y más simple que IPsec, montado en unos 15 minutos sobre una máquina Linux que ya tengas (un desktop viejo o una Raspberry Pi siempre encendida). El escenario estándar: tu Linux es el servidor y tu móvil y portátiles son clientes que tunelan todo su tráfico a través de él en redes Wi-Fi públicas o viajando.</p>
-        <p>El tutorial paso a paso: instalar <code>wireguard</code> y <code>qrencode</code>; generar las claves del servidor (<code>wg genkey | tee server_private.key | wg pubkey &gt; server_public.key</code>) y proteger la privada con <code>chmod 600</code>; identificar la interfaz de red con <code>ip route | grep default</code>; crear <code>wg0.conf</code> con la IP interna <code>10.0.0.1/24</code>, el puerto <code>51820</code> y las reglas <code>iptables</code> de MASQUERADE en PostUp/PostDown; habilitar IP forwarding (<code>sysctl -w net.ipv4.ip_forward=1</code>); abrir el puerto con <code>ufw allow 51820/udp</code>; y arrancar con <code>wg-quick up wg0</code> más <code>systemctl enable wg-quick@wg0</code>. El error más común: poner mal el nombre de interfaz en las líneas de iptables — los dispositivos se conectan pero no tienen internet.</p>
-        <p>Para añadir el móvil: generar sus claves, crear su config con el endpoint apuntando a tu IP pública (<code>curl -s ifconfig.me</code>), añadirlo como peer en <code>wg0.conf</code>, recargar sin downtime con <code>wg syncconf wg0 &lt;(wg-quick strip wg0)</code> y generar un QR con <code>qrencode -t ansiutf8</code> para escanearlo con la app. El resultado: cifrado <strong>ChaCha20</strong> (el mismo de TLS 1.3), sin logs porque lo configuras tú, $0/mes, sin límite de dispositivos ni ancho de banda, y arranca automáticamente en cada boot. El único mantenimiento es un <code>sudo apt upgrade</code> ocasional. "Eso es lo que 'gratis, para siempre' significa de verdad."</p>
+        <p>Nick Babich explica el archivo <strong>DESIGN.md</strong>, introducido por Google Stitch y luego liberado como especificación open-source. Es un archivo de texto plano que describe la identidad visual de un producto y da a las herramientas de IA una guía estructurada y persistente sobre cómo debe verse y sentirse el producto, basándose en el sistema de diseño existente del equipo. La gran ventaja: en lugar de que la IA invente estilos desde cero o genere UI genérica, puede apoyarse en decisiones de diseño reales, tokens y reglas de componentes que el equipo ya usa.</p>
+        <p>El archivo se estructura en capas. El <strong>frontmatter YAML</strong> contiene el nombre del sistema de diseño y los tokens atómicos: colores (surface, primary, inverse-primary, secondary...), tipografía (fontFamily, tamaños), corner radius (sm, DEFAULT, md) y spacing (base, xs, sm...). El autor comparte un ejemplo real usado para una landing page en Google Stitch con el sistema "Roxy Tech Modernism". La segunda capa son reglas Markdown que definen comportamientos y patrones de componentes. El artículo está aún en desarrollo en el texto extraído, pero la dirección es clara: DESIGN.md se está convirtiendo en uno de los archivos más útiles para proyectos de UI asistidos por IA, cerrando la brecha entre el sistema de diseño y lo que la IA genera.</p>
     </div>
     <div class="stats">
         <span>📖 Texto completo vía Freedium</span>
-        <span><a href="https://medium.com/p/d34cddbc0924" target="_blank">Leer en Medium →</a></span>
+        <span><a href="https://medium.com/p/c00325e8b23a" target="_blank">Leer en Medium →</a></span>
     </div>
 </article>
 
-<!-- 9 Countries -->
+<!-- 10. We Rewrote Our API in Rust -->
 <article class="article">
     <span class="badge badge-full">📖 Texto completo</span>
-    <span class="badge badge-society">Ciudadanía</span><span class="badge badge-life">Expat</span><span class="badge badge-society">Finanzas</span>
-    <h3><a href="https://medium.com/p/2e2cf411d4f9" target="_blank">9 Countries That Make You A Citizen In Under A Year</a></h3>
-    <div class="meta-line">Greyson Ferguson · 9 min · 👏 3.1K · 💬 95</div>
+    <span class="badge badge-code">Rust</span><span class="badge badge-code">Go</span><span class="badge badge-tech">Performance</span>
+    <h3><a href="https://medium.com/p/52d37711ffb3" target="_blank">We Rewrote Our API in Rust for 20% Better Performance. It Cost Us $180K.</a></h3>
+    <div class="meta-line">Aditya Suryawanshi · Level Up Coding · 8 min · 👏 526 · 💬 27</div>
     <div class="summary">
-        <p>En la mayoría de países la ciudadanía tarda una década o más, pero hay una docena que te la dan en menos de un año si cumples ciertos requisitos financieros (básicamente, invertir en inmuebles locales o hacer una "donación" no reembolsable al gobierno). El autor repasa nueve, ordenadas con su rango de poder de pasaporte de 2026 (contexto: el pasaporte de Emiratos Árabes es el más poderoso, con acceso sin visado a 182 países, seguido de Francia y España con 175; EE.UU. es noveno con 168). Las tres más rápidas: <strong>Vanuatu</strong> (30 días, la más veloz del mundo; donación de $130.000 o plan de inversión de $150.000 del que recuperas ~$50.000 en cinco años, o $105.000 + $200.000 en inmuebles), <strong>São Tomé y Príncipe</strong> (~2 meses; $90.000 individual, $95.000 familia de cuatro, +$5.000 por dependiente adicional y $5.000 de tasas) y <strong>Nauru</strong> (3-4 meses; $90.000, actualmente "descontado" desde $115.000).</p>
-        <p>El resto: <strong>Dominica</strong> (~6 meses, a veces 3; $200.000 en inmuebles, uno de los programas más baratos por esta vía en el Caribe), <strong>Granada</strong> (4-6 meses; donación de $235.000 para familia de cuatro, o $270.000 en desarrollo conjunto / $350.000 en solitario — y su gran atractivo es el tratado E-2 con EE.UU., que facilita abrir negocio y vivir allí), <strong>Antigua y Barbuda</strong> (3-6 meses; cuatro vías: $230.000 de donación, $260.000 a educación superior, $300.000 en inmuebles o $400.000 en negocio), <strong>Saint Kitts y Nevis</strong> (3-6 meses; el esquema de ciudadanía por inversión más antiguo del mundo, $250.000 de donación o $325.000 en inmuebles, familia de cuatro incluida), <strong>Türkiye</strong> (~8 meses, 4 con abogado ágil; inversión inmobiliaria mínima de $400.000 recuperable con ~5% anual) y <strong>Santa Lucía</strong> (10-12 meses; $240.000 de donación o $300.000 en inmuebles).</p>
-        <p>Dos matices importantes. Primero, Malta acaba de eliminar su programa de ciudadanía rápida por presión de la UE (otorgaba acceso a todo Schengen por unos cientos de miles de euros en inmuebles); ya solo queda la vía de residencia, que tarda años. Segundo, existen atajos no monetarios: casarte con un ciudadano de Argentina, Brasil o Italia y residir un año da derecho a ciudadanía acelerada, y hay programas por ascendencia, aunque — advierte el autor — casi siempre tardan mucho más de lo anunciado (Italia dice tres meses; él conoce gente que tardó años). El resumen: fuera del matrimonio, puedes comprar una segunda ciudadanía "siempre que tengas unos cientos de miles de dólares por ahí".</p>
+        <p>Una historia real que debería ser lectura obligatoria en todo equipo de ingeniería. El manager del autor reenvió un benchmark de Hacker News que mostraba Rust 3x más rápido que Go con tres palabras: "We should migrate". Cuatro meses y $180.000 después, perfilaron su API real en producción y descubrieron que Go era <em>más rápido</em> en su codebase, en su hardware, para su carga de trabajo. La migración a Rust se quedó en una rama privada y nunca se desplegó. El autor no se quedó en la anécdota: reconstruyó la misma API en Rust, Go y Zig para entender por qué los ingenieros inteligentes siguen cayendo en esta trampa.</p>
+        <p>La respuesta es devastadoramente simple: la mayoría de los benchmarks miden bucles optimizados a mano, datos en memoria, sin base de datos, sin red, sin middleware de auth, sin logging. "Un benchmark sin contexto de producción es un fabricante de coches probando la velocidad punta en un salar vacío y luego anunciándola a gente que conduce en ciudades." Las APIs reales pasan la mayor parte del tiempo esperando — a la base de datos, a la caché, a la red. Es trabajo I/O-bound, y todos los lenguajes esperan a la misma velocidad. El autor implementó un endpoint <code>POST /api/orders</code> con validación JSON, auth contra Redis, escritura en PostgreSQL y respuesta JSON — la forma del ~70% de los endpoints backend en producción. El artículo incluye el código completo en Go y reflexiona sobre la lección más cara de su carrera: haz el benchmark de tu carga real en tu hardware real antes de comprometerte a un rewrite.</p>
     </div>
     <div class="stats">
         <span>📖 Texto completo vía Freedium</span>
-        <span><a href="https://medium.com/p/2e2cf411d4f9" target="_blank">Leer en Medium →</a></span>
+        <span><a href="https://medium.com/p/52d37711ffb3" target="_blank">Leer en Medium →</a></span>
     </div>
 </article>
 
-<!-- 4 Skills Claude -->
+<!-- 11. LinkedIn AI Slop -->
 <article class="article">
     <span class="badge badge-full">📖 Texto completo</span>
-    <span class="badge badge-ai">IA</span><span class="badge badge-code">Claude Code</span><span class="badge badge-tech">Herramientas</span>
-    <h3><a href="https://medium.com/p/440b6a55bd74" target="_blank">4 Skills That Fix 95% of Claude Code's Problems (Hero Claude Stack)</a></h3>
-    <div class="meta-line">Divad · 8 min · 👏 549 · 💬 12</div>
+    <span class="badge badge-ai">IA</span><span class="badge badge-society">LinkedIn</span><span class="badge badge-tech">Ética Tech</span>
+    <h3><a href="https://medium.com/p/a5e487792db9" target="_blank">LinkedIn Thinks It Figured Out AI Slop</a></h3>
+    <div class="meta-line">Attila Vágó · 10 min · 👏 897 · 💬 12</div>
     <div class="summary">
-        <p>Claude Code es bueno escribiendo código, pero falla en cuatro áreas concretas: no puede ver vídeo, no recuerda bien repositorios grandes, y rediseña landings con el mismo degradado morado y los mismos iconos redondeados que todo el mundo. El autor — que paga $100/mes y lo usa a diario — propone cuatro herramientas open-source y gratuitas que taponan esos huecos. <strong>Claude Video</strong> (de Brad Bonanno, "Brad Automates") añade un comando <code>/watch</code> que le da a Claude un transcript con marcas de tiempo y frames extraídos del vídeo; si no hay subtítulos usa Whisper (Groq por defecto, OpenAI de respaldo). Tiene cuatro modos según cuántos frames extrae: Transcript (ninguno), Efficient (hasta 50), Balance (hasta 100, según cambios de escena y lo que se dice) y "Token burner" (sin tope, para cuando necesitas cada detalle y no te importa el coste).</p>
-        <p><strong>NotebookLM-py</strong> (de teng-lin) es una API Python no oficial que da acceso programático completo a NotebookLM desde el terminal, corriendo sobre Gemini: respondes preguntas sobre vídeos, generas decks, infografías y podcasts, creas mapas conceptuales y flashcards. La clave es que descarga la investigación sobre la infraestructura de Google, sin gastar tu presupuesto de Anthropic (ojo: en julio de 2026 Google rebautizó NotebookLM como <em>Gemini Notebook</em>; la librería sigue funcionando igual). <strong>Graphify</strong> (de Safi Shamsi) construye un grafo de conocimiento de tu codebase — o de PDFs, capturas, fotos de pizarra y archivos de audio/vídeo — dividiendo el código en nodos y agrupándolos por contenido, para que haya un camino claro de la pregunta a la respuesta en lugar de releer todo desde cero.</p>
-        <p><strong>Impeccable</strong> (de Paul Bakaus) ataca el problema del diseño genérico: como cada modelo se entrenó con las mismas plantillas SaaS, todos caen en los mismos tells (fuente Inter, degradado morado-azul, tarjetas dentro de tarjetas, texto gris sobre fondo de color). Impeccable da a Claude un vocabulario de diseño compartido con 23 comandos — <code>/impeccable init</code> (escanea tokens y Tailwind y escribe un brief de producto), <code>/critique</code> (feedback con puntuación numérica), <code>/colorize</code>, <code>/bolder</code>, <code>/quieter</code> y un Live Mode para iterar visualmente en el navegador — más decenas de reglas deterministas que cazan los anti-patrones antes de que se publiquen. La recomendación final: instala solo la que te esté costando tiempo esta semana; el resto puede esperar a que sientas el hueco.</p>
+        <p>Attila Vágó, ingeniero de software con experiencia en integración de IA en Prezi, desmonta el nuevo botón de LinkedIn "seems like AI slop" con una crítica afilada y bien argumentada. Su tesis: LinkedIn creó el problema y ahora espera que los usuarios lo arreglen gratis. La secuencia es conocida: LinkedIn añadió IA generativa en todas partes — posts, perfiles, descripciones de empleo — midiendo solo adopción. Las métricas explotaron, los bonuses se repartieron, los aplausos en Zoom resonaron. Tres años después, la plataforma está inundada de contenido sin valor real y LinkedIn admite implícitamente el desastre retirando la generación de posts con IA y añadiendo este botón.</p>
+        <p>El autor sabe de lo que habla: en Prezi, su equipo descubrió que el verdadero desafío no era integrar IA, sino obtener output de alta calidad. Pasaron semanas iterando, el equipo de QA desarrolló un proceso completamente nuevo para puntuar presentaciones, y toda la empresa se involucró. LinkedIn, en cambio, hizo la integración más básica posible: enviar tema → generar post, sin usar el historial profesional del usuario como contexto. "Si existe la inteligencia artificial tonta, era esa." LinkedIn rompió su propia plataforma y ahora la solución es... ¿los usuarios? El botón es una externalización del trabajo de curación de contenido que la plataforma debería hacer. Y ya está siendo weaponizado: al autor le reportaron su propio post (escrito a mano, cada palabra) como AI slop en menos de 48 horas.</p>
+        <p>Vágó detalla por qué el botón es problemático más allá de lo anecdótico. Definir "AI slop" es sorprendentemente difícil: la definición de Wikipedia ("contenido digital de baja calidad producido en masa con IA generativa") plantea más preguntas que respuestas. ¿Qué es baja calidad? ¿Cómo sabes que es producción en masa? ¿Y si es texto traducido por IA para superar una barrera lingüística? El usuario medio no tiene las habilidades de un curador de contenido profesional, y factores como el sesgo de confirmación y la baja capacidad de atención distorsionan el juicio. Además, el EU AI Act ya obliga a las empresas a identificar contenido generado por IA como sintético. Existen soluciones técnicas: identificar retroactivamente posts generados con IA, comparar contenido contra el perfil e historial del usuario, validar relevancia y calidad. Y está el watermarking de Anthropic, que podría convertirse en estándar. La conclusión del autor es directa: "LinkedIn creó este desastre y LinkedIn debe limpiarlo. No tú. No hagas clic en el botón."</p>
     </div>
     <div class="stats">
         <span>📖 Texto completo vía Freedium</span>
-        <span><a href="https://medium.com/p/440b6a55bd74" target="_blank">Leer en Medium →</a></span>
+        <span><a href="https://medium.com/p/a5e487792db9" target="_blank">Leer en Medium →</a></span>
     </div>
 </article>
 
-<!-- Addiction -->
+<!-- 12. Why do we hate AI? -->
 <article class="article">
     <span class="badge badge-full">📖 Texto completo</span>
-    <span class="badge badge-health">Salud mental</span><span class="badge badge-society">Sociedad</span><span class="badge badge-life">Psicología</span>
-    <h3><a href="https://medium.com/p/1020b00597f2" target="_blank">Your Addiction Reveals What You're Running From</a></h3>
-    <div class="meta-line">Constantin Patrascu · Read or Die - HQ · 8 min · 👏 6.1K · 💬 104</div>
+    <span class="badge badge-ai">IA</span><span class="badge badge-society">Filosofía</span><span class="badge badge-life">Pensamiento</span>
+    <h3><a href="https://medium.com/p/58af629677ea" target="_blank">Why do we hate AI?</a></h3>
+    <div class="meta-line">Dusko Pavlovic · AI Advances · 7 min · 👏 623 · 💬 17</div>
     <div class="summary">
-        <p>Tras trabajar con cientos de personas con adicción, la conclusión del autor es contraintuitiva: el narcótico no es el problema, es la <em>solución</em> a un problema. Lo que cada persona intenta resolver dice más de su adicción que la química de la droga. Y los datos desmontan el mito de la "adictividad" intrínseca: según la investigadora Maia Szalavitz, solo el 15% de quienes prueban cocaína desarrollan adicción, el 20% de quienes beben alcohol desarrollan trastorno por consumo, y apenas el <strong>10%</strong> de quienes usan heroína se vuelven adictos. La heroína — supuestamente la droga más adictiva — tiene una tasa menor que la cocaína o el alcohol. El caso de los veteranos de Vietnam lo confirma: la mayoría dejó la heroína al volver a casa; la droga no cambió, cambió el contexto. Ya no estaban en una zona de guerra con la heroína como única forma de sobrellevarlo.</p>
-        <p>El patrón por sustancia: quien usa heroína u opioides casi siempre tiene dolor (físico, emocional o ambos); quien usa metanfetamina suele tener recursos insuficientes frente a demandas abrumadoras (madres solteras con varios trabajos, gente escapando de la pobreza — la adicción a la metanfetamina es más alta en zonas económicamente desfavorecidas); quien usa cocaína lidia con vergüenza, insuficiencia o ansiedad social; el alcohol es el grupo más variado; y las benzodiacepinas son para ansiedad o trauma severos sin tratamiento. La neurobiología lo explica con el <em>reward prediction error</em>: el subidón de dopamina no ocurre porque la droga sea gratificante per se, sino porque el cerebro registra "esperaba dolor y obtuve alivio". Si no hay dolor, la misma droga produce una respuesta menor. Con el uso repetido aparece la tolerancia, pero también la <em>sensibilización</em> a las señales del entorno — por eso cambiar de contexto (casa, barrio, grupo social) reduce los disparadores.</p>
-        <p>¿Por qué nos obsesiona la sustancia y no la persona? Porque culpar a la droga es política y económicamente conveniente: si el problema es la droga, la solución es prohibirla, y no hay que abordar la pobreza, el trauma ni la falta de atención en salud mental. El autor añade el ángulo de clase: criminalizamos las drogas de los pobres (metanfetamina, crack asociado a comunidades negras) y medicalizamos las de los ricos (benzodiacepinas con receta, cocaína en polvo). Su consejo a quien sufre adicción: "Tu adicción no es evidencia de debilidad moral, es evidencia de que encontraste algo que resuelve de forma fiable un problema que estás enfrentando". Antes de parar la droga hay que entender de qué huyes y qué necesitarías para no necesitarla — porque si solo quitas la droga sin tratar lo que te llevó a ella, encontrarás otra solución al mismo problema. La intervención que funciona va más allá de la criminalización: acceso a tratamiento del dolor, abordar las condiciones que hacen la droga necesaria, tratar la comorbilidad mental, y reducción de daños con tratamiento asistido por medicación (metadona, buprenorfina, naltrexona).</p>
+        <p>Dusko Pavlovic construye un ensayo filosófico que enmarca la IA como una <strong>revolución copernicana</strong> en la inteligencia humana. El punto de partida es una pirámide de tres niveles: personas (con mente), animales (con vida) y cosas (inertes). Bajar es fácil — pierdes la mente, luego la vida, y acabas abajo. Subir es lentísimo. Pero la IA tomó un atajo: pasó de cosa a mente sin escalas, empezó a tocar jazz y a comprar acciones, y nos pilló por sorpresa. La ofensa es comparable a la de Copérnico en el siglo XVI: igual que él mostró que la Tierra no era el centro del universo, la IA muestra que los humanos no somos el centro del pensamiento y el lenguaje.</p>
+        <p>El autor define la inteligencia siguiendo a Turing: no es resolver problemas de libro con combinaciones estándar de soluciones de libro, sino la capacidad de resolver <strong>problemas no vistos</strong>. La inteligencia artificial es el esfuerzo de construir máquinas que resuelvan problemas no vistos — una versión artificial de algo que antes solo evolucionó en la naturaleza. Y aquí la analogía clave: los aviones no desplazaron a los pájaros ni explicaron cómo vuelan; simplemente se unieron a ellos en el cielo. Los submarinos no desplazaron a los peces; expandieron el mundo de la natación. Las IAs no necesitan desplazar ni explicar las inteligencias humanas; simplemente se unen a ellas en el lenguaje, expandiendo el mundo del pensamiento.</p>
+        <p>El ensayo incluye una escena brillante con Parménides y Zenón: mientras Parménides argumentaba que el movimiento era imposible, Zenón se paseaba preocupado — y ni el maestro, ni el alumno, ni Platón notaron que el movimiento de Zenón refutaba la teoría del movimiento de Parménides. Lo que los profesores enseñan y lo que los alumnos hacen no pertenecen al mismo reino. "Así sigue siendo hoy. Mientras los profesores enseñan que la comprensión de la IA es imposible, los alumnos generan resúmenes con IA. Todo el mundo se mete en problemas. Todo el mundo odia la IA." El artículo está salpicado de referencias que van de Aristóteles a Descartes, Chomsky, Dijkstra y Herbert Simon, y anuncia una segunda parte.</p>
     </div>
     <div class="stats">
         <span>📖 Texto completo vía Freedium</span>
-        <span><a href="https://medium.com/p/1020b00597f2" target="_blank">Leer en Medium →</a></span>
+        <span><a href="https://medium.com/p/58af629677ea" target="_blank">Leer en Medium →</a></span>
     </div>
 </article>
 
-<!-- Hyper-Independent -->
+<!-- 13. Mac Mini M4 vs RTX 5090 -->
 <article class="article">
     <span class="badge badge-full">📖 Texto completo</span>
-    <span class="badge badge-life">Psicología</span><span class="badge badge-health">Apego</span><span class="badge badge-society">Relaciones</span>
-    <h3><a href="https://medium.com/p/d5329bfe6405" target="_blank">Hyper-Independent and Lonely? Here's What No One Tells You</a></h3>
-    <div class="meta-line">May Pang · E³ - Entertain Enlighten Empower · 11 min · 👏 2.5K · 💬 49</div>
+    <span class="badge badge-tech">Hardware</span><span class="badge badge-ai">Local AI</span><span class="badge badge-tech">GPU</span>
+    <h3><a href="https://medium.com/p/2eaf90402bbc" target="_blank">Mac Mini M4 vs RTX 5090 vs Cloud GPUs for Local AI in 2026</a></h3>
+    <div class="meta-line">Anubhav · Data Science Collective · 8 min · 👏 916 · 💬 25</div>
     <div class="summary">
-        <p>Darren, 38, quería pareja e hijos, pero tras dos años de citas no conectaba con nadie y se aburría a los pocos meses. Se definía con orgullo como "muy de bajo mantenimiento": independiente, sin necesitar apoyo emocional, sin enfadarse casi nunca — aunque admitía que sí notaba cosas y juzgaba a la gente, solo que no le parecía "que valiera la pena enfadarse". La autora (coach de high performers, y ella misma ex-evitativa) le dio el diagnóstico: <strong>eres evitativo</strong>. La clave que casi todo el mundo malinterpreta: el evitativo no evita la conexión — los cuatro estilos de apego la desean profundamente — sino que teme <em>necesitar a alguien y perder su independencia</em>. Lo reconcilia idealizando el compromiso ("quiero casarme y tener hijos", una casilla que marcar) en vez de desear la vulnerabilidad diaria, intelectualizando la conexión en lugar de sentirla, y — patrón poco conocido — enganchándose a parejas no disponibles (a distancia, con otra persona o aún más evitativas), que crean un colchón de seguridad y a las que idealiza mucho después de que se acaben.</p>
-        <p>La autora insiste en que la etiqueta sí es útil: le permitió ver que su miedo venía de un momento concreto de la infancia (observar el amor de sus padres como algo volátil e inseguro), no de un cuidado inconsistente. Y de ahí destila una habilidad concreta que llama <strong>"trickling"</strong> (goteo): cuando la evitación se dispara — ese impulso de huir, retirarte o apagarte cuando alguien comparte una emoción intensa o te pide más de lo que quieres dar — no hay solo dos opciones (cumplir o huir), hay una tercera: quedarte en conexión honrando dónde estás emocionalmente. El guion: "Quiero seguir conectado contigo" (calma el pánico del otro) + "siento X y necesito un descanso" (una petición clara, no un "quiero parar") + "¿podemos hacer Y y volver a intentarlo?" (le das al otro una forma de ayudarte a regular). Importante: no digas "me siento evitativo", porque refuerza el rasgo y dispara al otro.</p>
-        <p>Por qué funciona: Dan Siegel llama a esto la <em>ventana de tolerancia</em> — la banda de activación donde estás lo bastante removido para estar presente pero no tan inundado como para que el cuerpo tome el mando; por encima entras en pánico y huyes, por debajo te adormeces y cumples. Edward Tronick descubrió en 1975 que incluso las díadas seguras están desincronizadas el 70% del tiempo: el vínculo no sobrevive por estar siempre en sintonía, sino por lo que pasa después del fallo — el <em>rupture and repair</em>. Cada "necesito un minuto, ¿volvemos a esto?" con una pareja que se queda es una repetición de reparación que le demuestra a tu cuerpo que necesitar a alguien no acaba en desaparición. Y por eso importa <em>con quién</em> lo haces más que cuánto te esfuerzas. El error instintivo — lanzarse a la vulnerabilidad total (que produce "resaca de vulnerabilidad") o "curarse solo antes de volver a salir" — falla porque, como explica Stephen Porges con la <em>co-regulación</em> polivagal, no nos calmamos en el vacío sino tomando prestada la calma de otro sistema nervioso. El resultado, cuando se repite lo suficiente con la persona adecuada, es lo que Mary Main llamó <em>earned secure attachment</em>: el estilo de apego nunca fue una condena, solo un patrón que se reentrena en conexión con gente que repara.</p>
+        <p>La tesis del artículo se resume en un número: 32GB, la memoria de la RTX 5090. Con la escasez de RAM de 2026, la 5090 se vende a ~$4.300 en la calle (MSRP de $1.999), mientras que un Mac Mini M4 Pro con 48GB de memoria unificada cuesta $1.799. La memoria unificada de Apple — donde CPU y GPU comparten los mismos chips físicos — es la ventaja diferencial: permite cargar modelos que la 5090 simplemente no puede meter en sus 32GB de VRAM. Con 48GB, el M4 Pro corre modelos 30B a 12–18 tok/s. La 5090 los corre a 66 tok/s, pero con modelos 70B+ la historia cambia drásticamente: necesitan ~43GB en Q4, así que ~11GB se derraman a RAM del sistema por PCIe y la velocidad se desploma a 2–5 tok/s.</p>
+        <p>El autor detalla la economía real. El Mac Mini M4 Pro consume 30–40W bajo carga (~$14/año en electricidad), es silencioso y cabe en cualquier sitio. La 5090 chupa 575W, necesita una fuente de 1000W, una caja grande, una CPU potente y una placa de gama alta — el coste total real está entre $4.000 y $6.000, más $160–210/año en electricidad, más el ruido y el calor de un calefactor de 575W en la habitación. La nube es la tercera opción: una H100 con 80GB cuesta ~$1.90/h en Vast.ai (el marketplace más barato, sin garantías — te pueden echar con 15 segundos de aviso), ~$2.99/h en Lambda (fiable), y hasta ~$7/h en Azure. La nube gana para trabajos pesados ocasionales, modelos 70B+, o fine-tuning. Pierde para asistentes siempre activos y para datos sensibles.</p>
+        <p>El autor incluye una tabla comparativa de velocidades según tamaño de modelo y una regla clara: antes de gastar un dólar, mide lo que ya tienes con <code>ollama run llama3.1:8b --verbose</code> y compara tu tasa de eval real con la tabla. El break-even es instructivo: un Mac Mini de $1.799 equivale a ~4.500 horas de cloud a $0.40/h (unos 185 días de uso continuo). Con uso de pocas horas al día, se amortiza en 1–2 años. El factor decisivo para muchos será la privacidad: tener el metal significa que tus datos nunca salen de tu escritorio. La mención de que Apple recortó la opción de 64GB a 48GB por la misma escasez de RAM que disparó la 5090 es un recordatorio de que ambos bandos sufren la misma cadena de suministro.</p>
     </div>
     <div class="stats">
         <span>📖 Texto completo vía Freedium</span>
-        <span><a href="https://medium.com/p/d5329bfe6405" target="_blank">Leer en Medium →</a></span>
+        <span><a href="https://medium.com/p/2eaf90402bbc" target="_blank">Leer en Medium →</a></span>
     </div>
 </article>
 
-<!-- Agentic Analytics -->
+<!-- 14. Spec-Driven Development -->
 <article class="article">
     <span class="badge badge-full">📖 Texto completo</span>
-    <span class="badge badge-ai">IA</span><span class="badge badge-tech">Data Science</span><span class="badge badge-code">Analytics</span>
-    <h3><a href="https://medium.com/p/ce605454bbc9" target="_blank">Anthropic is telling you that Agentic Analytics is not just text-to-SQL</a></h3>
-    <div class="meta-line">Jose Parreño · Data Science Collective · 19 min · 👏 877 · 💬 22</div>
+    <span class="badge badge-code">Agile</span><span class="badge badge-tech">Scrum</span><span class="badge badge-ai">AI Agents</span>
+    <h3><a href="https://medium.com/p/b4cc7025d971" target="_blank">Spec-Driven Development in Scrum and Kanban: Where the Spec Actually Lives</a></h3>
+    <div class="meta-line">Jaroslaw Wasowski · Level Up Coding · 13 min · 👏 327 · 💬 12</div>
     <div class="summary">
-        <p>El autor desmenuza el post de Anthropic del 3 de junio de 2026 ("How Anthropic enables self-service data analytics with Claude"), que reporta un 95% de precisión. Su tesis: la mayoría reduce la analítica agéntica a <em>text-to-SQL</em> porque es la parte que puedes demostrar en 30 segundos — pregunta en inglés, el modelo genera una query, la ejecuta y devuelve un número o un gráfico —, pero eso crea una "falsa sensación de precisión" y un fenómeno que bautiza como <strong>Analytics slop</strong>: nadie comprueba si los números que salen del dashboard son correctos. El problema real no es generar el GROUP BY, sino la <strong>ambigüedad de los datos</strong>: ante "¿cuál fue el revenue de clientes activos el mes pasado?", el modelo tiene que decidir qué significa "activo", qué definición de cliente es oficial, si es revenue bruto o neto, qué campo de fecha usar y qué reembolsos o filtros de fraude aplican. "Data is not software": puede escribir SQL perfecto y aun así no captar el significado de negocio.</p>
-        <p>Anthropic organiza su sistema en cuatro capas que van <em>antes</em> de que Claude toque una query: <strong>data foundations</strong> (datasets canónicos, modelado dimensional, checks de frescura, metadatos como producto de primera clase), <strong>sources of truth</strong> (capa semántica, linaje, contexto de negocio y material de referencia curado — el agente está <em>estructuralmente obligado</em> a consultar la capa semántica primero, y Anthropic dice explícitamente que NO es buena práctica dejar que los agentes inventen la capa semántica: los humanos son la clave), <strong>skills</strong> (procedimientos de dominio: qué fuente consultar primero, qué preguntas aclaratorias hacer, cómo revisar el resultado adversarialmente) y <strong>validation</strong> (evals offline, checks online, proveniencia y bucles de mantenimiento). El dato más revelador está en las skills: sin ellas, Claude no superaba el <strong>21%</strong> de acierto en sus evals; con la capa de skills, la precisión agregada sube por encima del <strong>95%</strong> y llega al ~99% en algunos dominios. Si el mayor salto viene de la guía procedimental y no de mejor generación de SQL, el producto no es text-to-SQL: es un workflow de analítica con ejecución de queries dentro.</p>
-        <p>El tercer pilar es que el sistema <em>decae</em> sin mantenimiento: Anthropic cuenta que la precisión offline cayó de ~95% a ~65% en un mes antes de tratar el mantenimiento de skills como un problema de ingeniería. Los tres modos de fallo que categoriza el post: ambigüedad de concepto/entidad (el usuario dice "active users" y hay varias implementaciones plausibles), <em>data staleness</em> (una métrica válida hace tres semanas se vuelve silenciosamente incorrecta tras un cambio de esquema o de regla) y fallo de recuperación (la respuesta correcta existe pero el espacio de búsqueda es enorme y el modelo aterriza en un casi-acierto). El mercado converge en lo mismo: la capa semántica de dbt, los "verified answers" de Power BI Copilot, el Cortex Analyst de Snowflake y el Genie de Databricks son la misma lección — contexto preparado es parte de la respuesta. El plan de arranque para un equipo de datos que quiera esto ya: elige <em>un</em> dominio (no todo el warehouse), crea <em>una</em> fuente de verdad gobernada, pon la capa semántica primero (SQL crudo como fallback), y construye un set pequeño de evals (20-30 preguntas reales con respuestas esperadas) antes de un rollout amplio. "Lo que no haría es conectar un modelo de frontera directamente al warehouse y llamar a eso una estrategia."</p>
+        <p>El artículo aborda el debate más candente en la intersección de Agile y AI: ¿es Spec-Driven Development (SDD) la nueva waterfall? La respuesta de Jaroslaw Wasowski es un no rotundo, pero con matices cruciales. La tensión real no es entre "entrega rápida" y "buenas specs", sino entre <strong>spec congelada</strong> y <strong>spec viva</strong>. Una spec congelada es Big Design Up Front con phase gates: eso sí es waterfall. Una spec viva es un contrato que madura dentro del sprint y se actualiza cuando la implementación enseña algo al equipo. La diferencia práctica para el lunes: no metas specs terminadas en el Product Backlog; mantén el backlog a nivel de objetivo e intención, y desarrolla el contrato — con precisión suficiente para que un agente de IA construya lo correcto — solo después de que la tarea entre en el sprint.</p>
+        <p>Wasowski estructura el SDD en tres niveles, tomando el marco de Birgitta Böckeler (Thoughtworks): <strong>spec-first</strong> (la spec guía el trabajo, pero el código sigue siendo el artefacto principal), <strong>spec-anchored</strong> (el contrato vive junto al código como artefacto versionado) y <strong>spec-as-source</strong> (la spec ES la fuente de verdad; el código es generado y desechable). Cada nivel sube el coste de mantenimiento y el acoplamiento. La mayoría de equipos deberían quedarse en spec-first. El error más común y más caro: pagar el coste de un nivel superior cuando tu problema está en uno inferior. Los datos respaldan la dirección: un estudio controlado (Colorado State, 2023) mostró un aumento del ~19% en velocidad y una caída del ~31% en densidad de defectos. Un fabricante de semiconductores redujo los defectos a la mitad pese a aumentar la complejidad. Un banco global pasó de gastar más de un tercio del tiempo de desarrollador en apagar fuegos a single digits en nueve meses.</p>
+        <p>Los fracasos enseñan tanto como los éxitos. Un experimento detallado mostró una ralentización de ~10x con un flujo SDD rígido en una feature CRUD pequeña: la herramienta generó más líneas de Markdown que de código, y cada una tuvo que ser revisada. El peor fracaso fue procedimental: SDD impuesto como mandato top-down generó una petición firmada por más de mil ingenieros y gaming de métricas. La regla de selección en tres frases: spec-first para la mayoría del trabajo, spec-anchored con contract tests en CI donde varios equipos comparten APIs, spec-as-source solo experimentalmente o en sistemas safety-critical. El mayor riesgo no es técnico sino psicológico: un estudio (METR, 2025) mostró que desarrolladores esperaban un ~24% de aceleración con AI y la medición real en un repositorio maduro mostró un 19% de <em>ralentización</em>. La brecha entre percepción y métrica es el verdadero enemigo. La recomendación final: mide cycle time, rework rate y ratio de líneas de código a líneas de Markdown antes de declarar victoria.</p>
     </div>
     <div class="stats">
         <span>📖 Texto completo vía Freedium</span>
-        <span><a href="https://medium.com/p/ce605454bbc9" target="_blank">Leer en Medium →</a></span>
+        <span><a href="https://medium.com/p/b4cc7025d971" target="_blank">Leer en Medium →</a></span>
     </div>
 </article>
 
-<!-- Linus Torvalds -->
+<!-- 15. Every Frontend Architecture Pattern -->
 <article class="article">
     <span class="badge badge-full">📖 Texto completo</span>
-    <span class="badge badge-ai">IA</span><span class="badge badge-code">Linux</span><span class="badge badge-tech">Ingeniería</span>
-    <h3><a href="https://medium.com/p/934b2d4be398" target="_blank">Linus Torvalds Said the Quiet Part Out Loud About AI and Code Quality.</a></h3>
-    <div class="meta-line">Noah Byteforge · Level Up Coding · 7 min · 👏 4.7K · 💬 103</div>
+    <span class="badge badge-code">Frontend</span><span class="badge badge-tech">Arquitectura</span><span class="badge badge-code">Web Dev</span>
+    <h3><a href="https://medium.com/p/a7ec07e7bbbb" target="_blank">Every Frontend Architecture Pattern Explained</a></h3>
+    <div class="meta-line">Tushar Kanjariya · 10 min · 👏 514 · 💬 11</div>
     <div class="summary">
-        <p>Hace dos días, en el Open Source Summit India 2026 de Mumbai, Linus Torvalds dijo algo que el autor no ha podido quitárselo de la cabeza: <strong>"ya no soy un programador"</strong>. No en el sentido de haber perdido la capacidad, sino como una elección deliberada sobre lo que su trabajo exige: lee las descripciones de los pull requests más que el código, entiende la <em>intención</em> más que la implementación, y manda parches como sugerencias, no como directivas, esperando que el mantenedor que entiende el subsistema devuelva el fix. El hombre que creó Git y lleva 35 años construyendo el kernel más importante del mundo admite que ya casi no lee código — y lo que eso dice no es sobre Torvalds, sino sobre qué es realmente la ingeniería cuando dejas de confundirla con escribir código.</p>
-        <p>La cobertura se ha quedado con lo provocador (alucinaciones, parches basura, el drenaje de tiempo de los mantenedores), pero lo importante es otra cosa. Torvalds describió los parches generados por IA como <strong>"mindless band-aid fixes"</strong>: arreglan el síntoma inmediato, pero el tipo de bug sigue ahí, "esperando en el pasillo para golpearte en otro sitio". No es una crítica a la IA, es una descripción de lo que pasa cuando algo arregla un síntoma sin entender la causa — y entender la causa requiere comprender el sistema, su historia y las decisiones que produjeron el diseño, algo que no se puede generar desde el propio código. Por eso lee las explicaciones más que los diffs: "la explicación es el test de comprensión". Sobre Rust fue igual de matizado: Rust arregla unos cuantos bugs fáciles de C, pero no arregla los errores de lógica, y sus garantías de seguridad solo aplican en las partes puramente Rust — donde interactúas con C, se acabaron las garantías, y la mayoría del Rust del kernel habla con código C del núcleo. Los bugs de alto perfil recientes han sido <em>errores de lógica</em>, no de seguridad de memoria: código incorrecto porque el autor entendió mal para qué servía.</p>
-        <p>Su postura sobre la IA es modesta y precisa: el campo está "ojalá en el punto en que la IA crea más productividad de la que quita" — no que sea transformadora, sino "ojalá neta positiva". Describe el periodo hasta principios de este año como uno en que la IA generaba más basura que código útil, con reportes de bugs plausibles que resultaban ser alucinaciones y que costaban trabajo real de investigación a los mantenedores, y un patrón de bugs relacionados apareciendo en ráfaga cuando varias personas usan IA sobre el mismo área. Su exigencia actual para aceptar un parche generado por IA: el fix sugerido <em>y</em> evidencia de que el humano hizo un verdadero ida y vuelta, verificando y entendiendo la salida en lugar de pasarla directamente. La lección para el ingeniero de 2026: el valor no está en escribir código más rápido, sino en construir modelos mentales del sistema a lo largo de años — la capacidad de leer un cambio propuesto y saber si quien lo mandó entendió el sistema o solo encontró una forma de que los tests pasen. Eso no está en el código, está en la experiencia de vivir con sus consecuencias. "Torvalds no está preocupado por la IA reemplazando ingenieros. Está preocupado por los ingenieros asistidos por IA que no han hecho el trabajo de entender realmente sus sistemas."</p>
+        <p>Tushar Kanjariya plantea que todos los patrones de arquitectura frontend son respuestas a una sola pregunta: <strong>¿cuánto trabajo debe hacer el navegador, versus el servidor, versus el build time?</strong> Todo lo demás — SSR, RSC, micro-frontends, BFFs — es solo un lugar distinto donde trazar esa línea. El artículo traza la evolución desde páginas HTML estáticas (carga instantánea, cero cosas que romper) hasta los frameworks MVC del lado del servidor (Django, Rails, ASP.NET — datos dinámicos pero recarga completa en cada clic) y la era SPA (React, Vue, Angular — el navegador hace casi todo, pero el "once it's loaded" es el problema: bundles enormes, first paint lento, SEO complicado).</p>
+        <p>El autor profundiza en el patrón <strong>Backend-for-Frontend (BFF)</strong>, nacido en SoundCloud hacia 2013. Su equipo estaba rompiendo un monolito en microservicios y cada cliente (web, iOS, Android) peleaba por una API compartida que no le servía a nadie. La solución: dar a cada cliente su propio backend fino, propiedad del equipo frontend, cuya única función es remodelar datos exactamente para lo que esa UI necesita. Phil Calçado documentó la historia original y Sam Newman la convirtió en el patrón canónico. Netflix resolvió el mismo problema con capas adaptadoras por dispositivo. El autor incluye código de ejemplo en Node.js/Express y es honesto sobre sus límites: no ha liderado una migración de micro-frontends en una empresa de 200 ingenieros, y todo lo que cuenta viene de documentación oficial y write-ups de ingeniería de SoundCloud, Netflix, Spotify, Vercel y Cloudflare. "Creo que eso es mucho más útil que fingir que lo he hecho todo yo mismo."</p>
     </div>
     <div class="stats">
         <span>📖 Texto completo vía Freedium</span>
-        <span><a href="https://medium.com/p/934b2d4be398" target="_blank">Leer en Medium →</a></span>
+        <span><a href="https://medium.com/p/a7ec07e7bbbb" target="_blank">Leer en Medium →</a></span>
     </div>
 </article>
 
