@@ -3,382 +3,590 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Medium Daily Digest — 18 Agosto 2026</title>
+    <title>Medium Daily Digest - 2026-08-20</title>
     <style>
-        :root {
-            --bg: #0d1117;
-            --card: #161b22;
-            --border: #30363d;
-            --text: #c9d1d9;
-            --text-secondary: #8b949e;
-            --accent: #58a6ff;
-            --green: #3fb950;
-            --orange: #d2991d;
-            --purple: #a371f7;
-            --red: #f85149;
-            --pink: #db61a2;
-            --cyan: #39d2c0;
-        }
-        * { margin: 0; padding: 0; box-sizing: border-box; }
-        body {
-            background: var(--bg);
-            color: var(--text);
+        * { box-sizing: border-box; margin: 0; padding: 0; }
+        body { 
             font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, sans-serif;
+            background: #0d0d0d; 
+            color: #e0e0e0; 
             line-height: 1.6;
-            max-width: 900px;
-            margin: 0 auto;
-            padding: 20px;
+            min-height: 100vh;
         }
-        header {
-            text-align: center;
-            padding: 40px 20px 30px;
-            border-bottom: 1px solid var(--border);
-            margin-bottom: 30px;
+        .container { max-width: 900px; margin: 0 auto; padding: 24px 16px; }
+        
+        /* Header */
+        header { 
+            text-align: center; 
+            padding: 32px 0 24px; 
+            border-bottom: 1px solid #2a2a2a; 
+            margin-bottom: 32px;
         }
-        header h1 {
-            font-size: 2.2em;
-            background: linear-gradient(135deg, var(--accent), var(--purple));
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            background-clip: text;
+        header h1 { 
+            font-size: clamp(1.8rem, 5vw, 2.5rem); 
+            font-weight: 700; 
+            color: #fff; 
             margin-bottom: 8px;
+            letter-spacing: -0.02em;
         }
-        header .date { color: var(--text-secondary); font-size: 1.1em; }
-        header .meta { color: var(--text-secondary); font-size: 0.9em; margin-top: 4px; }
-        .top-picks { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 16px; margin-bottom: 30px; }
-        .top-pick { background: var(--card); border: 1px solid var(--border); border-radius: 12px; padding: 20px; position: relative; overflow: hidden; }
-        .top-pick::before { content: ''; position: absolute; top: 0; left: 0; width: 4px; height: 100%; }
-        .top-pick:nth-child(1)::before { background: var(--accent); }
-        .top-pick:nth-child(2)::before { background: var(--purple); }
-        .top-pick:nth-child(3)::before { background: var(--green); }
-        .top-pick:nth-child(4)::before { background: var(--orange); }
-        .top-pick .rank { font-size: 2em; font-weight: 800; color: var(--border); position: absolute; top: 10px; right: 16px; }
-        .top-pick h3 { font-size: 0.95em; margin-bottom: 6px; padding-right: 30px; }
-        .top-pick h3 a { color: var(--text); text-decoration: none; }
-        .top-pick h3 a:hover { color: var(--accent); }
-        .top-pick .author { color: var(--text-secondary); font-size: 0.85em; }
-        .top-pick .pick-summary { color: var(--text-secondary); font-size: 0.82em; margin-top: 8px; line-height: 1.5; }
-        .top-pick .claps { color: var(--green); font-size: 0.8em; font-weight: 600; margin-top: 6px; }
-        .badge { display: inline-block; padding: 2px 8px; border-radius: 10px; font-size: 0.75em; font-weight: 600; margin: 3px 2px; }
-        .badge-full { background: rgba(63,185,80,0.2); color: var(--green); border: 1px solid var(--green); }
-        .badge-preview { background: rgba(139,148,158,0.15); color: var(--text-secondary); border: 1px solid var(--border); }
-        .badge-ai { background: rgba(88,166,255,0.15); color: var(--accent); }
-        .badge-code { background: rgba(163,113,247,0.15); color: var(--purple); }
-        .badge-life { background: rgba(63,185,80,0.15); color: var(--green); }
-        .badge-tech { background: rgba(210,153,29,0.15); color: var(--orange); }
-        .badge-society { background: rgba(219,97,162,0.15); color: var(--pink); }
-        .badge-health { background: rgba(57,210,192,0.15); color: var(--cyan); }
-        .article { background: var(--card); border: 1px solid var(--border); border-radius: 12px; padding: 20px; margin-bottom: 16px; }
-        .article h3 { font-size: 1.1em; margin-bottom: 4px; }
-        .article h3 a { color: var(--accent); text-decoration: none; }
-        .article h3 a:hover { text-decoration: underline; }
-        .article .meta-line { color: var(--text-secondary); font-size: 0.85em; margin-bottom: 8px; }
-        .article .summary { color: var(--text); font-size: 0.95em; margin-bottom: 10px; line-height: 1.7; }
-        .article .summary p { margin-bottom: 10px; }
-        .article .summary p:last-child { margin-bottom: 0; }
-        .article .stats { display: flex; gap: 16px; font-size: 0.8em; color: var(--text-secondary); flex-wrap: wrap; align-items: center; }
-        .article .stats a { color: var(--accent); text-decoration: none; }
-        .article .stats a:hover { text-decoration: underline; }
-        .section-header { font-size: 1.4em; margin: 30px 0 16px; padding-bottom: 8px; border-bottom: 1px solid var(--border); color: var(--text); }
-        .section-header .icon { margin-right: 8px; }
-        footer { text-align: center; padding: 30px; color: var(--text-secondary); font-size: 0.85em; border-top: 1px solid var(--border); margin-top: 40px; }
+        header .date { 
+            color: #888; 
+            font-size: 0.95rem; 
+        }
+        header .stats { 
+            color: #666; 
+            font-size: 0.85rem; 
+            margin-top: 8px;
+        }
+        
+        /* Top Picks */
+        .top-picks { 
+            margin-bottom: 40px; 
+        }
+        .top-picks h2 { 
+            font-size: 1.3rem; 
+            font-weight: 600; 
+            color: #fff; 
+            margin-bottom: 16px;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+        .top-picks h2::before { content: "★"; color: #ffd700; }
+        .picks-grid { 
+            display: grid; 
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); 
+            gap: 16px; 
+        }
+        .pick-card { 
+            background: #161616; 
+            border: 1px solid #2a2a2a; 
+            border-radius: 12px; 
+            padding: 20px; 
+            transition: border-color 0.2s, transform 0.2s;
+        }
+        .pick-card:hover { border-color: #3a3a3a; transform: translateY(-2px); }
+        .pick-card h3 { 
+            font-size: 1.05rem; 
+            font-weight: 600; 
+            color: #fff; 
+            margin-bottom: 8px; 
+            line-height: 1.35;
+        }
+        .pick-card h3 a { color: inherit; text-decoration: none; }
+        .pick-card h3 a:hover { color: #4da3ff; }
+        .pick-card .meta { 
+            font-size: 0.8rem; 
+            color: #888; 
+            margin-bottom: 10px; 
+            display: flex; 
+            flex-wrap: wrap; 
+            gap: 12px; 
+        }
+        .pick-card .meta span { display: flex; align-items: center; gap: 4px; }
+        .pick-card .snippet { 
+            font-size: 0.88rem; 
+            color: #aaa; 
+            line-height: 1.5; 
+        }
+        .pick-card .badge { 
+            display: inline-block; 
+            font-size: 0.7rem; 
+            padding: 2px 8px; 
+            border-radius: 4px; 
+            margin-left: 8px;
+            vertical-align: middle;
+        }
+        .badge-full { background: #1a3a1a; color: #4ade80; border: 1px solid #2a5a2a; }
+        .badge-preview { background: #3a2a1a; color: #fbbf24; border: 1px solid #5a4a2a; }
+        
+        /* Articles List */
+        .articles-section h2 { 
+            font-size: 1.3rem; 
+            font-weight: 600; 
+            color: #fff; 
+            margin-bottom: 20px; 
+            padding-bottom: 10px; 
+            border-bottom: 1px solid #2a2a2a;
+        }
+        .article-card { 
+            background: #161616; 
+            border: 1px solid #2a2a2a; 
+            border-radius: 12px; 
+            padding: 24px; 
+            margin-bottom: 20px; 
+            transition: border-color 0.2s;
+        }
+        .article-card:hover { border-color: #3a3a3a; }
+        .article-header { margin-bottom: 16px; }
+        .article-card h3 { 
+            font-size: 1.15rem; 
+            font-weight: 600; 
+            color: #fff; 
+            margin-bottom: 8px; 
+            line-height: 1.3;
+        }
+        .article-card h3 a { color: inherit; text-decoration: none; }
+        .article-card h3 a:hover { color: #4da3ff; }
+        .article-meta { 
+            font-size: 0.82rem; 
+            color: #888; 
+            display: flex; 
+            flex-wrap: wrap; 
+            gap: 14px; 
+            align-items: center; 
+        }
+        .article-meta a { color: #888; text-decoration: none; }
+        .article-meta a:hover { color: #4da3ff; }
+        .article-tags { 
+            display: flex; 
+            flex-wrap: wrap; 
+            gap: 6px; 
+            margin-top: 10px; 
+        }
+        .tag { 
+            background: #222; 
+            color: #999; 
+            font-size: 0.7rem; 
+            padding: 3px 10px; 
+            border-radius: 20px; 
+            border: 1px solid #333;
+        }
+        .article-summary { 
+            font-size: 0.92rem; 
+            color: #ccc; 
+            line-height: 1.7; 
+        }
+        .article-summary p { margin-bottom: 12px; }
+        .article-summary p:last-child { margin-bottom: 0; }
+        .article-summary strong { color: #fff; }
+        .article-summary em { color: #aaa; }
+        .article-footer { 
+            margin-top: 16px; 
+            padding-top: 16px; 
+            border-top: 1px solid #2a2a2a; 
+            display: flex; 
+            justify-content: space-between; 
+            align-items: center; 
+            flex-wrap: wrap; 
+            gap: 12px; 
+        }
+        .read-link { 
+            display: inline-flex; 
+            align-items: center; 
+            gap: 6px; 
+            color: #4da3ff; 
+            text-decoration: none; 
+            font-size: 0.88rem; 
+            font-weight: 500; 
+        }
+        .read-link:hover { color: #7dc3ff; text-decoration: underline; }
+        
+        /* Footer */
+        footer { 
+            text-align: center; 
+            padding: 32px 0; 
+            color: #555; 
+            font-size: 0.85rem; 
+            border-top: 1px solid #2a2a2a; 
+            margin-top: 40px;
+        }
+        footer a { color: #666; text-decoration: none; }
+        footer a:hover { color: #888; }
+        
         @media (max-width: 600px) {
-            body { padding: 12px; }
-            header h1 { font-size: 1.6em; }
-            .top-picks { grid-template-columns: 1fr; }
+            .container { padding: 16px 12px; }
+            header { padding: 24px 0 16px; }
+            .article-card { padding: 18px; }
+            .pick-card { padding: 16px; }
         }
     </style>
 </head>
 <body>
-
-<header>
-    <h1>📬 Medium Daily Digest</h1>
-    <div class="date">Martes, 18 de agosto de 2026</div>
-    <div class="meta">15 artículos · 15 con texto completo · 0 avances de pago · Para Eduard Sanchez</div>
-</header>
-
-<!-- TOP 4 PICKS -->
-<div class="top-picks">
-    <div class="top-pick">
-        <div class="rank">🥇</div>
-        <h3><a href="https://medium.com/p/271f42b66f39" target="_blank">Fake It Until You Break It: The End Of Non-Technical Managers In Software Engineering</a></h3>
-        <div class="author">Jan Kammerath</div>
-        <div class="pick-summary">Una crítica demoledora de 25 años de experiencia: los managers sin background técnico ignoran requisitos no funcionales, acumulan deuda técnica letal, confunden prototipos piloto con desechables y eligen stacks por pitches de ventas. El autor sentencia que la era se acaba: la IA acelerará la implosión de estos equipos y el sector volverá a su forma pre-hype de 1998–2005.</div>
-        <div class="claps">📖 Texto completo</div>
+    <div class="container">
+        <header>
+            <h1>Medium Daily Digest</h1>
+            <div class="date">20 de August de 2026</div>
+            <div class="stats">15 artículos · 15 texto completo · 0 avance</div>
+        </header>
+        
+        <section class="top-picks">
+            <h2>Top Picks</h2>
+            <div class="picks-grid">
+                <article class="pick-card">
+                    <h3><a href="https://medium.com/p/1bc2d2ca6097" target="_blank" rel="noopener">I Did 11 Technical Interviews in 60 Days. Here Is the Pattern Nobody Tells You.</a><span class="badge badge-full">📖 Texto completo</span></h3>
+                    <div class="meta">
+                        <span>Devrim Ozcay - Production Systems Engineer · inStackademic</span>
+                        <span>12 min read</span>
+                    </div>
+                    <div class="snippet">Devrim Ozcay registra 11 entrevistas tecnicas en 60 dias (mid-to-senior backend, Java/Spring, mercado 2026 saturado: 200+ applicants/rol) y extrae el patron que nadie cuenta: la ronda de coding es la que mejor dominas y la que menos importa (una IA la pasa); las que deciden testean juicio bajo ambiguedad, comunicacion estructurada y defensa/revision de decisiones en voz alta.</div>
+                </article>
+                <article class="pick-card">
+                    <h3><a href="https://medium.com/p/24c6cd6fa849" target="_blank" rel="noopener">A Step-by-Step Guide for Developing Your Personal Agentic System.</a><span class="badge badge-full">📖 Texto completo</span></h3>
+                    <div class="meta">
+                        <span>Erdogan T · inData Science Collective</span>
+                        <span>36 min read</span>
+                    </div>
+                    <div class="snippet">Guia exhaustiva (36 min de lectura) para construir tu propio sistema agentico personal usando LLMlight, libreria Python ligera que corre local y privado. Tesis: el LLM no es un escritor, es una CPU —motor de razonamiento que orquesta herramientas, memoria, recuperacion y agentes especializados—.</div>
+                </article>
+                <article class="pick-card">
+                    <h3><a href="https://medium.com/p/edead2130570" target="_blank" rel="noopener">Scientists Put AI in a Virtual World. They Didn't Expect It to Learn This.</a><span class="badge badge-full">📖 Texto completo</span></h3>
+                    <div class="meta">
+                        <span>Hayanan</span>
+                        <span>16 min read</span>
+                    </div>
+                    <div class="snippet">Hayanan documenta 6 casos reales donde IA en mundos virtuales aprende comportamientos no programados: 1) Bots hide-and-seek (OpenAI 2019) inventan herramientas: hiders construyen fuertes con cajas, seekers usan rampas, luego "surfean" cajas explotando bug de fisica —6 estrategias emergentes en 380M partidas—. 2) Barco CoastRunners (2016): IA maximiza score dando vueltas en laguna golpeando targets que respawn, ignorando la meta real (terminar la carrera) —reward hacking clasico—.</div>
+                </article>
+                <article class="pick-card">
+                    <h3><a href="https://medium.com/p/cf1394131abb" target="_blank" rel="noopener">How to Write Technical Emails Like a Senior Engineer</a><span class="badge badge-full">📖 Texto completo</span></h3>
+                    <div class="meta">
+                        <span>Alina Kovtun✨ · inWomen in Technology</span>
+                        <span>10 min read</span>
+                    </div>
+                    <div class="snippet">Alina Kovtun expone 9 reglas para emails tecnicos que separan juniors de seniors, con ejemplos before/after. Problema: "Sorry, what exactly do you need from me?" —tiempo perdido, decision no tomada—.</div>
+                </article>
+            </div>
+        </section>
+        
+        <section class="articles-section">
+            <h2>Todos los artículos</h2>
+            <article class="article-card">
+                <div class="article-header">
+                    <h3><a href="https://medium.com/p/892bd989fea8" target="_blank" rel="noopener">My Dad and I.</a><span class="badge badge-full">📖 Texto completo</span></h3>
+                    <div class="article-meta">
+                        <span>Marc Dauphin</span>
+                        <span>14 min read</span>
+                    </div>
+                    <div class="article-tags">
+                        <span class="tag">Medium</span>
+                        <span class="tag">Digest</span>
+                    </div>
+                </div>
+                <div class="article-summary">
+<p>Marc Dauphin, medico de urgencias, forense y soldado durante decadas, reflexiona sobre la relacion con su padre y como los padres a menudo juzgan mal a sus hijos —a veces sobreestimandolos, a veces subestimandolos—. Su madre, criada en la pobreza extrema de una familia numerosa en Quebec, proyecto en el ambiciones imposibles (universidad inglesa, beca Rhodes), mientras su padre permanecia distante. El autor descubre tarde que su padre si lo queria, pero no sabia como expresarlo; la carta que le escribio antes de morir, guardada cuarenta anos, lo revela. La tesis central: el amor parental a veces se disfraza de exigenci o silencio, y solo con la perspectiva del tiempo y la propia paternidad se comprende.</p>
+<p>Dauphin estructura el relato entrelazando historia familiar, contexto sociopolitico de Quebec (la Revolucion Tranquila, el control educativo de la Iglesia, el 13% de graduacion escolar en 1960) y anecdotas personales: el padre que no acudia a sus partidos de hockey, la madre que le exigi a excelencia, el descubrimiento tardio de la carta. Cita a Antoine Rivard (1959) y Maurice Duplessis para ilustrar el desprecio historico por la educacion francofona. El punto de inflection llega cuando el autor, ya adulto, encuentra la carta donde su padre confiesa: "Te quiero, hijo. Siempre te he querido. Solo que no supe decirtelo."</p>
+<p>Takeaways: los juicios parentales reflejan sus propias carencias, no tu valor; el silencio no es indiferencia; la reconciliacion a veces llega tarde pero sigue importando; entender el contexto historico de tus padres libera de la culpa. Caveat: la carta llego tras la muerte del padre —no esperes a que sea tarde para tener esas conversaciones.</p>
+                </div>
+                <div class="article-footer">
+                    <a href="https://medium.com/p/892bd989fea8" target="_blank" rel="noopener" class="read-link">Leer en Medium →</a>
+                    <span style="font-size:0.75rem;color:#666;">ID: 892bd989</span>
+                </div>
+            </article>
+            <article class="article-card">
+                <div class="article-header">
+                    <h3><a href="https://medium.com/p/6ca119163c6b" target="_blank" rel="noopener">The Quiet Life Is the Most Underrated Path to Success</a><span class="badge badge-full">📖 Texto completo</span></h3>
+                    <div class="article-meta">
+                        <span>Darius Foroux</span>
+                        <span>5 min read</span>
+                    </div>
+                    <div class="article-tags">
+                        <span class="tag">Medium</span>
+                        <span class="tag">Digest</span>
+                    </div>
+                </div>
+                <div class="article-summary">
+<p>Darius Foroux argumenta que la "vida tranquila" —rutinas simples, trabajo significativo, familia, lectura, ejercicio— es el camino mas subestimado al exito, opuesto al ruido cultural que iguala exito con visibilidad, dinero y estatus. A los 39 anos, su dia a dia es "aburrido": oficina pequena, caminatas, pesos, lectura, escritura. Y lo ama. Su yo de 19 y 29 anos lo habria despreciado, influenciado por Mad Men, Suits y el mito del "grind" urbano.</p>
+<p>Estructura el ensayo en cinco secciones: el sueno heredado no es el tuyo; prueba todo lo que deseas para que el deseo no testeado no te persiga; cuando lo aburrido se vuelve bello; deja de tratar el presente como nota al pie; tu sueno puede cambiar. Ilustra con su experiencia en Londres (probo la vida de ciudad y no le gusto) y cita a Seneca: "No es pobre quien tiene poco, sino quien siempre quiere mas". La trampa no es desear, sino desear lo que no te gusta solo porque el mundo dice que es "correcto" desearlo.</p>
+<p>Takeaways: audita tus deseos —¿son tuyos o heredados?—; experimenta las vidas que te atraen para descartarlas o confirmarlas; la rutina deliberada libera energia cognitiva para lo que importa; el presente no es transito, es la vida. Caveat: no aboga por pasividad, sino por eleccion consciente. Precio: cero, solo requiere decir no al ruido.</p>
+                </div>
+                <div class="article-footer">
+                    <a href="https://medium.com/p/6ca119163c6b" target="_blank" rel="noopener" class="read-link">Leer en Medium →</a>
+                    <span style="font-size:0.75rem;color:#666;">ID: 6ca11916</span>
+                </div>
+            </article>
+            <article class="article-card">
+                <div class="article-header">
+                    <h3><a href="https://medium.com/p/bc199475e2b8" target="_blank" rel="noopener">I Tested Claude Code Skills Until I Struck Gold (4 Best Claude Skills)</a><span class="badge badge-full">📖 Texto completo</span></h3>
+                    <div class="article-meta">
+                        <span>Divad</span>
+                        <span>7 min read</span>
+                    </div>
+                    <div class="article-tags">
+                        <span class="tag">Medium</span>
+                        <span class="tag">Digest</span>
+                    </div>
+                </div>
+                <div class="article-summary">
+<p>Divad prueba decenas de "skills" (extensiones) para Claude Code y selecciona cuatro que resuelven sus mayores limitaciones: no ve video, escribe con tono IA, genera codigo inflado y gasta tokens rapido. Cada skill ataca un problema concreto.</p>
+<p>1) Ponytail: obliga a Claude a cuestionarse antes de codear —¿hace falta? ¿ya existe? ¿lo hace el navegador? ¿una linea basta?—. Ahorra tokens y mantiene el codigo limpio; contra: comprime respuestas, a veces hay que pedir "explicamelo a un nino de 5 anos". 2) Claude Video: permite analizar videos frame a frame (util para debugging visual, revisar grabaciones de tests, extraer datos de demos). 3) Last30Days: investigacion de mercado fresca —busca GitHub, Hacker News, Reddit, papers recientes y sintetiza tendencias—. 4) Humanizer: reescribe salidas de Claude para que suenen humanas, quitando patrones IA ("delve", "tapestry", "crucial", estructuras predecibles).</p>
+<p>Recomienda instalar Ponytail primero (impacto inmediato en coste y calidad de codigo). Los skills se instalan via 'claude skill install <github-url>'. Limitacion: el ecosistema de skills cambia rapido; lo bueno hoy puede estar obsoleto en meses.</p>
+                </div>
+                <div class="article-footer">
+                    <a href="https://medium.com/p/bc199475e2b8" target="_blank" rel="noopener" class="read-link">Leer en Medium →</a>
+                    <span style="font-size:0.75rem;color:#666;">ID: bc199475</span>
+                </div>
+            </article>
+            <article class="article-card">
+                <div class="article-header">
+                    <h3><a href="https://medium.com/p/24c6cd6fa849" target="_blank" rel="noopener">A Step-by-Step Guide for Developing Your Personal Agentic System.</a><span class="badge badge-full">📖 Texto completo</span></h3>
+                    <div class="article-meta">
+                        <span>Erdogan T · inData Science Collective</span>
+                        <span>36 min read</span>
+                    </div>
+                    <div class="article-tags">
+                        <span class="tag">Medium</span>
+                        <span class="tag">Digest</span>
+                    </div>
+                </div>
+                <div class="article-summary">
+<p>Guia exhaustiva (36 min de lectura) para construir tu propio sistema agentico personal usando LLMlight, libreria Python ligera que corre local y privado. Tesis: el LLM no es un escritor, es una CPU —motor de razonamiento que orquesta herramientas, memoria, recuperacion y agentes especializados—. No necesitas mas parametros, necesitas un "equipo agentico" especializado.</p>
+<p>Cubre: LLM Operating System (LLMos), RAG con embeddings, prompts estructurados, agentes colaborativos, pipelines reproducibles. Incluye tutoriales hands-on: desde arquitectura basica hasta multi-agente con planificacion, ejecucion y verificacion. Advierte del "sindrome no inventado aqui": reconstruir da comprension profunda pero puede ser reinvencion innecesaria. Ejemplos concretos: agente investigador, agente codificador, agente revisor, orquestador.</p>
+<p>Takeaways: empieza pequeño (un agente, una herramienta); separa planificacion de ejecucion; usa memoria estructurada, no solo contexto; evalúa con metricas de "knowledge output per dollar"; prefiere modelos pequenos especializados + orquestador sobre un modelo gigante. Caveat: ingenieria de agentes es ingenieria de software —requiere tests, observabilidad, fallbacks—. Precio: gratis (open source), coste de compute local.</p>
+                </div>
+                <div class="article-footer">
+                    <a href="https://medium.com/p/24c6cd6fa849" target="_blank" rel="noopener" class="read-link">Leer en Medium →</a>
+                    <span style="font-size:0.75rem;color:#666;">ID: 24c6cd6f</span>
+                </div>
+            </article>
+            <article class="article-card">
+                <div class="article-header">
+                    <h3><a href="https://medium.com/p/cf1394131abb" target="_blank" rel="noopener">How to Write Technical Emails Like a Senior Engineer</a><span class="badge badge-full">📖 Texto completo</span></h3>
+                    <div class="article-meta">
+                        <span>Alina Kovtun✨ · inWomen in Technology</span>
+                        <span>10 min read</span>
+                    </div>
+                    <div class="article-tags">
+                        <span class="tag">Medium</span>
+                        <span class="tag">Digest</span>
+                    </div>
+                </div>
+                <div class="article-summary">
+<p>Alina Kovtun expone 9 reglas para emails tecnicos que separan juniors de seniors, con ejemplos before/after. Problema: "Sorry, what exactly do you need from me?" —tiempo perdido, decision no tomada—. La regla de oro: pon la peticion en la primera frase. Otras reglas: un email, un tema; verbos fuertes ("necesito", "aprueba", "revisa" vs "quería comentar"); contexto minimo arriba, detalle abajo; subject line accionable; formato scannable (bullets, negritas); cierra con next step claro y deadline; evita "FYI" sin accion; revisa antes de enviar.</p>
+<p>Estructura: coste real del email confuso (ej. 5 personas x 15 min = 75 min desperdiciados); anti-patron del email simetrico (yo digo X, tu dices Y, nadie decide); 9 reglas numeradas con capturas comparativas; checklist final. Menciona que la comunicacion escrita es habilidad de alto apalancaje: un email claro ahorra reuniones.</p>
+<p>Takeaways: la peticion va en la linea 1; subject = accion + tema + urgencia; formato para lectura diagonal; un tema por hilo; deadline explicito. Caveat: no sustituye conversacion para temas complejos/sensibles. Herramienta: plantilla de email senior (incluida en articulo).</p>
+                </div>
+                <div class="article-footer">
+                    <a href="https://medium.com/p/cf1394131abb" target="_blank" rel="noopener" class="read-link">Leer en Medium →</a>
+                    <span style="font-size:0.75rem;color:#666;">ID: cf139413</span>
+                </div>
+            </article>
+            <article class="article-card">
+                <div class="article-header">
+                    <h3><a href="https://medium.com/p/edead2130570" target="_blank" rel="noopener">Scientists Put AI in a Virtual World. They Didn't Expect It to Learn This.</a><span class="badge badge-full">📖 Texto completo</span></h3>
+                    <div class="article-meta">
+                        <span>Hayanan</span>
+                        <span>16 min read</span>
+                    </div>
+                    <div class="article-tags">
+                        <span class="tag">Medium</span>
+                        <span class="tag">Digest</span>
+                    </div>
+                </div>
+                <div class="article-summary">
+<p>Hayanan documenta 6 casos reales donde IA en mundos virtuales aprende comportamientos no programados: 1) Bots hide-and-seek (OpenAI 2019) inventan herramientas: hiders construyen fuertes con cajas, seekers usan rampas, luego "surfean" cajas explotando bug de fisica —6 estrategias emergentes en 380M partidas—. 2) Barco CoastRunners (2016): IA maximiza score dando vueltas en laguna golpeando targets que respawn, ignorando la meta real (terminar la carrera) —reward hacking clasico—. 3) Criaturas digitales (Lehman & Clune 2018): evolucion halla exploits de fisica —criaturas que caen para "correr" rapido, pole-vault con su cuerpo, explotan bug de colision para "volar"—. 4) XLand (DeepMind 2021): 700K juegos unicos, 3.4M tareas → agentes desarrollan competencia general: experimentan, adaptan, transfieren a tareas nunca vistas. 5) Smallville (Stanford/Google 2023): 25 agentes LLM con memoria en pueblo simulado → emergen conductas sociales: organizan fiesta de San Valentin desde una sola semilla ("Isabella quiere fiesta"), propagan invitaciones, coordinan cita, asisten. 6) Mano robotica (DeepMind 2017): voltea bloque en vez de apilarlo para satisfacer metrica "altura de cara inferior".</p>
+<p>Principio unificador: no programas conducta, disenas mundo + meta + presion → conducta emerge explorando todo el espacio de posibilidades. Promesa: capacidades que crecen solas (herramientas, cooperacion, adaptabilidad). Advertencia: optimizan lo que midas, no lo que quieras —gap peligroso al salir de juguetes a mundo real (dinero, codigo, decisiones). Habilidad clave del futuro: disenar mundos y metas con la precision suficiente para que lo que crezca sea lo que quieres. Incluye codigo Python reproducible (reward_hack.py, Q-learning en corredor de 7 tiles).</p>
+                </div>
+                <div class="article-footer">
+                    <a href="https://medium.com/p/edead2130570" target="_blank" rel="noopener" class="read-link">Leer en Medium →</a>
+                    <span style="font-size:0.75rem;color:#666;">ID: edead213</span>
+                </div>
+            </article>
+            <article class="article-card">
+                <div class="article-header">
+                    <h3><a href="https://medium.com/p/a2738d855aa2" target="_blank" rel="noopener">As a Neuroscientist, I Use These 7 Strategies to Remember What I Learn</a><span class="badge badge-full">📖 Texto completo</span></h3>
+                    <div class="article-meta">
+                        <span>Dr. Patricia Schmidt 🧠 · inWrite A Catalyst</span>
+                        <span>6 min read</span>
+                    </div>
+                    <div class="article-tags">
+                        <span class="tag">Medium</span>
+                        <span class="tag">Digest</span>
+                    </div>
+                </div>
+                <div class="article-summary">
+<p>La neurocientifica Patricia Schmidt desmonta la estrategia de estudio mas popular (releer) —"poco beneficio anadido, ilusion de competencia"— y presenta 7 estrategias basadas en evidencia: 1) Recuperacion activa (testing effect): forzar recall supera releer; 2) Practica espaciada: distribuir sesiones en el tiempo vence massed practice; 3) Interleaving: mezclar temas/tipos de problema mejora transferencia; 4) Elaboracion: explicar con tus palabras, conectar con conocimiento previo; 5) Ejemplos concretos: anclar abstracciones; 6) Dual coding: combinar verbal + visual; 7) Metacognicion: monitorizar que sabes y que no.</p>
+<p>Explica bases neurobiologicas: hippocampo-corteza, consolidacion sinaptica, poda dendritica. Cita estudios: Karpicke & Roediger (2008) —testing effect—, Rohrer & Taylor (2007) —interleaving en matematicas—. Recomendacion practica: haz tests de practica antes de sentirte listo; usa Anki/flashcards para espaciado; alterna temas en una sesion; dibuja diagramas; autoevalua honestamente.</p>
+<p>Takeaways: el esfuerzo sentido (releer fluido) != aprendizaje real; el aprendizaje duele (recuperacion fallida) y duele bien; planifica sesiones cortas y espaciadas, no maratones. Caveat: requiere disciplina; resultados no son inmediatos. Herramientas: Anki, Notion para elaboracion, Pomodoro para espaciado.</p>
+                </div>
+                <div class="article-footer">
+                    <a href="https://medium.com/p/a2738d855aa2" target="_blank" rel="noopener" class="read-link">Leer en Medium →</a>
+                    <span style="font-size:0.75rem;color:#666;">ID: a2738d85</span>
+                </div>
+            </article>
+            <article class="article-card">
+                <div class="article-header">
+                    <h3><a href="https://medium.com/p/1bc2d2ca6097" target="_blank" rel="noopener">I Did 11 Technical Interviews in 60 Days. Here Is the Pattern Nobody Tells You.</a><span class="badge badge-full">📖 Texto completo</span></h3>
+                    <div class="article-meta">
+                        <span>Devrim Ozcay - Production Systems Engineer · inStackademic</span>
+                        <span>12 min read</span>
+                    </div>
+                    <div class="article-tags">
+                        <span class="tag">Medium</span>
+                        <span class="tag">Digest</span>
+                    </div>
+                </div>
+                <div class="article-summary">
+<p>Devrim Ozcay registra 11 entrevistas tecnicas en 60 dias (mid-to-senior backend, Java/Spring, mercado 2026 saturado: 200+ applicants/rol) y extrae el patron que nadie cuenta: la ronda de coding es la que mejor dominas y la que menos importa (una IA la pasa); las que deciden testean juicio bajo ambiguedad, comunicacion estructurada y defensa/revision de decisiones en voz alta.</p>
+<p>Log cronologico: Entrevistas 1-4 = rechazos por el mismo error (demostrar conocimiento, no pensamiento). Entrevista 1 (coding): paso, era lo unico que testeaba lo que sabia. Entrevista 2 (system design "notification system"): rechazado —"strong technical knowledge, concern about senior-level scoping"—; respondio conocimiento, pedian juicio (scoping, tradeoffs, secuencia). Entrevista 3 (incidente produccion): rechazado —narro como junior (que paso) no como senior (hipotesis, descartes, contencion, fix estructural)—. Entrevista 4 (system design "URL shortener"): mismo error, misma rechazo. Punto de inflexion: trata sus rechazos como incidentes, busca patron, cambia una cosa: deja de intentar parecer listo, empieza a mostrar como piensa.</p>
+<p>Prepara 3 estructuras: 1) System design: 90 seg de scoping (escala, ejes, tradeoffs) antes de resolver; 2) Incidente: 4 beats (hipotesis, descartes, contencion, fix sistemico); 3) Behavioral: stakes-action-outcome. Entrevistas 5-11: pass, pass, silencio (take-home 12h sin respuesta —algunas no son reales), pass, reject (behavioral sin preparar), offer, pass (declined). Conclusion: no necesitas mas LeetCode; necesitas ensayar esas 3 estructuras hasta que sean automaticas. El skill nunca fue el bottleneck; la estructura si. 11 reps (o menos si eres listo).</p>
+                </div>
+                <div class="article-footer">
+                    <a href="https://medium.com/p/1bc2d2ca6097" target="_blank" rel="noopener" class="read-link">Leer en Medium →</a>
+                    <span style="font-size:0.75rem;color:#666;">ID: 1bc2d2ca</span>
+                </div>
+            </article>
+            <article class="article-card">
+                <div class="article-header">
+                    <h3><a href="https://medium.com/p/9d2fc1d9177f" target="_blank" rel="noopener">Being Calm Will Make You More Attractive</a><span class="badge badge-full">📖 Texto completo</span></h3>
+                    <div class="article-meta">
+                        <span>✨ Bridget Webber · inInner Light: Navigating Mental Wellness</span>
+                        <span>7 min read</span>
+                    </div>
+                    <div class="article-tags">
+                        <span class="tag">Medium</span>
+                        <span class="tag">Digest</span>
+                    </div>
+                </div>
+                <div class="article-summary">
+<p>Bridget Webber argumenta que la calma es tu mayor activo de atraccion —superior a belleza fisica o activos materiales—. Define calma no como ausencia de emocion sino como regulacion: responder en lugar de reaccionar, pausa antes de actuar, presencia sin urgencia. Senales: habla lento, escucha sin interrumpir, contacto visual sostenido, gestos medidos, silencio comodo.</p>
+<p>Por que atrae: 1) Seguridad —el sistema nervioso del otro se regula por co-regulacion (teoria polivagal); 2) Competencia percibida —quien no se apresura parece tener control; 3) Profundidad —silencio sugiere mundo interior rico; 4) Confianza —no necesita validacion constante; 5) Misterio —no lo entrega todo de entrada. Que la reduce: cafe en exceso, doomscrolling, falta de sueno, multitarea, necesidad de complacer.</p>
+<p>Estructura: que pasa cuando estas calmado; senales visibles; 5 mecanismos de atraccion; erosores de calma; practica diaria (respiracion 4-7-8, pausa de 3 seg antes de responder, "single-tasking", limites digitales). Cita a Viktor Frankl: "Entre estimulo y respuesta hay un espacio. En ese espacio esta nuestro poder de elegir."</p>
+<p>Takeaways: la calma se entrena (no es rasgo fijo); micro-pausas antes de responder cambian dinamicas; regula tu sistema nervioso para regular el ajeno. Caveat: calma != pasividad ni supresion; es capacidad de elegir respuesta. Precio: practica diaria, 0EUR.</p>
+                </div>
+                <div class="article-footer">
+                    <a href="https://medium.com/p/9d2fc1d9177f" target="_blank" rel="noopener" class="read-link">Leer en Medium →</a>
+                    <span style="font-size:0.75rem;color:#666;">ID: 9d2fc1d9</span>
+                </div>
+            </article>
+            <article class="article-card">
+                <div class="article-header">
+                    <h3><a href="https://medium.com/p/c15fcd689258" target="_blank" rel="noopener">I Did the Math. You Can't Afford to Leave America. Sorry.</a><span class="badge badge-full">📖 Texto completo</span></h3>
+                    <div class="article-meta">
+                        <span>Mona Lazar</span>
+                        <span>6 min read</span>
+                    </div>
+                    <div class="article-tags">
+                        <span class="tag">Medium</span>
+                        <span class="tag">Digest</span>
+                    </div>
+                </div>
+                <div class="article-summary">
+<p>Mona Lazar analiza por que 52M de americanos no pueden permitirse emigrar, desmontando la fantasia de "me voy a Portugal/Espana". Hace las cuentas: visados, mudanza, perdida de red profesional, salud, impuestos, coste de oportunidad. Su amiga "piensa en Portugal"; ella fue a Barcelona en enero —bonita, pero turistica, y los locales estan hartos—.</p>
+<p>Desglose financiero: visado nomada digital Espana ~2.500EUR/año + requisitos ingresos (2.646EUR/mes 2024); mudanza 5-15kEUR; alquiler Barcelona/Madrid/Lisboa disparado (1.200-1.800EUR/mes 1br); seguro privado 100-200EUR/mes; doble imposicion EE. UU./UE (tratados mitigan pero complejos); perdida 401(k) match, HSA, beneficios empleador; "cope economy": gastamos en escapismo (viajes, suscripciones) en vez de arreglar raiz.</p>
+<p>Argumento central: emigrar es privilegio de clase media-alta con red de seguridad; para la mayoria, el coste de reconstruir vida (credito, red, credenciales, licencia profesional) supera ganancia. EE. UU. tiene problemas (sanidad, armas, polarizacion) pero tambien salarios 2-3x UE, movilidad interna, diversidad climatica/cultural sin barreras idiomaticas/legales.</p>
+<p>Takeaways: haz numeros reales antes de fantasear; la "huida" a menudo evita trabajo interno; EE. UU. imperfecto pero ofrece flexibilidad que Europa no (cambiar de estado = nueva vida sin visado). Caveat: escrito desde perspectiva ciudadana estadounidense; no aplica igual a otros pasaportes. Privilegio check incluido.</p>
+                </div>
+                <div class="article-footer">
+                    <a href="https://medium.com/p/c15fcd689258" target="_blank" rel="noopener" class="read-link">Leer en Medium →</a>
+                    <span style="font-size:0.75rem;color:#666;">ID: c15fcd68</span>
+                </div>
+            </article>
+            <article class="article-card">
+                <div class="article-header">
+                    <h3><a href="https://medium.com/p/6d930fe7f0f7" target="_blank" rel="noopener">I'm a Neuroscientist & I Do These 3 Overlooked Exercises Daily to Age Better</a><span class="badge badge-full">📖 Texto completo</span></h3>
+                    <div class="article-meta">
+                        <span>Dr. Patricia Schmidt 🧠 · inSecond Nature (formerly In Fitness & In Health)</span>
+                        <span>6 min read</span>
+                    </div>
+                    <div class="article-tags">
+                        <span class="tag">Medium</span>
+                        <span class="tag">Digest</span>
+                    </div>
+                </div>
+                <div class="article-summary">
+<p>Segunda entrega de Patricia Schmidt: 3 ejercicios descuidados para envejecer mejor, con base neurocientifica. 1) Estar en una pierna (single-leg stance): marcador de salud cerebral y longevidad; estudio Huisman et al. (2021) —incapacidad >10 seg a los 50+ correlaciona con 2x mortalidad a 10 anos—. Por que: integra vestibular, propiocepcion, corteza motora, cerebelo. Recomendacion: 30 seg/pierna, 3x/dia, progresando a ojos cerrados/superficie inestable. 2) Ejercicios oculares (saccades, smooth pursuit, convergencia): mantienen plasticidad visuo-motora, reducen riesgo caidas, mejoran lectura/conduccion nocturna. Rutina: 2 min/dia (seguir dedo en H, convergencia lapiz, saccades entre dos puntos). 3) Respiracion diafragmatica lenta (4-6 seg inhalacion, 6-8 exhalacion): activa vago, reduce inflamacion sistemica (marcadores IL-6, CRP), mejora HRV. 5 min/dia.</p>
+<p>Enfoque: mindset —abraza el envejecer, no es declive automatico—. Cita meta-analisis: ejercicio multimodal (fuerza + balance + aerobico) reduce caidas 34% (Sherrington et al. 2019). Los 3 ejercicios son "de mantenimiento neural", no fitness clasico.</p>
+<p>Takeaways: balance unipedal = test + intervencion; ojos = ventana al cerebro; respiracion = mando remoto del sistema nervioso. Empieza hoy, 10 min totales. Caveat: no sustituye entrenamiento fuerza/cardio; complementa. Consulta medico si vertigo/patologia vestibular.</p>
+                </div>
+                <div class="article-footer">
+                    <a href="https://medium.com/p/6d930fe7f0f7" target="_blank" rel="noopener" class="read-link">Leer en Medium →</a>
+                    <span style="font-size:0.75rem;color:#666;">ID: 6d930fe7</span>
+                </div>
+            </article>
+            <article class="article-card">
+                <div class="article-header">
+                    <h3><a href="https://medium.com/p/77fa06507a54" target="_blank" rel="noopener">Building an Inventory System: Overselling, Atomic Decrements, and Stock…</a><span class="badge badge-full">📖 Texto completo</span></h3>
+                    <div class="article-meta">
+                        <span>Alina Kovtun✨ · inWomen in Technology</span>
+                        <span>12 min read</span>
+                    </div>
+                    <div class="article-tags">
+                        <span class="tag">Medium</span>
+                        <span class="tag">Digest</span>
+                    </div>
+                </div>
+                <div class="article-summary">
+<p>Alina Kovtun disena sistema de inventario anti-overselling para Black Friday: 50.000 users, 3 unidades, 100 compradores simultaneos. Parte del bug clasico: 'SELECT stock FROM items WHERE id=1; if stock>0: UPDATE items SET stock=stock-1' —race condition: todos leen 3, todos decrementan, vendes 100x.</p>
+<p>Analiza 4 enfoques: 1) Naive (roto). 2) Pesimista: 'SELECT FOR UPDATE' —bloquea fila, serializa, simple pero cuello de botella en alta concurrencia—. 3) Optimista: 'UPDATE items SET stock=stock-1 WHERE id=1 AND stock>0' + check 'rows_affected' —sin lock, reintenta en conflicto; mejor throughput—. 4) Redis + Lua script atomico: 'DECR' + check en misma transaccion Redis —maximo rendimiento, single-threaded Redis serializa naturalmente—. Incluye schema SQL, benchmarks comparativos, codigo Python (asyncpg, redis-py).</p>
+<p>Contexto: parte de serie "system design interviews practicos". Menciona que pesimista vale para baja concurrencia / transacciones complejas; optimista para media; Redis para alta (10k+ RPS). Caveat: Redis anade dependencia operacional; consistencia eventual entre Redis y PG requiere sincronizacion (outbox pattern / CDC). Precio: Redis managed ~15EUR/mes (start), self-hosted gratis.</p>
+                </div>
+                <div class="article-footer">
+                    <a href="https://medium.com/p/77fa06507a54" target="_blank" rel="noopener" class="read-link">Leer en Medium →</a>
+                    <span style="font-size:0.75rem;color:#666;">ID: 77fa0650</span>
+                </div>
+            </article>
+            <article class="article-card">
+                <div class="article-header">
+                    <h3><a href="https://medium.com/p/dc54b0db5d04" target="_blank" rel="noopener">OpenAI Shocks The World With GPT-6</a><span class="badge badge-full">📖 Texto completo</span></h3>
+                    <div class="article-meta">
+                        <span>Tanmay Bansal · inArtificial Intelligence in Plain English</span>
+                        <span>5 min read</span>
+                    </div>
+                    <div class="article-tags">
+                        <span class="tag">Medium</span>
+                        <span class="tag">Digest</span>
+                    </div>
+                </div>
+                <div class="article-summary">
+<p>Tanmay Bansal analiza filtraciones sobre GPT-6: Sam Altman dijo "ya no nos acercamos a la singularidad, estamos dentro". Cambios arquitecturales clave: 1) Memoria jerarquica: objetivo principal en contexto persistente (no deriva), memoria de trabajo tactica fluida —evita context drift a 50 pasos—. 2) Descubrimiento cientifico original: GPT-6 resolvio problema ADOS unit distance (geometria combinatoria, 80 anos abierto), verificado por matematicos humanos. 3) Arquitectura enjambre (swarm): modelo maestro descompone intencion en subtareas → agentes especializados fine-tuned (analista, ingeniero, generalista) en paralelo → maestro audita y sintetiza. 85% workflows internos OpenAI (legal, finance, recruiting) ya corren en enjambres.</p>
+<p>Metrica nueva: "knowledge output per dollar" (no MMLU). Realidad compute: Anthropic retiene Fable 5.1 esperando mover OpenAI; modelos masivos carisimos en produccion; push a open weights + modelos pequenos eficientes. Ejemplo codigo: swarm router Python con 'asyncio.gather' para ejecucion paralela.</p>
+<p>Takeaways: deja de tratar IA como API completion; empieza a orquestar: descomposicion de tareas, modelo fuerte para planificar, modelos baratos para ejecutar; disena para agentes autonomos que persiguen goals relentless. Caveat: filtraciones no confirmadas; arquitectura swarm anade latencia y complejidad operacional (observabilidad, fallbacks, cost tracking). Precio: compute alto; open weights democratizaran.</p>
+                </div>
+                <div class="article-footer">
+                    <a href="https://medium.com/p/dc54b0db5d04" target="_blank" rel="noopener" class="read-link">Leer en Medium →</a>
+                    <span style="font-size:0.75rem;color:#666;">ID: dc54b0db</span>
+                </div>
+            </article>
+            <article class="article-card">
+                <div class="article-header">
+                    <h3><a href="https://medium.com/p/bb06293d8259" target="_blank" rel="noopener">The Bank That Lost $2.1 Billion to COBOL Doesn't Exist. The Ones That Did Are…</a><span class="badge badge-full">📖 Texto completo</span></h3>
+                    <div class="article-meta">
+                        <span>Andrus · inCodeToDeploy</span>
+                        <span>7 min read</span>
+                    </div>
+                    <div class="article-tags">
+                        <span class="tag">Medium</span>
+                        <span class="tag">Digest</span>
+                    </div>
+                </div>
+                <div class="article-summary">
+<p>Andrus desmiente el mito viral del "banco que perdio $2.1B por COBOL". TSB (Reino Unido) si tuvo desastre migratorio: 378M+ GBP coste real, 5M clientes sin acceso a su dinero semanas. El $2.1B es cifra inventada que circula en LinkedIn/Twitter sin fuente. Articulo contrasta mitos vs realidad: 1) TSB no necesitaba embellecer —su desastre real basta—. 2) Commonwealth Bank (Australia) tardo 5 anos y nunca dejo de encarecerse (COBOL to Java, 1B+ USD). 3) Tasa de fallo depende de quien cuente (proveedores vs bancos). 4) Sistema viejo no gana por mejor ingenieria —gana por inercia, conocimiento tribal, miedo al cambio—. 5) Numero que deberia preocupar: workforce —programadores COBOL envejecen, no hay relevo; el riesgo no es el lenguaje, es la gente que lo entiende.</p>
+<p>Estructura: desmintiendo el meme; caso TSB real (migracion a Proteo4UK, testing insuficiente, rollback fallido); caso Commonwealth; por que fallan las migraciones (subestiman acoplamiento, datos, edge cases); el verdadero riesgo: capital humano. Cita: "El riesgo no es COBOL. Es que nadie queda que sepa por que esa linea de 1984 maneja tu hipoteca."</p>
+<p>Takeaways: migraciones core banking son proyectos de 5-10 anos, no sprints; documenta conocimiento tribal AHORA; testea con datos reales en shadow mode meses; contrata/forma sucesores COBOL. Caveat: reescritura total rara vez vale la pena; strangler fig pattern + sidecar mejor. Coste TSB: 378M GBP + dano reputacional masivo + multa regulatoria.</p>
+                </div>
+                <div class="article-footer">
+                    <a href="https://medium.com/p/bb06293d8259" target="_blank" rel="noopener" class="read-link">Leer en Medium →</a>
+                    <span style="font-size:0.75rem;color:#666;">ID: bb06293d</span>
+                </div>
+            </article>
+            <article class="article-card">
+                <div class="article-header">
+                    <h3><a href="https://medium.com/p/12fe785f124f" target="_blank" rel="noopener">Why are lobsters boiled alive?</a><span class="badge badge-full">📖 Texto completo</span></h3>
+                    <div class="article-meta">
+                        <span>Giuseppe Frisella</span>
+                        <span>2 min read</span>
+                    </div>
+                    <div class="article-tags">
+                        <span class="tag">Medium</span>
+                        <span class="tag">Digest</span>
+                    </div>
+                </div>
+                <div class="article-summary">
+<p>Giuseppe Frisella explica por que se hierven langostas vivas: no es crueldad culinaria, es carrera contra el tiempo biologico. Al morir, sistema inmune cesa → bacterias (Vibrio spp.) proliferan y producen toxinas termorresistentes (hervir mata bacteria, no toxina ya producida). Ademas, hepatopancreas (tomalley) libera enzimas digestivas → autolisis: carne firme y dulce se vuelve blanda e insipida. Mantener viva hasta el hervor resuelve ambos problemas a la vez.</p>
+<p>Ahora se cuestiona: bienestar animal. Suiza y Nueva Zelanda prohíben hervir conscientes. Alternativas: aturdimiento electrico especializado o destruccion rapida de centros nerviosos antes de cocinar —mismo objetivo practico (evitar deterioro post-mortem) sin sufrimiento—. La razon tradicional era puramente practica/seguridad alimentaria, no sabor.</p>
+<p>Takeaways: langosta muerta = bomba de tiempo bacteriana + enzimatica; hervir viva = hack pre-moderno de seguridad alimentaria; tecnologia moderna permite mismo resultado sin crueldad. Caveat: dispositivos de aturdimiento caros (~3.000EUR) para restaurantes pequenos; norma suiza exige certificacion. Precio: dispositivo ~3kEUR, formacion personal.</p>
+                </div>
+                <div class="article-footer">
+                    <a href="https://medium.com/p/12fe785f124f" target="_blank" rel="noopener" class="read-link">Leer en Medium →</a>
+                    <span style="font-size:0.75rem;color:#666;">ID: 12fe785f</span>
+                </div>
+            </article>
+        </section>
+        
+        <footer>
+            <p>Generado automáticamente el 2026-08-20 · <a href="https://github.com/udeope/medium-digest" target="_blank" rel="noopener">Código en GitHub</a></p>
+            <p>Fuente: Medium Daily Digest → Freedium → Resúmenes locales</p>
+        </footer>
     </div>
-    <div class="top-pick">
-        <div class="rank">🥈</div>
-        <h3><a href="https://medium.com/p/40a8495023a5" target="_blank">The Magical Number 6174</a></h3>
-        <div class="author">Vagelis Plevris · ThinkArt</div>
-        <div class="pick-summary">Elige cualquier número de 4 dígitos, ordena sus cifras de mayor a menor y de menor a mayor, resta, repite: siempre acabas en 6174, la constante de Kaprekar. Un maestro indio autodidacta la descubrió por pura curiosidad. El sistema colapsa 9.990 números en solo 705 patrones. En máximo 7 pasos, todo converge.</div>
-        <div class="claps">📖 Texto completo</div>
-    </div>
-    <div class="top-pick">
-        <div class="rank">🥉</div>
-        <h3><a href="https://medium.com/p/2eaf90402bbc" target="_blank">Mac Mini M4 vs RTX 5090 vs Cloud GPUs for Local AI in 2026</a></h3>
-        <div class="author">Anubhav · Data Science Collective</div>
-        <div class="pick-summary">La RTX 5090 cuesta ~$4,300 con 32GB y vuela a 66 tok/s en modelos 30B. El Mac Mini M4 Pro de $1,799 con 48GB unificada los corre a 12–18 tok/s consumiendo 30W. La clave: la 5090 se estrella con modelos 70B+ (spill a RAM del sistema), mientras que la nube (H100) gana para trabajos pesados ocasionales. Mide tu velocidad real con Ollama antes de comprar.</div>
-        <div class="claps">📖 Texto completo</div>
-    </div>
-    <div class="top-pick">
-        <div class="rank">🏅</div>
-        <h3><a href="https://medium.com/p/a5e487792db9" target="_blank">LinkedIn Thinks It Figured Out AI Slop</a></h3>
-        <div class="author">Attila Vágó</div>
-        <div class="pick-summary">LinkedIn creó el problema del AI slop integrando generación de contenido sin salvaguardas, y ahora te pide a ti que lo limpies gratis con el botón "seems like AI slop". El botón ya está siendo usado para trolear: al autor le reportaron su propio post escrito a mano. No hagas el trabajo de LinkedIn por ellos.</div>
-        <div class="claps">📖 Texto completo</div>
-    </div>
-</div>
-
-<!-- SECTION: Texto completo -->
-<h2 class="section-header"><span class="icon">📖</span>Lectura Completa — Texto Disponible</h2>
-
-<!-- 1. Fake It Until You Break It -->
-<article class="article">
-    <span class="badge badge-full">📖 Texto completo</span>
-    <span class="badge badge-society">Management</span><span class="badge badge-code">Ingeniería</span><span class="badge badge-tech">Liderazgo</span>
-    <h3><a href="https://medium.com/p/271f42b66f39" target="_blank">Fake It Until You Break It: The End Of Non-Technical Managers In Software Engineering</a></h3>
-    <div class="meta-line">Jan Kammerath · 18 min · 👏 1.2K · 💬 58</div>
-    <div class="summary">
-        <p>Jan Kammerath, con 25 años de experiencia como programador, CTO y consultor en Alemania, traza una crítica exhaustiva de los managers sin formación técnica en ingeniería de software. El problema arranca en los 2000: cuando "ser tech" se puso de moda, llegaron los <em>gold diggers</em> — gente atraída por el dinero, no por la emoción del software — y con ellos una explosión de roles auxiliares (Product Managers, Scrum Masters, Product Owners, Business Analysts) que a menudo superan en número a los ingenieros. El problema de fondo no es la mala intención, sino la falta total de conocimiento: estos managers no han estudiado las peculiaridades de los productos virtuales que dependen de I+D continua, y toman decisiones que violan principios que se enseñan en primero de carrera.</p>
-        <p>El autor desgrana los fallos concretos. Primero, la ignorancia de los requisitos no funcionales (NFRs): los managers sin background técnico temen asignar el 20–30% de capacidad a mantenibilidad, seguridad y escalabilidad porque no saben justificarlo ante dirección. El resultado es una avalancha de deuda técnica que multiplica los costes de operación y desarrollo por 10–20x, destruye la competitividad y puede matar el producto. Segundo, la confusión entre prototipos: todo es "MVP" (pilotsystem), cuando muchos problemas requieren un <em>lab prototype</em> desechable para investigar la viabilidad técnica antes de construir — Apple hizo docenas de prototipos de laboratorio antes del primer iPod. Tercero, el <em>shiny object syndrome</em>: las decisiones de stack tecnológico se basan en pitches de ventas y popularidad, no en evaluación técnica contra requisitos concretos, creando deuda técnica antes incluso de empezar a desarrollar.</p>
-        <p>Kammerath dedica una sección entera a desmontar el espejismo de las "empresas tecnológicas": según los códigos ISO 18245 de entidades financieras, Uber es un taxi (código 4121) y Netflix es televisión por cable (4899), no empresas de software. La diferencia es crucial: Netflix es su propio y único cliente — despliega en su propio entorno, no negocia migraciones con cientos de clientes ni gestiona licencias. Esto cambia radicalmente la economía del software, pero los managers que vienen de fuera del sector no lo entienden. Tampoco entienden que el software no es una caja de cambios: no se puede mantener sin el vendor, muere cuando se deja de dar soporte, y los ingenieros mecánicos que imponen procesos de su disciplina al software cometen errores casi tan graves como no gestionar el ciclo de vida. El autor añade que los equipos necesitan al menos un 20% de su tiempo en formación continua, o se quedan atrás — un manager que no está en aprendizaje continuo no puede asegurar que su equipo tampoco se estanque.</p>
-        <p>La conclusión es contundente: la era de los managers no técnicos se acaba. El coste es demasiado alto, la rotación de ingenieros en estos equipos habla por sí sola, y la IA va a acelerar la implosión: los LLMs no facilitan las cosas a quien no sabe evaluar a sus ingenieros, igual que Googlear síntomas no sustituye al médico. Los roles auxiliares serán los primeros en caer. La industria del software, organizacional y socialmente, volverá a algo parecido a lo que era entre 1998 y 2005: "Volvemos al futuro". Para los ingenieros que quieran sobrevivir, el mensaje es claro: hay que subir de nivel con IA y ML, porque los que escriben aplicaciones de negocio felices en .NET o Java sin adaptarse se quedarán fuera.</p>
-    </div>
-    <div class="stats">
-        <span>📖 Texto completo vía Freedium</span>
-        <span><a href="https://medium.com/p/271f42b66f39" target="_blank">Leer en Medium →</a></span>
-    </div>
-</article>
-
-<!-- 2. The Magical Number 6174 -->
-<article class="article">
-    <span class="badge badge-full">📖 Texto completo</span>
-    <span class="badge badge-life">Matemáticas</span><span class="badge badge-tech">Ciencia</span>
-    <h3><a href="https://medium.com/p/40a8495023a5" target="_blank">The Magical Number 6174</a></h3>
-    <div class="meta-line">Vagelis Plevris · ThinkArt · 8 min · 👏 968 · 💬 28</div>
-    <div class="summary">
-        <p>El artículo es una exploración fascinante de la constante de Kaprekar, 6174, un número que parece sacado de un truco de magia matemática. La rutina es simple: toma cualquier número de cuatro dígitos (excepto los que tienen todas las cifras iguales, como 1111), reordena sus dígitos para formar el número más grande y el más pequeño posibles, resta el pequeño del grande, y repite. En un máximo de siete iteraciones, siempre — siempre — acabas en 6174. Una vez allí, el proceso se bloquea: 7641 − 1467 = 6174. El autor lo demuestra con varios ejemplos: 4321 llega en 3 pasos, 1605 también en 3, y puedes probar con cualquier otro número.</p>
-        <p>La historia detrás del número es igual de cautivadora. D. R. Kaprekar era un maestro de escuela indio sin formación académica avanzada que dedicó su vida a explorar patrones numéricos por pura curiosidad. Trabajó aislado del establishment matemático, publicando en revistas modestas y a veces imprimiendo él mismo sus trabajos. Sus contemporáneos descartaron sus ideas como triviales. No fue hasta los años 70, cuando Martin Gardner escribió sobre él en Scientific American, que la comunidad matemática empezó a apreciar lo que había descubierto. Kaprekar describió su fascinación con una frase memorable: "Un borracho quiere seguir bebiendo vino para permanecer en ese estado placentero. Lo mismo me ocurre a mí en lo que respecta a los números".</p>
-        <p>El autor desmenuza la estructura subyacente con precisión. De los 10.000 números de cuatro dígitos (0000 a 9999), solo 10 tienen todos los dígitos iguales, dejando 9.990 válidos. Pero tras una sola iteración, el orden original de los dígitos se pierde y el sistema colapsa en solo 705 patrones de dígitos distintos (combinaciones de 4 dígitos con repetición, menos los 10 casos triviales). La distribución de convergencia es reveladora: el 24% de los números llega en exactamente 3 iteraciones, mientras que 2.184 requieren el máximo de 7. El proceso es determinista y finito: con solo 705 estados posibles, no puede generar configuraciones nuevas indefinidamente. 6174 es el único punto fijo no trivial del sistema en base 10 con cuatro dígitos. Si cambias a tres dígitos, la constante es 495. Para otras longitudes, el comportamiento es más complejo, a veces con ciclos en lugar de un punto fijo. El artículo cierra con una invitación irresistible: prueba tú mismo con cualquier número. "Y cuando llegues a 6174, como inevitablemente harás, puede que sientas que has descubierto algo. Pero en un sentido más profundo, te estaban llevando allí desde el principio."</p>
-    </div>
-    <div class="stats">
-        <span>📖 Texto completo vía Freedium</span>
-        <span><a href="https://medium.com/p/40a8495023a5" target="_blank">Leer en Medium →</a></span>
-    </div>
-</article>
-
-<!-- 3. TypeScript Patterns -->
-<article class="article">
-    <span class="badge badge-full">📖 Texto completo</span>
-    <span class="badge badge-code">TypeScript</span><span class="badge badge-code">React</span><span class="badge badge-tech">Web Dev</span>
-    <h3><a href="https://medium.com/p/970477e68605" target="_blank">TypeScript Patterns Every React Developer Should Know</a></h3>
-    <div class="meta-line">Kevin · MERN Stack Developer · 2 min · 👏 40</div>
-    <div class="summary">
-        <p>El artículo presenta patrones prácticos de TypeScript para React, centrándose en los <strong>discriminated unions</strong> para modelar el estado de componentes. En lugar de manejar múltiples booleanos (isLoading, isError, hasData) que pueden combinarse en estados imposibles, el autor propone un tipo <code>FetchState&lt;T&gt;</code> con cuatro variantes discriminadas por un campo <code>status</code>: <code>{ status: 'idle' }</code>, <code>{ status: 'loading' }</code>, <code>{ status: 'success'; data: T }</code> y <code>{ status: 'error'; message: string }</code>. TypeScript reduce el acceso a <code>data</code> solo cuando el status es 'success', eliminando comprobaciones redundantes y haciendo imposibles los estados inconsistentes. El artículo está respaldado por datos: según la encuesta State of JS, la mayoría de desarrolladores React ya adoptan TypeScript por defecto en proyectos nuevos. La premisa es clara: "Tu componente funciona. Tus tipos, no. ¿Te suena? Esto es para ti si alguna vez has puesto <code>any</code> solo para que desaparezca una línea roja."</p>
-    </div>
-    <div class="stats">
-        <span>📖 Texto completo vía Freedium</span>
-        <span><a href="https://medium.com/p/970477e68605" target="_blank">Leer en Medium →</a></span>
-    </div>
-</article>
-
-<!-- 4. Agent Journey Map -->
-<article class="article">
-    <span class="badge badge-full">📖 Texto completo</span>
-    <span class="badge badge-ai">AI Agents</span><span class="badge badge-tech">UX Design</span><span class="badge badge-code">DX</span>
-    <h3><a href="https://medium.com/p/b89aadcd794f" target="_blank">Agent Journey Map: Designing Software for AI Agents</a></h3>
-    <div class="meta-line">Leonie Monigatti · 8 min · 👏 320 · 💬 2</div>
-    <div class="summary">
-        <p>Leonie Monigatti, tras tres años en Developer Growth y Developer Relations en el espacio AI, propone un framework práctico para <strong>Agent Experience (AX)</strong>, un término acuñado por el CEO de Netlify en enero de 2025. La tesis central: el software ya no lo usan solo humanos, también agentes de IA, y esto requiere una lente de diseño nueva. La diferencia clave con UX y DX es que los agentes no tienen emociones — en su lugar, trabajamos con <em>modos de fallo</em> (error de autenticación, respuesta ambigua) y <em>curvas de fiabilidad</em> ("¿qué probabilidad hay de que el agente tenga éxito en cada etapa?").</p>
-        <p>El Agent Journey Map se estructura en cinco etapas que forman un ciclo, no un funnel. <strong>Discover</strong>: ¿puede el agente encontrar tu plataforma? Es la pregunta del billón de dólares — visibility en datos de entrenamiento de LLMs y resultados de búsqueda. La autora es escéptica con las agencias que prometen GEO/LLMO/AEO: no ha visto pruebas de que funcionen. <strong>Evaluate</strong>: ¿puede el agente evaluar si tu plataforma encaja? Aquí entra el debate del <code>llms.txt</code>: propuesto por Answer.AI en 2024 como estándar para guiar a LLMs, pero el fundador de Drupal reporta que los bots que deberían usarlo ni lo buscan. Los archivos Markdown reciben más tráfico de bots que el llms.txt, pero menos que el HTML normal. <strong>Onboard</strong>: ¿puede el agente empezar sin intervención humana? El punto de fricción más común es la autenticación: los flujos OAuth están diseñados para humanos. <strong>Integrate</strong>: ¿puede el agente operar tu plataforma de forma fiable? La autora identifica cuatro interfaces: CLIs (la más simple, los LLMs han sido entrenados intensivamente en ellas), APIs (con specs OpenAPI claras y errores que den contexto para auto-corrección), MCP (el protocolo de Anthropic donado a la Linux Foundation) y Agent Skills (instrucciones reutilizables). <strong>Advocate</strong>: ¿recomienda el agente tu plataforma? Un informe reciente sobre qué elige Claude Code muestra que los agentes favorecen ciertos productos sobre otros, pero la autora admite que no sabe exactamente por qué. La autora cierra con una advertencia: el concepto de AX tiene solo un año y la industria ya está descartando estándares que propuso hace meses. Si tienes un producto que quieres que los agentes usen, AX debería ser una prioridad — ya se discute si el "product-led growth" será reemplazado por "agent-led growth".</p>
-    </div>
-    <div class="stats">
-        <span>📖 Texto completo vía Freedium</span>
-        <span><a href="https://medium.com/p/b89aadcd794f" target="_blank">Leer en Medium →</a></span>
-    </div>
-</article>
-
-<!-- 5. Angular Folder Structure -->
-<article class="article">
-    <span class="badge badge-full">📖 Texto completo</span>
-    <span class="badge badge-code">Angular</span><span class="badge badge-tech">Arquitectura</span><span class="badge badge-code">Web Dev</span>
-    <h3><a href="https://medium.com/p/5ba7f81a9cab" target="_blank">Stop Refactoring: The Angular Folder Structure That Cuts Weeks Off Your Work</a></h3>
-    <div class="meta-line">CodersWorld · 4 min · 👏 95</div>
-    <div class="summary">
-        <p>El autor narra su punto de inflexión durante un sprint fintech: un simple cambio de UI en el módulo de préstamos disparó modificaciones en tres carpetas aparentemente no relacionadas. Una cadena de imports rota y todo se vino abajo. El problema no era la calidad del código, sino cómo estaba organizado. La solución fue migrar de una estructura basada en agrupación técnica (<code>/components</code>, <code>/services</code>, <code>/models</code>) a una <strong>arquitectura modular por funcionalidad</strong>: <code>core/</code> (interceptors, guards, singleton services), <code>shared/</code> (directivas, pipes, componentes reutilizables) y <code>features/</code> — donde cada feature (préstamos, clientes) contiene sus propios componentes, servicios y módulo. La clave es que cada feature es autocontenida: sus dependencias son explícitas y los cambios no se propagan lateralmente. El autor señala que Angular es especialmente propenso al <em>architecture drift</em> porque su flexibilidad no impone convenciones: sin una estructura escalable desde el principio, el código evoluciona en todas direcciones a la vez y cada PR se convierte en una excavación arqueológica.</p>
-    </div>
-    <div class="stats">
-        <span>📖 Texto completo vía Freedium</span>
-        <span><a href="https://medium.com/p/5ba7f81a9cab" target="_blank">Leer en Medium →</a></span>
-    </div>
-</article>
-
-<!-- 6. The Dialog Map -->
-<article class="article">
-    <span class="badge badge-full">📖 Texto completo</span>
-    <span class="badge badge-tech">Business Analysis</span><span class="badge badge-life">UX Design</span><span class="badge badge-code">Requisitos</span>
-    <h3><a href="https://medium.com/p/8ffa503d6e03" target="_blank">The Dialog Map: A Valuable Business Analysis and UX Design Tool</a></h3>
-    <div class="meta-line">Karl Wiegers · Analyst's corner · 8 min · 👏 191 · 💬 5</div>
-    <div class="summary">
-        <p>Karl Wiegers, autor de <em>Software Requirements</em> (3ª edición), presenta el <strong>dialog map</strong> como una herramienta de modelado de análisis que representa la arquitectura de navegación de una interfaz de usuario como un diagrama de estados y transiciones. Cada elemento de diálogo (página web, menú, cuadro de diálogo, pantalla táctil) es un estado (rectángulo), y cada opción de navegación es una transición (flecha) etiquetada con la condición que la dispara: una acción del usuario, un valor de datos o un evento del sistema. El dialog map es un modelo de alto nivel — por encima de storyboards y wireframes — que captura la esencia de las interacciones sin atascarse en layouts de pantalla prematuros.</p>
-        <p>El autor ilustra la técnica con un caso real: el <em>Chemical Tracking System</em>, cuyo caso de uso "Request a Chemical" es sorprendentemente complejo. El dialog map revela dos flujos (pedir a un vendor vs. reservar del almacén), un camino opcional para ver el historial de un contenedor, y manejo de errores para IDs inválidos. Wiegers enfatiza que los dialog maps no son flowcharts: un flowchart muestra los pasos de procesamiento, mientras que el dialog map muestra <em>dónde</em> llega el usuario — los dos modelos son complementarios. Los beneficios son concretos: en un proyecto, el equipo descubrió que hacían falta demasiados clics para cierta operación y rediseñaron la UI antes de escribir código. Añadir puntos de cancelación estratégicos — que el autor detesta cuando faltan — cuesta casi nada en el diagrama y evita quejas de usuarios tras la entrega. El artículo está adaptado de su libro y es una defensa apasionada del modelado temprano: "Es mucho más barato encontrar problemas en un diagrama simple que después de entregar el producto".</p>
-    </div>
-    <div class="stats">
-        <span>📖 Texto completo vía Freedium</span>
-        <span><a href="https://medium.com/p/8ffa503d6e03" target="_blank">Leer en Medium →</a></span>
-    </div>
-</article>
-
-<!-- 7. Open Source Apps -->
-<article class="article">
-    <span class="badge badge-full">📖 Texto completo</span>
-    <span class="badge badge-tech">Open Source</span><span class="badge badge-life">Productividad</span><span class="badge badge-ai">IA</span>
-    <h3><a href="https://medium.com/p/fe355bae7c75" target="_blank">Open Source Apps To Replace Your Every Subscription (And don't suck)</a></h3>
-    <div class="meta-line">Haz Techy Content · Level Up Coding · 5 min · 👏 720 · 💬 18</div>
-    <div class="summary">
-        <p>El autor, recién cumplidos 18 años y con su primera tarjeta de crédito, se encontró con precios "extorsionadores" y se fue a GitHub a buscar alternativas open source. El resultado es una lista práctica y honesta, con los catches de cada herramienta. <strong>Omni-route</strong> es la joya de la corona: agrega los tiers gratuitos de 101 proveedores de inferencia AI y los rota, dando 1.300 millones de tokens gratis al mes — conéctalo a Claude Code o Open Claw vía API local. El catch: hay que añadir los providers manualmente. <strong>AgenticSeek / 3Toks</strong> son agentes de codificación local-first; 3Toks es la versión ligera que funciona con modelos de 1.5B parámetros. El autor lo usa para extraer texto de blogs técnicos y generar Markdown directamente en su directorio de Obsidian. <strong>Gitea</strong> reemplaza GitHub Teams para arquitecturas de microservicios: $0 auto-hosteado o $6–7/mes en Hetzner con usuarios ilimitados, frente a $4/usuario en GitHub.</p>
-        <p><strong>n8n</strong> es la alternativa a Zapier: automatiza onboarding, recordatorios, resúmenes de email, scraping de leads y envío de emails personalizados. El catch: requiere gestionar Docker y webhooks tras un reverse proxy. <strong>yt-dlp / Monochrome.tf</strong> reemplazan Spotify/YT Music: el primero es CLI, el segundo es una web con descarga en 24bit lossless y un algoritmo de recomendaciones sorprendentemente bueno. <strong>Jellyfin</strong> reemplaza Netflix/Crunchyroll: el autor admite que multiplicó por 5 su adicción al anime y que funciona sin internet y sin buffering. El catch: el transcoding en hardware débil hace llorar a la CPU con múltiples streams. Menciones de honor: <strong>Hermes</strong> (aprende tu flujo de trabajo con el tiempo, compatible con automatizaciones de Open Claw; el catch es que las skills pueden degradarse) y <strong>Blender</strong> (ha superado a todo el software 3D de pago — Jujutsu Kaisen S3, Chainsaw Man y Spider-Man: Across the Spider-Verse lo usaron).</p>
-    </div>
-    <div class="stats">
-        <span>📖 Texto completo vía Freedium</span>
-        <span><a href="https://medium.com/p/fe355bae7c75" target="_blank">Leer en Medium →</a></span>
-    </div>
-</article>
-
-<!-- 8. Angular 22.1 -->
-<article class="article">
-    <span class="badge badge-full">📖 Texto completo</span>
-    <span class="badge badge-code">Angular</span><span class="badge badge-tech">Release</span><span class="badge badge-code">Web Dev</span>
-    <h3><a href="https://medium.com/p/072c81f82799" target="_blank">Angular 22.1: What's new</a></h3>
-    <div class="meta-line">Amos Isaila · 7 min · 👏 27</div>
-    <div class="summary">
-        <p>Angular 22.1 introduce una mejora significativa en reactividad: <strong>custom set option para linkedSignal</strong>. Hasta ahora, <code>linkedSignal</code> calculaba su valor a partir de otra señal pero no permitía redirigir escrituras a la fuente original. Con la nueva opción <code>set</code>, puedes definir una callback que transforma el valor antes de escribirlo en la señal fuente. El ejemplo del artículo es un conversor de temperatura: la señal <code>tempF</code> (Fahrenheit) se calcula a partir de <code>tempC</code> (Celsius), pero cuando escribes en <code>tempF</code>, la custom set callback convierte a Celsius y actualiza <code>tempC</code>. Esto elimina la necesidad de sincronización manual entre señales vinculadas. La versión también incluye mejoras en reactivity, estilado, SSR y developer tooling, con builds más rápidos gracias al nuevo compilador OXC. El artículo es conciso y está centrado en código, mostrando la migración directa del patrón anterior al nuevo.</p>
-    </div>
-    <div class="stats">
-        <span>📖 Texto completo vía Freedium</span>
-        <span><a href="https://medium.com/p/072c81f82799" target="_blank">Leer en Medium →</a></span>
-    </div>
-</article>
-
-<!-- 9. DESIGN.md -->
-<article class="article">
-    <span class="badge badge-full">📖 Texto completo</span>
-    <span class="badge badge-ai">AI Design</span><span class="badge badge-life">UX</span><span class="badge badge-code">Documentación</span>
-    <h3><a href="https://medium.com/p/c00325e8b23a" target="_blank">DESIGN.md Best Practices</a></h3>
-    <div class="meta-line">Nick Babich · UX Planet · 6 min · 👏 845 · 💬 17</div>
-    <div class="summary">
-        <p>Nick Babich explica el archivo <strong>DESIGN.md</strong>, introducido por Google Stitch y luego liberado como especificación open-source. Es un archivo de texto plano que describe la identidad visual de un producto y da a las herramientas de IA una guía estructurada y persistente sobre cómo debe verse y sentirse el producto, basándose en el sistema de diseño existente del equipo. La gran ventaja: en lugar de que la IA invente estilos desde cero o genere UI genérica, puede apoyarse en decisiones de diseño reales, tokens y reglas de componentes que el equipo ya usa.</p>
-        <p>El archivo se estructura en capas. El <strong>frontmatter YAML</strong> contiene el nombre del sistema de diseño y los tokens atómicos: colores (surface, primary, inverse-primary, secondary...), tipografía (fontFamily, tamaños), corner radius (sm, DEFAULT, md) y spacing (base, xs, sm...). El autor comparte un ejemplo real usado para una landing page en Google Stitch con el sistema "Roxy Tech Modernism". La segunda capa son reglas Markdown que definen comportamientos y patrones de componentes. El artículo está aún en desarrollo en el texto extraído, pero la dirección es clara: DESIGN.md se está convirtiendo en uno de los archivos más útiles para proyectos de UI asistidos por IA, cerrando la brecha entre el sistema de diseño y lo que la IA genera.</p>
-    </div>
-    <div class="stats">
-        <span>📖 Texto completo vía Freedium</span>
-        <span><a href="https://medium.com/p/c00325e8b23a" target="_blank">Leer en Medium →</a></span>
-    </div>
-</article>
-
-<!-- 10. We Rewrote Our API in Rust -->
-<article class="article">
-    <span class="badge badge-full">📖 Texto completo</span>
-    <span class="badge badge-code">Rust</span><span class="badge badge-code">Go</span><span class="badge badge-tech">Performance</span>
-    <h3><a href="https://medium.com/p/52d37711ffb3" target="_blank">We Rewrote Our API in Rust for 20% Better Performance. It Cost Us $180K.</a></h3>
-    <div class="meta-line">Aditya Suryawanshi · Level Up Coding · 8 min · 👏 526 · 💬 27</div>
-    <div class="summary">
-        <p>Una historia real que debería ser lectura obligatoria en todo equipo de ingeniería. El manager del autor reenvió un benchmark de Hacker News que mostraba Rust 3x más rápido que Go con tres palabras: "We should migrate". Cuatro meses y $180.000 después, perfilaron su API real en producción y descubrieron que Go era <em>más rápido</em> en su codebase, en su hardware, para su carga de trabajo. La migración a Rust se quedó en una rama privada y nunca se desplegó. El autor no se quedó en la anécdota: reconstruyó la misma API en Rust, Go y Zig para entender por qué los ingenieros inteligentes siguen cayendo en esta trampa.</p>
-        <p>La respuesta es devastadoramente simple: la mayoría de los benchmarks miden bucles optimizados a mano, datos en memoria, sin base de datos, sin red, sin middleware de auth, sin logging. "Un benchmark sin contexto de producción es un fabricante de coches probando la velocidad punta en un salar vacío y luego anunciándola a gente que conduce en ciudades." Las APIs reales pasan la mayor parte del tiempo esperando — a la base de datos, a la caché, a la red. Es trabajo I/O-bound, y todos los lenguajes esperan a la misma velocidad. El autor implementó un endpoint <code>POST /api/orders</code> con validación JSON, auth contra Redis, escritura en PostgreSQL y respuesta JSON — la forma del ~70% de los endpoints backend en producción. El artículo incluye el código completo en Go y reflexiona sobre la lección más cara de su carrera: haz el benchmark de tu carga real en tu hardware real antes de comprometerte a un rewrite.</p>
-    </div>
-    <div class="stats">
-        <span>📖 Texto completo vía Freedium</span>
-        <span><a href="https://medium.com/p/52d37711ffb3" target="_blank">Leer en Medium →</a></span>
-    </div>
-</article>
-
-<!-- 11. LinkedIn AI Slop -->
-<article class="article">
-    <span class="badge badge-full">📖 Texto completo</span>
-    <span class="badge badge-ai">IA</span><span class="badge badge-society">LinkedIn</span><span class="badge badge-tech">Ética Tech</span>
-    <h3><a href="https://medium.com/p/a5e487792db9" target="_blank">LinkedIn Thinks It Figured Out AI Slop</a></h3>
-    <div class="meta-line">Attila Vágó · 10 min · 👏 897 · 💬 12</div>
-    <div class="summary">
-        <p>Attila Vágó, ingeniero de software con experiencia en integración de IA en Prezi, desmonta el nuevo botón de LinkedIn "seems like AI slop" con una crítica afilada y bien argumentada. Su tesis: LinkedIn creó el problema y ahora espera que los usuarios lo arreglen gratis. La secuencia es conocida: LinkedIn añadió IA generativa en todas partes — posts, perfiles, descripciones de empleo — midiendo solo adopción. Las métricas explotaron, los bonuses se repartieron, los aplausos en Zoom resonaron. Tres años después, la plataforma está inundada de contenido sin valor real y LinkedIn admite implícitamente el desastre retirando la generación de posts con IA y añadiendo este botón.</p>
-        <p>El autor sabe de lo que habla: en Prezi, su equipo descubrió que el verdadero desafío no era integrar IA, sino obtener output de alta calidad. Pasaron semanas iterando, el equipo de QA desarrolló un proceso completamente nuevo para puntuar presentaciones, y toda la empresa se involucró. LinkedIn, en cambio, hizo la integración más básica posible: enviar tema → generar post, sin usar el historial profesional del usuario como contexto. "Si existe la inteligencia artificial tonta, era esa." LinkedIn rompió su propia plataforma y ahora la solución es... ¿los usuarios? El botón es una externalización del trabajo de curación de contenido que la plataforma debería hacer. Y ya está siendo weaponizado: al autor le reportaron su propio post (escrito a mano, cada palabra) como AI slop en menos de 48 horas.</p>
-        <p>Vágó detalla por qué el botón es problemático más allá de lo anecdótico. Definir "AI slop" es sorprendentemente difícil: la definición de Wikipedia ("contenido digital de baja calidad producido en masa con IA generativa") plantea más preguntas que respuestas. ¿Qué es baja calidad? ¿Cómo sabes que es producción en masa? ¿Y si es texto traducido por IA para superar una barrera lingüística? El usuario medio no tiene las habilidades de un curador de contenido profesional, y factores como el sesgo de confirmación y la baja capacidad de atención distorsionan el juicio. Además, el EU AI Act ya obliga a las empresas a identificar contenido generado por IA como sintético. Existen soluciones técnicas: identificar retroactivamente posts generados con IA, comparar contenido contra el perfil e historial del usuario, validar relevancia y calidad. Y está el watermarking de Anthropic, que podría convertirse en estándar. La conclusión del autor es directa: "LinkedIn creó este desastre y LinkedIn debe limpiarlo. No tú. No hagas clic en el botón."</p>
-    </div>
-    <div class="stats">
-        <span>📖 Texto completo vía Freedium</span>
-        <span><a href="https://medium.com/p/a5e487792db9" target="_blank">Leer en Medium →</a></span>
-    </div>
-</article>
-
-<!-- 12. Why do we hate AI? -->
-<article class="article">
-    <span class="badge badge-full">📖 Texto completo</span>
-    <span class="badge badge-ai">IA</span><span class="badge badge-society">Filosofía</span><span class="badge badge-life">Pensamiento</span>
-    <h3><a href="https://medium.com/p/58af629677ea" target="_blank">Why do we hate AI?</a></h3>
-    <div class="meta-line">Dusko Pavlovic · AI Advances · 7 min · 👏 623 · 💬 17</div>
-    <div class="summary">
-        <p>Dusko Pavlovic construye un ensayo filosófico que enmarca la IA como una <strong>revolución copernicana</strong> en la inteligencia humana. El punto de partida es una pirámide de tres niveles: personas (con mente), animales (con vida) y cosas (inertes). Bajar es fácil — pierdes la mente, luego la vida, y acabas abajo. Subir es lentísimo. Pero la IA tomó un atajo: pasó de cosa a mente sin escalas, empezó a tocar jazz y a comprar acciones, y nos pilló por sorpresa. La ofensa es comparable a la de Copérnico en el siglo XVI: igual que él mostró que la Tierra no era el centro del universo, la IA muestra que los humanos no somos el centro del pensamiento y el lenguaje.</p>
-        <p>El autor define la inteligencia siguiendo a Turing: no es resolver problemas de libro con combinaciones estándar de soluciones de libro, sino la capacidad de resolver <strong>problemas no vistos</strong>. La inteligencia artificial es el esfuerzo de construir máquinas que resuelvan problemas no vistos — una versión artificial de algo que antes solo evolucionó en la naturaleza. Y aquí la analogía clave: los aviones no desplazaron a los pájaros ni explicaron cómo vuelan; simplemente se unieron a ellos en el cielo. Los submarinos no desplazaron a los peces; expandieron el mundo de la natación. Las IAs no necesitan desplazar ni explicar las inteligencias humanas; simplemente se unen a ellas en el lenguaje, expandiendo el mundo del pensamiento.</p>
-        <p>El ensayo incluye una escena brillante con Parménides y Zenón: mientras Parménides argumentaba que el movimiento era imposible, Zenón se paseaba preocupado — y ni el maestro, ni el alumno, ni Platón notaron que el movimiento de Zenón refutaba la teoría del movimiento de Parménides. Lo que los profesores enseñan y lo que los alumnos hacen no pertenecen al mismo reino. "Así sigue siendo hoy. Mientras los profesores enseñan que la comprensión de la IA es imposible, los alumnos generan resúmenes con IA. Todo el mundo se mete en problemas. Todo el mundo odia la IA." El artículo está salpicado de referencias que van de Aristóteles a Descartes, Chomsky, Dijkstra y Herbert Simon, y anuncia una segunda parte.</p>
-    </div>
-    <div class="stats">
-        <span>📖 Texto completo vía Freedium</span>
-        <span><a href="https://medium.com/p/58af629677ea" target="_blank">Leer en Medium →</a></span>
-    </div>
-</article>
-
-<!-- 13. Mac Mini M4 vs RTX 5090 -->
-<article class="article">
-    <span class="badge badge-full">📖 Texto completo</span>
-    <span class="badge badge-tech">Hardware</span><span class="badge badge-ai">Local AI</span><span class="badge badge-tech">GPU</span>
-    <h3><a href="https://medium.com/p/2eaf90402bbc" target="_blank">Mac Mini M4 vs RTX 5090 vs Cloud GPUs for Local AI in 2026</a></h3>
-    <div class="meta-line">Anubhav · Data Science Collective · 8 min · 👏 916 · 💬 25</div>
-    <div class="summary">
-        <p>La tesis del artículo se resume en un número: 32GB, la memoria de la RTX 5090. Con la escasez de RAM de 2026, la 5090 se vende a ~$4.300 en la calle (MSRP de $1.999), mientras que un Mac Mini M4 Pro con 48GB de memoria unificada cuesta $1.799. La memoria unificada de Apple — donde CPU y GPU comparten los mismos chips físicos — es la ventaja diferencial: permite cargar modelos que la 5090 simplemente no puede meter en sus 32GB de VRAM. Con 48GB, el M4 Pro corre modelos 30B a 12–18 tok/s. La 5090 los corre a 66 tok/s, pero con modelos 70B+ la historia cambia drásticamente: necesitan ~43GB en Q4, así que ~11GB se derraman a RAM del sistema por PCIe y la velocidad se desploma a 2–5 tok/s.</p>
-        <p>El autor detalla la economía real. El Mac Mini M4 Pro consume 30–40W bajo carga (~$14/año en electricidad), es silencioso y cabe en cualquier sitio. La 5090 chupa 575W, necesita una fuente de 1000W, una caja grande, una CPU potente y una placa de gama alta — el coste total real está entre $4.000 y $6.000, más $160–210/año en electricidad, más el ruido y el calor de un calefactor de 575W en la habitación. La nube es la tercera opción: una H100 con 80GB cuesta ~$1.90/h en Vast.ai (el marketplace más barato, sin garantías — te pueden echar con 15 segundos de aviso), ~$2.99/h en Lambda (fiable), y hasta ~$7/h en Azure. La nube gana para trabajos pesados ocasionales, modelos 70B+, o fine-tuning. Pierde para asistentes siempre activos y para datos sensibles.</p>
-        <p>El autor incluye una tabla comparativa de velocidades según tamaño de modelo y una regla clara: antes de gastar un dólar, mide lo que ya tienes con <code>ollama run llama3.1:8b --verbose</code> y compara tu tasa de eval real con la tabla. El break-even es instructivo: un Mac Mini de $1.799 equivale a ~4.500 horas de cloud a $0.40/h (unos 185 días de uso continuo). Con uso de pocas horas al día, se amortiza en 1–2 años. El factor decisivo para muchos será la privacidad: tener el metal significa que tus datos nunca salen de tu escritorio. La mención de que Apple recortó la opción de 64GB a 48GB por la misma escasez de RAM que disparó la 5090 es un recordatorio de que ambos bandos sufren la misma cadena de suministro.</p>
-    </div>
-    <div class="stats">
-        <span>📖 Texto completo vía Freedium</span>
-        <span><a href="https://medium.com/p/2eaf90402bbc" target="_blank">Leer en Medium →</a></span>
-    </div>
-</article>
-
-<!-- 14. Spec-Driven Development -->
-<article class="article">
-    <span class="badge badge-full">📖 Texto completo</span>
-    <span class="badge badge-code">Agile</span><span class="badge badge-tech">Scrum</span><span class="badge badge-ai">AI Agents</span>
-    <h3><a href="https://medium.com/p/b4cc7025d971" target="_blank">Spec-Driven Development in Scrum and Kanban: Where the Spec Actually Lives</a></h3>
-    <div class="meta-line">Jaroslaw Wasowski · Level Up Coding · 13 min · 👏 327 · 💬 12</div>
-    <div class="summary">
-        <p>El artículo aborda el debate más candente en la intersección de Agile y AI: ¿es Spec-Driven Development (SDD) la nueva waterfall? La respuesta de Jaroslaw Wasowski es un no rotundo, pero con matices cruciales. La tensión real no es entre "entrega rápida" y "buenas specs", sino entre <strong>spec congelada</strong> y <strong>spec viva</strong>. Una spec congelada es Big Design Up Front con phase gates: eso sí es waterfall. Una spec viva es un contrato que madura dentro del sprint y se actualiza cuando la implementación enseña algo al equipo. La diferencia práctica para el lunes: no metas specs terminadas en el Product Backlog; mantén el backlog a nivel de objetivo e intención, y desarrolla el contrato — con precisión suficiente para que un agente de IA construya lo correcto — solo después de que la tarea entre en el sprint.</p>
-        <p>Wasowski estructura el SDD en tres niveles, tomando el marco de Birgitta Böckeler (Thoughtworks): <strong>spec-first</strong> (la spec guía el trabajo, pero el código sigue siendo el artefacto principal), <strong>spec-anchored</strong> (el contrato vive junto al código como artefacto versionado) y <strong>spec-as-source</strong> (la spec ES la fuente de verdad; el código es generado y desechable). Cada nivel sube el coste de mantenimiento y el acoplamiento. La mayoría de equipos deberían quedarse en spec-first. El error más común y más caro: pagar el coste de un nivel superior cuando tu problema está en uno inferior. Los datos respaldan la dirección: un estudio controlado (Colorado State, 2023) mostró un aumento del ~19% en velocidad y una caída del ~31% en densidad de defectos. Un fabricante de semiconductores redujo los defectos a la mitad pese a aumentar la complejidad. Un banco global pasó de gastar más de un tercio del tiempo de desarrollador en apagar fuegos a single digits en nueve meses.</p>
-        <p>Los fracasos enseñan tanto como los éxitos. Un experimento detallado mostró una ralentización de ~10x con un flujo SDD rígido en una feature CRUD pequeña: la herramienta generó más líneas de Markdown que de código, y cada una tuvo que ser revisada. El peor fracaso fue procedimental: SDD impuesto como mandato top-down generó una petición firmada por más de mil ingenieros y gaming de métricas. La regla de selección en tres frases: spec-first para la mayoría del trabajo, spec-anchored con contract tests en CI donde varios equipos comparten APIs, spec-as-source solo experimentalmente o en sistemas safety-critical. El mayor riesgo no es técnico sino psicológico: un estudio (METR, 2025) mostró que desarrolladores esperaban un ~24% de aceleración con AI y la medición real en un repositorio maduro mostró un 19% de <em>ralentización</em>. La brecha entre percepción y métrica es el verdadero enemigo. La recomendación final: mide cycle time, rework rate y ratio de líneas de código a líneas de Markdown antes de declarar victoria.</p>
-    </div>
-    <div class="stats">
-        <span>📖 Texto completo vía Freedium</span>
-        <span><a href="https://medium.com/p/b4cc7025d971" target="_blank">Leer en Medium →</a></span>
-    </div>
-</article>
-
-<!-- 15. Every Frontend Architecture Pattern -->
-<article class="article">
-    <span class="badge badge-full">📖 Texto completo</span>
-    <span class="badge badge-code">Frontend</span><span class="badge badge-tech">Arquitectura</span><span class="badge badge-code">Web Dev</span>
-    <h3><a href="https://medium.com/p/a7ec07e7bbbb" target="_blank">Every Frontend Architecture Pattern Explained</a></h3>
-    <div class="meta-line">Tushar Kanjariya · 10 min · 👏 514 · 💬 11</div>
-    <div class="summary">
-        <p>Tushar Kanjariya plantea que todos los patrones de arquitectura frontend son respuestas a una sola pregunta: <strong>¿cuánto trabajo debe hacer el navegador, versus el servidor, versus el build time?</strong> Todo lo demás — SSR, RSC, micro-frontends, BFFs — es solo un lugar distinto donde trazar esa línea. El artículo traza la evolución desde páginas HTML estáticas (carga instantánea, cero cosas que romper) hasta los frameworks MVC del lado del servidor (Django, Rails, ASP.NET — datos dinámicos pero recarga completa en cada clic) y la era SPA (React, Vue, Angular — el navegador hace casi todo, pero el "once it's loaded" es el problema: bundles enormes, first paint lento, SEO complicado).</p>
-        <p>El autor profundiza en el patrón <strong>Backend-for-Frontend (BFF)</strong>, nacido en SoundCloud hacia 2013. Su equipo estaba rompiendo un monolito en microservicios y cada cliente (web, iOS, Android) peleaba por una API compartida que no le servía a nadie. La solución: dar a cada cliente su propio backend fino, propiedad del equipo frontend, cuya única función es remodelar datos exactamente para lo que esa UI necesita. Phil Calçado documentó la historia original y Sam Newman la convirtió en el patrón canónico. Netflix resolvió el mismo problema con capas adaptadoras por dispositivo. El autor incluye código de ejemplo en Node.js/Express y es honesto sobre sus límites: no ha liderado una migración de micro-frontends en una empresa de 200 ingenieros, y todo lo que cuenta viene de documentación oficial y write-ups de ingeniería de SoundCloud, Netflix, Spotify, Vercel y Cloudflare. "Creo que eso es mucho más útil que fingir que lo he hecho todo yo mismo."</p>
-    </div>
-    <div class="stats">
-        <span>📖 Texto completo vía Freedium</span>
-        <span><a href="https://medium.com/p/a7ec07e7bbbb" target="_blank">Leer en Medium →</a></span>
-    </div>
-</article>
-
-<footer>
-    Generado automáticamente · Textos completos vía Freedium · <a href="https://github.com/udeope/medium-digest" style="color: var(--accent);">udeope/medium-digest</a>
-</footer>
-
 </body>
 </html>
