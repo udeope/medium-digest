@@ -29,6 +29,30 @@ h3 a{color:inherit;text-decoration:none}h3 a:hover,.read-link:hover{color:#7dc3f
 .article-footer{margin-top:16px;padding-top:16px;border-top:1px solid #2a2a2a;display:flex;justify-content:space-between;align-items:center;gap:12px;color:#777;font-size:.8rem}
 .read-link{color:#7dc3ff;text-decoration:none;font-weight:600}footer{text-align:center;color:#555;font-size:.8rem;padding:28px 0 10px}footer a{color:#777}
 @media(max-width:600px){.container{padding:12px}.article-card{padding:18px}.article-footer{align-items:flex-start;flex-direction:column}.badge{margin-left:4px;margin-top:4px}}
+
+/* NEWS_DIGEST_CSS_START */
+.news-section{background:#121212;border:1px solid #2a2a2a;border-radius:14px;padding:22px;margin:30px 0 40px}
+.news-heading{display:flex;align-items:flex-start;justify-content:space-between;gap:12px;margin-bottom:16px}
+.news-kicker{color:#7dc3ff;font-size:.72rem;text-transform:uppercase;letter-spacing:.12em}
+.news-heading h2{margin:4px 0 0;color:#fff;font-size:1.3rem}
+.news-date{color:#888;font-size:.82rem;white-space:nowrap}
+.news-overview{background:#171717;border:1px solid #303030;border-radius:10px;padding:16px 18px;margin-bottom:14px}
+.news-overview h3,.news-group h3{font-size:.94rem;color:#fff;line-height:1.4;margin-bottom:9px}
+.news-overview ul,.news-list{padding-left:19px;color:#bbb}
+.news-overview li{margin:5px 0}
+.news-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(250px,1fr));gap:12px}
+.news-group{padding:16px;background:#161616;border:1px solid #2a2a2a;border-radius:10px}
+.news-group h3{font-size:.9rem}
+.news-list{font-size:.87rem;line-height:1.6}
+.news-list li{margin:0 0 10px}
+.news-list li:last-child{margin-bottom:0}
+.news-feature{grid-column:1/-1;border-color:#37506a}
+.news-section a{color:#7dc3ff;text-decoration:none}
+.news-section a:hover{text-decoration:underline}
+.news-sources{margin-top:14px;color:#777;font-size:.77rem}
+.news-note{margin-top:8px;color:#d0ae70;font-size:.82rem}
+@media(max-width:600px){.news-section{padding:16px}.news-heading{flex-direction:column}.news-date{white-space:normal}}
+/* NEWS_DIGEST_CSS_END */
 </style>
 </head>
 <body><div class="container">
@@ -39,7 +63,48 @@ h3 a{color:inherit;text-decoration:none}h3 a:hover,.read-link:hover{color:#7dc3f
 <article class="pick-card"><h3><a href="https://medium.com/p/0f3468349607" target="_blank" rel="noopener">How and Why Netflix Built a Real-Time Distributed Graph: Part 3 - Querying the…</a><span class="badge badge-full">📖 Texto completo</span></h3><div class="meta"><span>Netflix Technology Blog</span><span>Netflix TechBlog</span><span>2 de octubre de 2026 · digest</span><span>20 min read</span></div><div class="snippet">Netflix explica cómo recorrer un grafo de 150.000 millones de aristas con frontiers, I/O asíncrono, filtros tempranos y caché selectiva.</div></article>
 <article class="pick-card"><h3><a href="https://medium.com/p/4c595a3abe55" target="_blank" rel="noopener">New Jev Model is Insane! 200x Faster &amp; 400x Cheaper Than Frontier Models</a><span class="badge badge-full">📖 Texto completo</span></h3><div class="meta"><span>Jim Clyde Monge</span><span>Generative AI</span><span>2 de octubre de 2026 · digest</span><span>10 min read</span></div><div class="snippet">Jev intenta reservar los modelos generativos para lo que necesitan generar: decisiones estructuradas, rápidas y baratas para el resto.</div></article>
 <article class="pick-card"><h3><a href="https://medium.com/p/c0b562dc78d1" target="_blank" rel="noopener">Argo CD v3.6 Less Memory, Faster UI, Better Rollout Visibility</a><span class="badge badge-full">📖 Texto completo</span></h3><div class="meta"><span>Eugene Doudine</span><span>Argo Project</span><span>2 de octubre de 2026 · digest</span><span>11 min read</span></div><div class="snippet">Argo CD 3.6 combina virtual scrolling, compresión de manifests, mejor observabilidad y progressive sync menos propenso a datos obsoletos.</div></article>
-</div></section><section class="articles-section"><h2>Todos los artículos</h2>
+</div></section><!-- NEWS_DIGEST_START -->
+<section class="news-section" id="news-digest" aria-labelledby="news-title">
+  <div class="news-heading"><div><div class="news-kicker">last30days · digest diario</div>
+    <h2 id="news-title">Digest Diario de Noticias Tech</h2></div>
+    <div class="news-date">2 de octubre de 2026</div></div>
+  <div class="news-overview"><h3>🧭 Lectura rápida</h3><ul>
+    <li>La industria acelera la transición hacia agentes modulares con sandboxing estricto, orquestación estándar en Python y gobernanza activa para producción.</li>
+    <li>Conviene vigilar la adopción de arquitecturas alternativas de inferencia y RAG sin vectores frente a los stacks tradicionales de embeddings.</li>
+  </ul></div>
+  <div class="news-grid">
+    <div class="news-group"><h3>🤖 IA &amp; Modelos</h3><ul class="news-list">
+      <li><strong>K-Dense BYOK para investigación científica</strong> - Asistente open-source que corre en local con claves propias, protegiendo la privacidad de datos experimentales y reduciendo costes (<a href="https://llm-stats.com/ai-news" target="_blank" rel="noopener noreferrer">arXiv / LLM-Stats</a>).</li>
+      <li><strong>SpikingBrain e inferencia inspirada en redes neuronales pulsantes</strong> - Arquitectura sparse guiada por eventos orientada a reducir latencia y consumo energético en hardware local (<a href="https://x.com/Steven_AI_Dev/status/2105878762877313443" target="_blank" rel="noopener noreferrer">@Steven_AI_Dev en X</a>).</li>
+      <li><strong>PageIndex propone RAG estructurado sin vectores</strong> - Sistema de indexación documental directa que evita embeddings tradicionales y minimiza la pérdida de contexto por chunking (<a href="https://x.com/Steven_AI_Dev/status/2105878762877313443" target="_blank" rel="noopener noreferrer">@Steven_AI_Dev en X</a>).</li>
+    </ul></div>
+    <div class="news-group"><h3>🛠️ Dev Tools &amp; Agentes</h3><ul class="news-list">
+      <li><strong>OpenAI Agents SDK estandariza flujos multi-agente en Python</strong> - Framework ligero enfocado en handoffs y delegación modular sin sobrecarga de abstracciones (<a href="https://github.com/openai/openai-agents-python" target="_blank" rel="noopener noreferrer">GitHub openai-agents-python</a>).</li>
+      <li><strong>Cloudflare añade sandboxes efímeras para agentes de código</strong> - Guías y herramientas para aislar la ejecución de código generado por IA en entornos seguros (<a href="https://developers.cloudflare.com/sandbox/sdk/tutorials/openai-agents/" target="_blank" rel="noopener noreferrer">Cloudflare Docs</a>).</li>
+      <li><strong>VS Code consolida su soporte para plugins de agentes</strong> - La plataforma amplía bundles de habilidades y hooks preempaquetados para orquestar agentes dentro del editor (<a href="https://toolradar.com/blog/open-source-developer-tools" target="_blank" rel="noopener noreferrer">Toolradar</a>).</li>
+      <li><strong>Mistral Vibe Code como agente CLI en terminal</strong> - Herramienta de asistencia en línea de comandos construida sobre los modelos de código de Mistral (<a href="https://www.scriptbyai.com/best-cli-ai-coding-agents/" target="_blank" rel="noopener noreferrer">ScriptByAI</a>).</li>
+      <li><strong>Toolkit earendil-works/pi supera 111k estrellas</strong> - Suite abierta que unifica API de modelos, bucle de razonamiento, TUI y CLI para agentes autónomos (<a href="https://github.com/earendil-works/pi" target="_blank" rel="noopener noreferrer">GitHub earendil-works/pi</a>).</li>
+    </ul></div>
+    <div class="news-group"><h3>🛡️ Seguridad, Chips &amp; Infraestructura</h3><ul class="news-list">
+      <li><strong>Gobernanza y auditoría con Awesome AI Agent Governance</strong> - Catálogo de herramientas para compliance con el EU AI Act, trazabilidad de logs y contención en MCP y Claude Code (<a href="https://github.com/systempromptio/awesome-ai-agent-governance" target="_blank" rel="noopener noreferrer">GitHub systempromptio</a>).</li>
+      <li><strong>Inversión concentrada en chips y conectividad para IA</strong> - El capital sigue respaldando infraestructura crítica de centros de datos, semiconductores y redes de fibra (<a href="https://www.broadcom.com/" target="_blank" rel="noopener noreferrer">Broadcom</a> / <a href="https://x.com/BottomPhishing/status/2105617993871073536" target="_blank" rel="noopener noreferrer">@BottomPhishing en X</a>).</li>
+    </ul></div>
+    <div class="news-group"><h3>💼 Negocio Tech</h3><ul class="news-list">
+      <li><strong>Cláusulas de riesgo extremo en filings de salida a bolsa de IA</strong> - Análisis del escrutinio regulatorio y advertencias contractuales en documentación de empresas como Anthropic (<a href="https://www.reddit.com/r/MarketFluxHub/comments/1wttt6g/the_daily_market_flux_your_complete_market/" target="_blank" rel="noopener noreferrer">r/MarketFluxHub</a>).</li>
+      <li><strong>Y Combinator actualiza su listado de startups open-source</strong> - Nuevas empresas respaldadas por la aceleradora consolidan modelos comerciales sobre software abierto (<a href="https://github.com/yc-oss/open-source-companies" target="_blank" rel="noopener noreferrer">GitHub yc-oss</a>).</li>
+      <li><strong>Series A europeas priorizan software B2B de distribución</strong> - Rondas de entre 4M$ y 12M€ confirman el apetito inversor por soluciones de automatización operativa real (<a href="https://fundraiseinsider.com/blog/series-a-startups/" target="_blank" rel="noopener noreferrer">Fundraise Insider</a>).</li>
+    </ul></div>
+    <div class="news-group news-feature"><h3>🔥 Tema destacado: Estandarización de orquestación con OpenAI Agents SDK</h3><ul class="news-list">
+      <li><strong>Handoffs vs Agent.as_tool() como patrones de diseño</strong> - Clarifica cuándo delegar el control total de la sesión frente a invocar funciones subordinadas, reduciendo bucles y gasto de tokens (<a href="https://www.matthewswong.com/en/blog/openai-agents-sdk-handoffs-vs-agents-as-tools/" target="_blank" rel="noopener noreferrer">Matthew SW Ong</a>).</li>
+      <li><strong>Pipelines multimodales de voz en Python puro</strong> - Soporte nativo para encadenar transcripción, lógica de decisión y síntesis de voz sin frameworks intermediarios pesados (<a href="https://openai.github.io/openai-agents-python/" target="_blank" rel="noopener noreferrer">OpenAI Docs</a>).</li>
+    </ul></div>
+  </div>
+  <div class="news-sources">⚡ vía last30days - Reddit/X/YouTube/TikTok/Instagram/HN/Polymarket/GitHub/Web</div>
+  <div class="news-note">⚠️ Cobertura parcial: Reddit (rate limits en endpoints de búsqueda).</div>
+</section>
+<!-- NEWS_DIGEST_END -->
+
+<section class="articles-section"><h2>Todos los artículos</h2>
 <article class="article-card"><div class="article-header"><h3><a href="https://medium.com/p/043f7eecf9cb" target="_blank" rel="noopener">Everyday Resurrections: Of Music &amp; Marriage</a><span class="badge badge-full">📖 Texto completo</span></h3><div class="article-meta"><span>Daniel Coffeen</span><span>Reading the Way of Things</span><span>2 de octubre de 2026 · digest</span><span>11 min read</span></div><div class="article-tags"><span class="tag">música</span><span class="tag">repetición</span><span class="tag">matrimonio</span><span class="tag">filosofía</span></div></div><div class="article-summary"><p>Daniel Coffeen propone una analogía exigente entre escuchar música y estar casado: ambas experiencias piden volver a lo mismo sin dejar de encontrar algo nuevo. Su tesis se apoya en la idea filosófica de repetición, que no sería copiar el pasado sino hacer emerger lo nuevo desde lo ya conocido. El ejemplo inicial es la escultura Things Fall Apart de Sarah Sze, que el autor visitó muchas veces sin agotarla. En la música, una canción no vuelve como simple recuerdo de la primera escucha; puede presentarse otra vez como una experiencia fresca. La obra de arte, por tanto, funciona como una ingeniería de lo perpetuamente nuevo y exige una atención capaz de no convertirla en cliché personal.</p>
 <p>La nostalgia puede ayudar a volver a una canción, pero también puede cubrirla hasta impedir escucharla. Coffeen distingue entre el recuerdo sentimental y el trabajo de atender a la estructura, la producción, el ritmo y los detalles de la canción en el presente. A veces el tema resucita porque el oyente logra soltar las memorias que lo fijaban a un tiempo; otras veces descubre que la canción era desechable y puede dejarla descansar sin convertir esa decisión en un juicio moral. La resurrección es cooperativa: depende de la vitalidad de la obra y de la disposición de quien la escucha. El autor no ofrece una técnica cuantificable, sino una práctica de escucha intensa y una forma de evaluar qué sigue vivo.</p>
 <p>La segunda mitad lleva el argumento a la pareja. Para Coffeen, la seducción busca repetidamente algo nuevo y puede terminar encontrando siempre la misma figura abstracta, mientras que el matrimonio enfrenta el reto de hallar diferencia dentro de la misma persona y dentro de la rutina. No se trata solo de sexualidad: el trabajo consiste en recuperar la atención y el impulso amoroso bajo las presiones de dinero, trabajo y salud. La metáfora final es un guitarrista que toca el mismo riff: cambiar de canción cuando se pierde el ritmo evita la dificultad de volver a entrar en el groove. El texto reconoce que la vida cotidiana también necesita automatismos para ahorrar energía; su recomendación es reservar el esfuerzo de “resucitar” para aquello que merece amor.</p>
